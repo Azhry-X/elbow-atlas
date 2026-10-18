@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elbow Master Dossier</title>
+<meta name="description" content="9-page A4 master clinical assessment and rehabilitation dossier for the elbow: triage and red flags, differential diagnosis and prognosis, objective examination, special tests and PROMs, post-surgical rehab, injections and electrophysical agents, manual therapy, exercise and return to activity, and flowsheet. Companion Test Atlas: https://azhry-x.github.io/elbow-atlas">
+<style>
+/* =====================================================================
+   HIP COMPLEX MASTER DOSSIER — design system
+   Mirrors the Knee Complex and Ankle & Foot dossiers so all read as one series.
+   Fonts are bundled locally; no CDN, no emoji fonts (icons are inline SVG).
+   ===================================================================== */
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Semibold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Bold.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: block; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Bold.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+
+:root{
+  --ink:#0f172a; --navy:#1e3a8a; --crimson:#991b1b; --emerald:#065f46; --paper:#f8fafc;
+  --line:#cbd5e1; --line2:#e2e8f0; --mut:#475569;
+}
+
+/* ================= PRINT GEOMETRY ================= */
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  html, body { width: 210mm; margin: 0; padding: 0; background: #FFFFFF !important; }
+  .clinical-page { page-break-after: always; break-after: page; margin: 0 !important; box-shadow: none !important; }
+  .clinical-page:last-child { page-break-after: auto; break-after: auto; }
+}
+
+*{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: "Source Sans 3", sans-serif;
+  color:var(--ink); font-size:9px; line-height:1.26;
+  font-variant-numeric: tabular-nums;
+  background:linear-gradient(160deg,#0f172a 0%,#1e293b 45%,#1e3a8a 100%);
+  background-attachment:fixed;
+}
+@media screen { body{ padding:10mm 0; } }
+
+/* ================= PAGE SHELL ================= */
+.clinical-page{
+  width:210mm; height:297mm; max-height:297mm; box-sizing:border-box; padding:5mm 7mm;
+  overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;
+  background-color:#F8FAFC; position:relative; gap:1.5mm;
+  margin:0 auto 12mm auto; box-shadow:0 20px 60px rgba(2,6,23,.55);
+}
+.clinical-page:last-child{ margin-bottom:0; }
+.clinical-page{ --accent:#1E3A8A; --accent-soft:#eef2ff; --accent-line:#bfdbfe; }
+.clinical-page[data-accent="red"]{    --accent:#B42318; --accent-soft:#fef2f2; --accent-line:#fecaca; }
+.clinical-page[data-accent="blue"]{   --accent:#1E3A8A; --accent-soft:#eef2ff; --accent-line:#bfdbfe; }
+.clinical-page[data-accent="purple"]{ --accent:#6B21A8; --accent-soft:#faf5ff; --accent-line:#e9d5ff; }
+.clinical-page[data-accent="orange"]{ --accent:#C2410C; --accent-soft:#fff7ed; --accent-line:#fed7aa; }
+.clinical-page[data-accent="teal"]{   --accent:#0F766E; --accent-soft:#f0fdfa; --accent-line:#99f6e4; }
+.clinical-page[data-accent="green"]{  --accent:#15803D; --accent-soft:#f0fdf4; --accent-line:#bbf7d0; }
+.clinical-page[data-accent="slate"]{  --accent:#334155; --accent-soft:#f1f5f9; --accent-line:#cbd5e1; }
+.pg-body{ flex:1 1 auto; min-height:0; display:flex; flex-direction:column; gap:1.5mm; }
+
+/* ================= HEADER / FOOTER ================= */
+.pg-hdr{ display:flex; justify-content:space-between; align-items:flex-end; gap:3mm; border-bottom:2px solid var(--accent); padding-bottom:1.3mm; }
+.brand{ display:flex; align-items:center; gap:2mm; min-width:0; }
+.logo{ width:9.5mm; height:9.5mm; border-radius:2mm; flex:0 0 auto; background:linear-gradient(135deg,#1e3a8a 0%,#0f172a 100%); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:900; font-size:9.5px; letter-spacing:.02em; box-shadow:inset 0 0 0 1px rgba(255,255,255,.15); }
+.kicker{ font-size:6.8px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#64748b; }
+.pg-title{ font-size:12.5px; font-weight:900; letter-spacing:-.01em; color:var(--ink); line-height:1.1; margin:0; }
+.hdr-right{ display:flex; align-items:flex-end; gap:2.5mm; font-size:8px; white-space:nowrap; }
+.pgno{ background:var(--accent); color:#fff; font-weight:800; font-size:9px; padding:1mm 2.2mm; border-radius:1.4mm; letter-spacing:.06em; }
+
+.pg-ftr{ display:flex; flex-direction:column; align-items:stretch; gap:1mm;
+  border-top:1px solid var(--line); padding-top:1mm; font-size:7.2px; color:var(--mut); min-height:22px; }
+.ftr-top{ display:flex; justify-content:space-between; align-items:center; gap:2mm; white-space:nowrap; }
+.pg-ftr b{ color:var(--ink); }
+.pnav-wrap{ display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+.pnav{ display:flex; align-items:center; justify-content:center; gap:1.5pt; min-height:34pt; width:100%; padding:0;
+  background:#F1F5F9; border:1px solid #CBD5E1; border-radius:1.5mm; }
+.pnav .nl{ font-size:6.8px; font-weight:800; letter-spacing:.08em; color:#475569; text-transform:uppercase; margin-right:.8mm; line-height:1; }
+.ptab{ position:relative; display:inline-flex; align-items:center; justify-content:center;
+  width:34pt; height:34pt; min-width:34pt; border-radius:1mm; border:1px solid var(--line);
+  background:#fff; color:var(--navy); font-weight:800; font-size:11pt; text-decoration:none; line-height:1; }
+.ptab.on{ background:var(--accent); color:#fff; border-color:var(--accent); }
+
+/* ================= LINK BADGES & EVIDENCE MARKERS ================= */
+.ref-badge, .calc-badge, .guide-badge, .find-badge {
+  position: relative; display: inline-flex; align-items: center; gap: 2px;
+  font-size: 6.8pt; line-height: 1; padding: 1.5px 4px; border-radius: 3px;
+  text-decoration: none; font-weight: 700; white-space: nowrap; vertical-align: middle; letter-spacing: .02em;
+}
+.calc-badge { background-color: #ECFDF5; border: 1px solid #A7F3D0; color: #047857; }
+.guide-badge { background-color: #FFFBEB; border: 1px solid #FDE68A; color: #B45309; }
+.ref-badge { background-color: #F0F9FF; border: 1px solid #BAE6FD; color: #0369A1; }
+.badge-ico{ width:7.5px; height:7.5px; flex:0 0 auto; display:inline-block; }
+.card-h .calc-badge, .card-h .guide-badge{ font-size:6.4pt; text-transform:none; letter-spacing:.01em; }
+
+.eb{ font-size:6.2px; font-weight:800; padding:0.2px 1.8px; border-radius:1.5px; vertical-align:super; line-height:1; display:inline-block; margin-left:1px; text-transform:none; letter-spacing:0; }
+.eb-h{ color:#047857; background:#ecfdf5; border:0.6px solid #a7f3d0; }
+.eb-m{ color:#b45309; background:#fffbeb; border:0.6px solid #fde68a; }
+.eb-l{ color:#b91c1c; background:#fef2f2; border:0.6px solid #fecaca; }
+.eb-e{ color:#4338ca; background:#eef2ff; border:0.6px solid #c7d2fe; }
+
+/* Atlas test-name link (underline = Atlas card; ▸ = verified video) */
+.test-link{ color:inherit; text-decoration:underline; text-decoration-color:rgba(30,58,138,0.45); text-underline-offset:1.6px; font-weight:inherit; }
+.test-link.has-video::after{ content:"\00a0\25B8"; font-size:0.82em; color:#1e3a8a; text-decoration:none; font-weight:700; }
+.card-h .test-link, .card.red > .card-h .test-link{ text-decoration-color:rgba(255,255,255,0.7); }
+.card-h .test-link.has-video::after{ color:#fff; }
+
+/* Atlas info icon */
+.info-icon{ display:inline-flex; align-items:center; justify-content:center; width:3.8mm; height:3.8mm; min-width:3.8mm; text-decoration:none; vertical-align:middle; margin:0 0.2mm; color:var(--accent); }
+.card-h .info-icon{ color:#ffffff; }
+.sh.r .info-icon, .crit .info-icon{ color:var(--crimson); }
+.info-svg{ width:3.3mm; height:3.3mm; display:inline-block; pointer-events:none; }
+
+/* ================= CARDS ================= */
+.card{ border:1px solid var(--line); border-radius:1.6mm; overflow:hidden; background:#fff; }
+.card-h{ background:var(--accent); color:#fff; font-weight:800; font-size:8.4px; letter-spacing:.07em; text-transform:uppercase;
+  padding:1mm 2mm; display:flex; justify-content:space-between; align-items:center; gap:2mm; }
+.card-h > span:first-child{ display:inline-flex; align-items:center; gap:1.2mm; flex-wrap:wrap; }
+.card-b{ padding:1.2mm 2mm; }
+.card.red{ border:2px solid var(--crimson); }
+.card.red > .card-h{ background:linear-gradient(90deg,#991b1b,#7f1d1d); }
+.card.green{ border:2px solid var(--emerald); }
+.card.ink > .card-h{ background:var(--ink); }
+.card.soft{ background:var(--paper); }
+.tag{ font-size:6.8px; font-weight:800; letter-spacing:.08em; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+  padding:.2mm 1.5mm; border-radius:3mm; white-space:nowrap; }
+
+.sh{ font-weight:800; font-size:8px; text-transform:uppercase; letter-spacing:.05em; color:var(--accent); display:flex; justify-content:space-between;
+  align-items:center; gap:2mm; border-bottom:1px dashed var(--accent-line); padding-bottom:.4mm; margin:.8mm 0 .5mm; }
+.sh > span:first-child{ display:inline-flex; align-items:center; gap:1mm; flex-wrap:wrap; }
+.sh:first-child{ margin-top:0; }
+.sh.r{ color:var(--crimson); border-bottom-color:#fecaca; }
+.sh.g{ color:var(--emerald); border-bottom-color:#a7f3d0; }
+.sh.n{ color:var(--navy); border-bottom-color:#bfdbfe; }
+
+/* Pathway router */
+.router-row{ display:grid; grid-template-columns:minmax(0,25fr) minmax(0,45fr) minmax(0,30fr); gap:1.2mm; min-height:9.0mm; align-items:center; }
+.router-col{ display:flex; align-items:center; flex-wrap:nowrap; gap:0.4mm; min-height:9.0mm; white-space:nowrap; }
+.rchip{ display:inline-flex; align-items:center; justify-content:center; width:4.8mm; min-width:4.8mm; height:9.0mm; min-height:9.0mm;
+  position:relative; background:transparent; color:var(--navy); font-weight:800; font-size:7.4px; text-decoration:none; line-height:1;
+  isolation:isolate; z-index:1; }
+.rchip::before{ content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:4.4mm; height:4.4mm; border-radius:1mm; border:1px solid #94a3b8; background:#fff; z-index:-1; box-sizing:border-box; }
+.router-col > span{ font-size:7.0px; color:#64748b; font-weight:700; }
+
+/* ================= FORM PRIMITIVES ================= */
+.cb{ display:inline-block; width:12px; height:12px; min-width:12px; border:1.5px solid #334155; border-radius:2.5px; background:#fff; vertical-align:middle; flex:0 0 auto; }
+.cb.sm{ width:9px; height:9px; min-width:9px; border-width:1.3px; border-radius:2px; }
+.cb.r{ border-color:var(--crimson); } .cb.g{ border-color:var(--emerald); } .cb.n{ border-color:var(--navy); } .cb.w{ border-color:#fff; background:transparent; }
+.ci{ display:flex; align-items:flex-start; gap:1.3mm; padding:.25mm 0; }
+.ci > .cb{ margin-top:-0.5px; }
+.cio{ display:inline-flex; align-items:center; gap:.8mm; margin-right:1.8mm; white-space:nowrap; }
+.row{ display:flex; align-items:flex-end; gap:3mm; }
+.fr{ display:flex; align-items:flex-end; gap:1.2mm; white-space:nowrap; min-height:14px; }
+.fr .fl{ flex:1 1 auto; }
+.fl{ display:inline-block; border-bottom:1px solid #94a3b8; min-width:9mm; height:12px; vertical-align:bottom; }
+.fl.s{ min-width:7mm; width:7mm; flex:0 0 auto; } .fl.m{ min-width:12mm; width:12mm; flex:0 0 auto; } .fl.l{ min-width:20mm; width:20mm; flex:0 0 auto; }
+.lb{ font-weight:700; color:#334155; font-size:8px; }
+.mut{ color:var(--mut); } .xs{ font-size:7.4px; } .xxs{ font-size:6.8px; } .b{ font-weight:700; }
+.crim{ color:var(--crimson); } .emer{ color:var(--emerald); } .nav{ color:var(--navy); } .acc{ color:var(--accent); }
+.stat{ display:inline-block; font-size:7px; font-weight:800; padding:.2mm 1.2mm; border-radius:2mm; background:#eff6ff; color:var(--navy); border:1px solid #bfdbfe; white-space:nowrap; text-transform:none; letter-spacing:0; }
+.stat.r{ background:#fef2f2; color:var(--crimson); border-color:#fecaca; }
+.stat.g{ background:#ecfdf5; color:var(--emerald); border-color:#a7f3d0; }
+.stat.w{ background:rgba(255,255,255,.14); color:#fff; border-color:rgba(255,255,255,.4); }
+.lr{ display:inline-flex; align-items:flex-end; gap:.8mm; white-space:nowrap; font-weight:700; color:#64748b; font-size:7.4px; }
+.circ{ display:inline-flex; gap:1.2mm; font-weight:700; color:#334155; font-size:7.8px; }
+.circ span{ border:1px solid var(--line); border-radius:3mm; padding:0 1.3mm; background:#fff; }
+.nprs{ display:inline-flex; gap:2px; }
+.nprs span{ width:14px; height:14px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:7.4px; font-weight:800; border:1.3px solid; background:#fff; }
+.mini{ border:1px solid var(--line2); border-radius:1.2mm; padding:.7mm 1.3mm; background:#fff; }
+.box{ border:1.2px solid var(--line); border-radius:1.2mm; padding:.6mm 1.2mm; background:#fff; }
+.box.r{ border-color:#b91c1c; background:#fff5f5; }
+.box.n{ border-color:#93c5fd; background:#f8fbff; }
+.box.g{ border-color:#10b981; background:#f0fdf4; }
+.box.a{ border-color:var(--accent-line); background:var(--accent-soft); }
+
+/* ================= TABLES ================= */
+.t{ width:100%; border-collapse:collapse; font-size:8.6px; font-variant-numeric:tabular-nums; }
+.t th{ background:var(--accent-soft); color:var(--accent); font-weight:800; text-align:left; padding:.7mm 1.1mm; border:1px solid var(--line); font-size:7.1px; text-transform:uppercase; letter-spacing:.04em; line-height:1.15; }
+.t td{ border:1px solid var(--line); padding:.55mm 1.1mm; vertical-align:middle; background:#fff; line-height:1.18; }
+.t tr:nth-child(even) td{ background:#fbfdff; }
+.t td.k{ font-weight:700; } .t td.w{ background:#fff !important; }
+.t.dense td{ font-size:8.2px; padding:.45mm 1mm; }
+.t.red th{ background:#fef2f2; color:var(--crimson); }
+.t.green th{ background:#ecfdf5; color:var(--emerald); }
+.t.navy th{ background:#eef2ff; color:var(--navy); }
+.t td.c, .t th.c{ text-align:center; }
+.t.ink th{ background:var(--ink); color:#fff; border-color:#334155; }
+.t.slate th{ background:#e2e8f0; color:#334155; border-color:#cbd5e1; }
+.t tr.sub td{ background:var(--accent-soft) !important; color:var(--accent); font-weight:800; font-size:7.4px; text-transform:uppercase; letter-spacing:.05em; padding:.4mm 1.1mm; }
+.t tr.redrow td:first-child{ border-left:3px solid #991b1b; }
+
+/* ================= HANDWRITING ZONES ================= */
+.dots{ position:relative; border:1px solid var(--line); border-radius:1.6mm; background-color:#fff;
+  background-image:radial-gradient(circle, #64748b 0.85px, transparent 1.05px); background-size:5mm 5mm; background-position:2.5mm 2.5mm; }
+.dots-l{ position:absolute; top:1mm; left:1.6mm; font-size:7.2px; font-weight:800; color:var(--accent); background:#fff; padding:.2mm 1.2mm;
+  text-transform:uppercase; letter-spacing:.07em; border-radius:1mm; border:1px solid var(--line2); }
+.fill{ flex:1 1 auto; min-height:10mm; }
+
+.crit{ display:flex; align-items:center; gap:1.4mm; border:2px solid var(--crimson); background:repeating-linear-gradient(135deg,#fef2f2 0 6px,#fff 6px 12px);
+  border-radius:1.4mm; padding:.6mm 1.6mm; color:var(--crimson); font-weight:800; font-size:8px; line-height:1.15; }
+.crit svg.stop{ width:10px; height:10px; flex:0 0 auto; }
+.ok{ border:1.5px solid var(--emerald); background:#ecfdf5; border-radius:1.4mm; padding:.6mm 1.6mm; color:var(--emerald); font-weight:700; }
+.note{ border-left:3px solid var(--accent); background:#fff; padding:.7mm 2mm; border-radius:0 1.2mm 1.2mm 0; }
+.divider-v{ border-left:1px dashed #fecaca; padding-left:2mm; }
+
+/* ================= ANATOMICAL WIREFRAMES ================= */
+.bm{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.4mm; }
+.bm figure{ margin:0; border:1px solid var(--line2); border-radius:1.2mm; background:#fff; padding:.8mm .8mm .4mm; display:flex; flex-direction:column; align-items:center; }
+.bm svg{ width:100%; height:auto; display:block; }
+.bm figcaption{ font-size:6.8px; font-weight:800; letter-spacing:.12em; color:var(--navy); text-transform:uppercase; margin-top:.3mm; }
+.bm .o{ fill:#F8FAFC; stroke:#64748B; stroke-width:1.1; stroke-linejoin:round; stroke-linecap:round; }
+.bm .b{ fill:#eef2ff; stroke:#64748B; stroke-width:.9; }
+.bm .d{ fill:none; stroke:#94a3b8; stroke-width:.7; stroke-dasharray:2 1.6; }
+.bm .lm{ fill:none; stroke:#1e3a8a; stroke-width:.85; stroke-dasharray:2 1.3; }
+.bm .pt{ fill:#1e3a8a; }
+.bm text{ font-family:"Source Sans 3", sans-serif; font-size:5.2px; font-weight:700; fill:#64748B; }
+.bm text.k{ fill:#1e3a8a; }
+
+/* ================= FLOWSHEET ================= */
+.flow td{ vertical-align:top; }
+.flow .p{ font-size:5.6pt; color:#64748b; font-weight:600; line-height:1.05; white-space:nowrap; }
+.vnum{ font-size:10px; font-weight:800; color:var(--navy); text-align:center; vertical-align:middle !important; background:#f8fafc; }
+.bm .mk circle{ fill:#1e3a8a; }
+.bm .mk text{ fill:#fff; font-size:5.4px; font-weight:800; }
+.bm text.s{ font-size:5px; font-weight:800; fill:#94a3b8; letter-spacing:.04em; }
+.sh .calc-badge, .sh .guide-badge{ text-transform:none; letter-spacing:.01em; }
+.t tr.sub .calc-badge, .t tr.sub .guide-badge{ text-transform:none; letter-spacing:.01em; }
+
+/* ---- compiled utility classes (Tailwind v3, generated at build) ---- */
+.collapse{visibility:collapse}.static{position:static}.col-span-2{grid-column:span 2/span 2}.mt-\[1px\]{margin-top:1px}.flex{display:flex}.table{display:table}.grid{display:grid}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-3{gap:.75rem}.gap-\[1\.5px\]{gap:1.5px}.gap-\[1px\]{gap:1px}.gap-x-1{-moz-column-gap:.25rem;column-gap:.25rem}.gap-x-2{-moz-column-gap:.5rem;column-gap:.5rem}.border{border-width:1px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.pl-2{padding-left:.5rem}.pt-\[1px\]{padding-top:1px}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}
+</style>
+</head>
+<body>
+
+<!-- ===================== PAGE 1 ===================== -->
+<div class="clinical-page" id="page-1" data-accent="red">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Emergency Triage, Red Flags, Trauma Clearance &amp; Body Chart</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">MRN</span><span class="fl l"></span></div>
+      <div class="pgno">01 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Demographics -->
+<section class="card" id="p1-demographics">
+<div class="card-h"><span>A · Patient Demographics &amp; Elbow Presentation Profile</span><span class="tag">INTAKE</span></div>
+<div class="card-b flex flex-col gap-[1px]">
+<div class="row">
+<div class="fr" style="flex:3.2"><span class="lb">Patient Name</span><span class="fl"></span></div>
+<div class="fr" style="flex:.8"><span class="lb">Age</span><span class="fl"></span></div>
+<div class="fr"><span class="lb">Sex</span><span class="cio"><span class="cb"></span>M</span><span class="cio"><span class="cb"></span>F</span></div>
+<div class="fr" style="flex:1.4"><span class="lb">Date</span><span class="fl"></span></div>
+</div>
+<div class="row">
+<div class="fr" style="flex:2"><span class="lb">Occupation / Throwing or Manual Sport</span><span class="fl"></span></div>
+<div class="fr"><span class="lb">Dominant Arm</span><span class="cio"><span class="cb"></span>R</span><span class="cio"><span class="cb"></span>L</span></div>
+<div class="fr"><span class="lb">Affected Side</span><span class="cio"><span class="cb"></span>R</span><span class="cio"><span class="cb"></span>L</span><span class="cio"><span class="cb"></span>Bilat</span></div>
+<div class="fr"><span class="lb">Onset</span><span class="cio"><span class="cb"></span>Traumatic</span><span class="cio"><span class="cb"></span>Overuse / Insidious</span></div>
+</div>
+<div class="row">
+<div class="fr"><span class="lb"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#nprs" rel="noopener" target="_blank">NPRS</a> Now (circle)</span>
+<span class="nprs">
+<span style="border-color:var(--emerald);color:var(--emerald)">0</span><span style="border-color:var(--emerald);color:var(--emerald)">1</span><span style="border-color:var(--emerald);color:var(--emerald)">2</span><span style="border-color:var(--emerald);color:var(--emerald)">3</span><span style="border-color:var(--navy);color:var(--navy)">4</span><span style="border-color:var(--navy);color:var(--navy)">5</span><span style="border-color:var(--navy);color:var(--navy)">6</span><span style="border-color:var(--crimson);color:var(--crimson)">7</span><span style="border-color:var(--crimson);color:var(--crimson)">8</span><span style="border-color:var(--crimson);color:var(--crimson)">9</span><span style="border-color:var(--crimson);color:var(--crimson)">10</span>
+</span>
+</div>
+<div class="fr" style="flex:1"><span class="lb">Compartment</span><span class="cio"><span class="cb sm"></span>Lat</span><span class="cio"><span class="cb sm"></span>Med</span><span class="cio"><span class="cb sm"></span>Ant</span><span class="cio"><span class="cb sm"></span>Post</span><span class="lb">Worst</span><span class="fl"></span></div>
+</div>
+</div>
+</section>
+<!-- B : Red Flags -->
+<section class="card red" id="p1-redflags">
+<div class="card-h"><span>B · Post-Trauma Radiography Rules, Distal Biceps Avulsion &amp; Red-Flag Triage</span><span class="tag">TRIAGE GATE</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh r" style="margin:0 0 .5px;"><span>Elbow Extension Test &amp; Trauma ROM Rules</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2600962/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Appelboam 2008</a></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-extension-test" rel="noopener" target="_blank"><b>Elbow extension test</b></a> (Appelboam 2008 BMJ, adults + children, n = 1740) <span class="eb eb-h">H</span>: <b class="crim">fracture: Sn 96.8% (95.0–98.2), Sp 48.5% (45.6–51.4); worst-case Sn 95.3%; Sp similar in adults (47.7%) and children (49.5%)</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-extension-test" rel="noopener" target="_blank"><b>Elbow extension test — adults</b></a> (Appelboam 2008 BMJ) <span class="eb eb-h">H</span>: <b class="crim">full extension: NPV 98.4% (96.3–99.5), LR− 0.03 (0.01–0.08); radiography can be deferred if an olecranon fracture is not suspected; patients not X-rayed “should return if symptoms have not resolved within 7-10 days”</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-extension-test" rel="noopener" target="_blank"><b>Range of movement and the radiograph</b></a> (Lennon 2007 Emerg Med J) <span class="eb eb-m">M</span>: <b class="crim">for detecting a normal radiograph: full extension Sp 0.916 (0.863–0.969), Sn 0.478; equal ROM Sp 0.976 (0.940–0.991), Sn 0.211; under 16 years equal ROM Sp 1 (0.941–1.000)</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-extension-test" rel="noopener" target="_blank"><b>Active ROM after trauma</b></a> (Darracq 2008 Am J Emerg Med, n = 113) <span class="eb eb-m">M</span>: <b class="crim">limited active ROM (flexion, extension, pronation, supination): Sn 100% (0.93–1.00) for fracture or effusion; preserved active ROM: Sp 97% (0.89–1.00) for absence of fracture</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh r" style="margin:0 0 .5px;"><span>Distal Biceps Avulsion &amp; Emergency Red Flags</span><a class="guide-badge" href="https://doi.org/10.1177/0363546507305016" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>O'Driscoll 2007</a></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#hook-test" rel="noopener" target="_blank"><b>Hook test — distal biceps avulsion</b></a> (O'Driscoll 2007 Am J Sports Med, n = 45, surgery reference) <span class="eb eb-m">M</span>: <b class="crim">Sn and Sp both 100%; MRI Sn 92%, Sp 85%</b> · <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#biceps-squeeze-test" rel="noopener" target="_blank"><b>Biceps squeeze test</b></a> (Ruland 2005 Clin Orthop Relat Res) <span class="eb eb-l">L</span>: <b class="crim">positive in 24 of 25 patients; complete rupture confirmed at surgery in 21 of 22</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Dislocation &amp; compartment syndrome:</b></a> <b class="crim">dislocation with neurovascular compromise</b> (absent pulse, pallor, acute nerve deficit); <b class="crim">forearm compartment syndrome</b> (severe pain out of proportion, tense swollen forearm, pain on passive finger stretch) <span class="eb eb-e">E</span></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Septic &amp; paediatric red flags:</b></a> <b class="crim">septic olecranon bursitis / septic arthritis</b> (fever, heat, swelling); <b class="crim">fracture in a child</b> (acute trauma, refusal to use arm, swelling or incomplete active ROM) <span class="eb eb-e">E</span></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Visceral &amp; proximal referral:</b></a> <b class="crim">cardiac referral to the left medial arm</b> (non-mechanical ache, chest/jaw symptoms) <span class="eb eb-e">E</span> · <b class="nav">cervical radiculopathy referral</b> (C5–T1 neck/radicular screen) <span class="eb eb-e">E</span></div></div>
+</div>
+<div class="col-span-2 flex flex-wrap items-center gap-x-1 mt-[1px] pt-[1px] border-t border-dashed" style="border-color:var(--accent-line)">
+<span class="lb crim">TRIAGE DISPOSITION:</span>
+<span class="cio"><span class="cb g"></span><b class="emer">Cleared — proceed</b></span>
+<span class="cio"><span class="cb r"></span>Radiography required (incomplete extension / trauma / child)</span>
+<span class="cio"><span class="cb r"></span>Urgent surgical referral (distal biceps avulsion)</span>
+<span class="cio"><span class="cb r"></span><b class="crim">Emergency referral (dislocation / compartment syndrome / septic / cardiac)</b></span>
+</div>
+</div>
+</section>
+<!-- C : Pathway Router -->
+<section class="card green" id="p1-fasttrack">
+<div class="card-h"><span>C · Clinical Pathway Router &amp; Elbow Subgroup Navigation</span><span class="tag">RAPID</span></div>
+<div class="card-b flex flex-col gap-[1px]">
+<div class="box g" style="padding:.3mm 1.2mm;">
+<div class="flex items-center justify-between" style="font-size:6.8px; font-weight:bold; color:var(--emerald); text-transform:uppercase;">
+<span>Clinical Pathway Router</span>
+<span class="mut" style="font-weight:bold; text-transform:none; font-size:6.6px;">Tick route → jump to matching pages</span>
+</div>
+<div class="router-row">
+<div class="router-col">
+<span class="cb sm g"></span>
+<b class="emer" style="font-size:6.8px;">A · TENDON:</b>
+<a class="rchip" href="#page-1">1</a><span>→</span><a class="rchip" href="#page-2">2</a><span>→</span><a class="rchip" href="#page-3">3</a><span>→</span><a class="rchip" href="#page-4">4</a><span>→</span><a class="rchip" href="#page-8">8</a>
+</div>
+<div class="router-col">
+<span class="cb sm g"></span>
+<b class="nav" style="font-size:6.8px;">B · INSTABILITY:</b>
+<a class="rchip" href="#page-1">1</a><span>→</span><a class="rchip" href="#page-2">2</a><span>→</span><a class="rchip" href="#page-4">4</a><span>→</span><a class="rchip" href="#page-8">8</a><span>→</span><a class="rchip" href="#page-9">9</a>
+</div>
+<div class="router-col">
+<span class="cb sm g"></span>
+<b class="crim" style="font-size:6.8px;">C · POST-OP:</b>
+<a class="rchip" href="#page-1">1</a><span>→</span><a class="rchip" href="#page-3">3</a><span>→</span><a class="rchip" href="#page-5">5</a><span>→</span><a class="rchip" href="#page-8">8</a><span>→</span><a class="rchip" href="#page-9">9</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- D : Subjective History & Body Chart -->
+<section class="card flex flex-col" id="p1-subjective">
+<div class="card-h"><span>D · Subjective History, Symptom Behaviour &amp; Elbow / Forearm Body Chart</span><span class="tag">SUBJECTIVE</span></div>
+<div class="card-b" style="padding:.4mm 1.2mm;">
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-[1px]">
+<div class="sh" style="margin:0 0 .5px;"><span>Symptom Location &amp; Clinical Pattern</span><span class="stat">Clinical Signpost</span></div>
+<div class="ci"><span class="cb"></span><div><b>Lateral Epicondyle Pain on Gripping / Wrist Extension:</b> (+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#cozens-test" rel="noopener" target="_blank">Cozen</a> / <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">PFG</a> → <span class="nav b">Lateral epicondylalgia / LET (p2/p4/p8)</span></div></div>
+<div class="ci"><span class="cb"></span><div><b>Medial Epicondyle Pain or Valgus Throwing Overload:</b> <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#medial-epicondylitis-test" rel="noopener" target="_blank">Medial test</a> / <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#moving-valgus-stress-test" rel="noopener" target="_blank">Moving valgus</a> → <span class="nav b">Medial epicondylalgia vs UCL tear (p2/p4)</span></div></div>
+<div class="ci"><span class="cb"></span><div><b>Medial Ache with Ring / Little Finger Paraesthesia:</b> (+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-flexion-test" rel="noopener" target="_blank">Flexion + pressure</a> / <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tinel-sign-elbow" rel="noopener" target="_blank">Tinel</a> → <span class="nav b">Cubital tunnel syndrome (p2/p4/p7)</span></div></div>
+<div class="ci"><span class="cb"></span><div><b>Lateral Clicking / Apprehension in Supinated Push-Up:</b> (+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tabletop-relocation-plri" rel="noopener" target="_blank">Chair / push-up / tabletop</a> → <span class="nav b">Posterolateral rotatory instability (p2/p4)</span></div></div>
+</div>
+<div class="flex flex-col gap-[1px] border-l pl-2" style="border-color:var(--line)">
+<div class="sh" style="margin:0 0 .5px;"><span>Aggravating, Easing &amp; Irritability Profile</span><span class="stat">Behaviour</span></div>
+<div class="row xs">
+<div class="fr" style="flex:1"><span class="lb">Aggravating</span><span class="fl"></span></div>
+<div class="fr" style="flex:1"><span class="lb">Easing</span><span class="fl"></span></div>
+</div>
+<div class="fr flex-wrap xs">
+<span class="lb">Irritability:</span>
+<span class="cio"><span class="cb sm g"></span>Low</span>
+<span class="cio"><span class="cb sm"></span>Moderate</span>
+<span class="cio"><span class="cb sm r"></span>High (rest/night pain)</span>
+</div>
+<div class="sh" style="margin:.4mm 0 .5px;"><span>Mechanism &amp; Occupational / Sport Risk</span><span class="stat">History</span></div>
+<div class="fr flex-wrap xs">
+<span class="lb">Mechanism:</span>
+<span class="cio"><span class="cb sm"></span>FOOSH / trauma</span>
+<span class="cio"><span class="cb sm"></span>Eccentric load (biceps)</span>
+<span class="cio"><span class="cb sm"></span>Overhead throwing</span>
+<span class="cio"><span class="cb sm"></span>Repetitive + forceful arm use</span>
+</div>
+<div class="fr flex-wrap xs">
+<span class="lb">Factors:</span>
+<span class="cio"><span class="cb sm"></span>Smoking history</span>
+<span class="cio"><span class="cb sm"></span>Prior CSI injection</span>
+<span class="cio"><span class="cb sm"></span>Locking / catching</span>
+<span class="cio"><span class="cb sm r"></span>Ulnar / radial paraesthesia</span>
+</div>
+</div>
+</div>
+<div class="sh" style="margin:.4mm 0 .2mm;"><span>Body Chart — where is the pain?</span><span class="stat">Clinical signposts <span class="eb eb-e">E</span></span></div>
+<svg font-family="Source Sans 3, Arial, sans-serif" style="width:100%;max-height:56mm;height:56mm;display:block" viewbox="0 0 880 334" xmlns="http://www.w3.org/2000/svg"><g>
+<path d="M 189.0 6 C 189.0 29.0 191.0 29.0 191.0 52 C 191.0 76.0 194.0 76.0 194.0 100 C 194.0 119.0 196.0 119.0 196.0 138 C 196.0 147.0 194.0 147.0 194.0 156 C 194.0 170.0 194.0 170.0 194.0 184 C 194.0 205.0 203.0 205.0 203.0 226 C 203.0 242.0 211.0 242.0 211.0 258 L 208.0 262 C 206 282 207 300 211 316 C 217 322 231 322 238 316 C 242 300 244 282 242.0 262 L 239.0 258 C 239.0 242.0 243.0 242.0 243.0 226 C 243.0 205.0 248.0 205.0 248.0 184 C 248.0 170.0 246.0 170.0 246.0 156 C 246.0 147.0 244.0 147.0 244.0 138 C 244.0 119.0 246.0 119.0 246.0 100 C 246.0 76.0 249.0 76.0 249.0 52 C 249.0 29.0 251.0 29.0 251.0 6 Z" fill="#f4dccb" stroke="#b88a6e" stroke-linejoin="round" stroke-width="1.1"></path>
+<path d="M 238 10 C 242 60 240 120 239 150 C 240 190 238 230 236 258 L 231 258 C 233 230 235 190 234 150 C 235 120 236 60 232 10 Z" fill="#d9a888" fill-opacity=".22"></path>
+<path d="M 216.5 300 L 216.5 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 225.0 300 L 225.0 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 233.5 300 L 233.5 320" stroke="#b88a6e" stroke-width=".7"></path><ellipse cx="206" cy="282" fill="#f4dccb" rx="4" ry="11" stroke="#b88a6e" stroke-width="1" transform="rotate(16 206 282)"></ellipse>
+<path d="M 214 20 L 214 132 M 226 20 L 226 132" opacity=".6" stroke="#b9a88a" stroke-width=".8"></path>
+<path d="M 198 150 C 208 140 232 140 243 150 C 232 158 208 158 198 150 Z" fill="#f7f1e3" opacity=".95" stroke="#b9a88a" stroke-width=".8"></path>
+<path d="M 210 160 L 210 256 M 230 160 L 232 256" opacity=".55" stroke="#b9a88a" stroke-width="1"></path>
+<path d="M 216 118 C 218 132 220 142 222 156" fill="none" stroke="#c9997c" stroke-width="1.2"></path>
+<path d="M 204 30 C 200 70 206 108 216 120 M 236 30 C 240 70 234 108 224 120" fill="none" stroke="#c9997c" stroke-width=".9"></path>
+<path d="M 196 160 C 200 185 208 205 214 236" fill="none" stroke="#c9997c" stroke-width=".9"></path>
+<path d="M 244 160 C 238 190 232 210 228 240" fill="none" stroke="#c9997c" stroke-width=".9"></path>
+<ellipse cx="198.0" cy="151.0" fill="#16a34a" fill-opacity="0.5" rx="8" ry="8" stroke="#16a34a" stroke-width="1.1" transform="rotate(0 198.0 151.0)"></ellipse>
+<ellipse cx="243.0" cy="150.0" fill="#2563eb" fill-opacity="0.5" rx="8" ry="8" stroke="#2563eb" stroke-width="1.1" transform="rotate(0 243.0 150.0)"></ellipse>
+<ellipse cx="221.0" cy="148.0" fill="#7c3aed" fill-opacity="0.4" rx="9" ry="11" stroke="#7c3aed" stroke-width="1.1" transform="rotate(0 221.0 148.0)"></ellipse>
+<ellipse cx="205.0" cy="182.0" fill="#0d9488" fill-opacity="0.42" rx="7" ry="13" stroke="#0d9488" stroke-width="1.1" transform="rotate(8 205.0 182.0)"></ellipse>
+<ellipse cx="233.0" cy="300.0" fill="#ca8a04" fill-opacity="0.4" rx="12" ry="18" stroke="#ca8a04" stroke-width="1.1" transform="rotate(0 233.0 300.0)"></ellipse>
+<ellipse cx="208.0" cy="60.0" fill="#64748b" fill-opacity="0.3" rx="9" ry="24" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.1" transform="rotate(0 208.0 60.0)"></ellipse>
+<ellipse cx="240.0" cy="70.0" fill="#dc2626" fill-opacity="0.28" rx="8" ry="26" stroke="#dc2626" stroke-dasharray="3 2" stroke-width="1.1" transform="rotate(0 240.0 70.0)"></ellipse>
+<text fill="#475569" font-size="11.2" font-weight="800" text-anchor="start" x="8" y="30.0">Lateral arm</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="8" y="40.6">cervical C5–C6 referral</text><path d="M 125.7 26.4 L 206.0 58.0" fill="none" stroke="#475569" stroke-width=".9"></path><circle cx="125.7" cy="26.4" fill="#475569" r="1.5"></circle><circle cx="206.0" cy="58.0" fill="#fff" r="2" stroke="#475569" stroke-width="1.2"></circle>
+<text fill="#15803d" font-size="11.2" font-weight="800" text-anchor="start" x="8" y="110.0">Lateral epicondyle</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="8" y="120.6">tennis elbow (LET)</text><path d="M 121.0 106.4 L 196.0 151.0" fill="none" stroke="#15803d" stroke-width=".9"></path><circle cx="121.0" cy="106.4" fill="#15803d" r="1.5"></circle><circle cx="196.0" cy="151.0" fill="#fff" r="2" stroke="#15803d" stroke-width="1.2"></circle>
+<text fill="#0f766e" font-size="11.2" font-weight="800" text-anchor="start" x="8" y="170.0">Radial tunnel</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="8" y="180.6">PIN / radial tunnel</text><path d="M 106.1 166.4 L 203.0 182.0" fill="none" stroke="#0f766e" stroke-width=".9"></path><circle cx="106.1" cy="166.4" fill="#0f766e" r="1.5"></circle><circle cx="203.0" cy="182.0" fill="#fff" r="2" stroke="#0f766e" stroke-width="1.2"></circle>
+<text fill="#475569" font-size="11.2" font-weight="800" text-anchor="start" x="8" y="240.0">Thumb side</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="8" y="250.6">C6 / median, radial</text><path d="M 106.1 236.4 L 203.0 282.0" fill="none" stroke="#475569" stroke-width=".9"></path><circle cx="106.1" cy="236.4" fill="#475569" r="1.5"></circle><circle cx="203.0" cy="282.0" fill="#fff" r="2" stroke="#475569" stroke-width="1.2"></circle>
+<text fill="#b91c1c" font-size="11.2" font-weight="800" text-anchor="end" x="432" y="36.0">Medial arm (left)</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="432" y="46.6">cardiac — RED FLAG</text><path d="M 325.0 32.4 L 241.0 72.0" fill="none" stroke="#b91c1c" stroke-width=".9"></path><circle cx="325.0" cy="32.4" fill="#b91c1c" r="1.5"></circle><circle cx="241.0" cy="72.0" fill="#fff" r="2" stroke="#b91c1c" stroke-width="1.2"></circle>
+<text fill="#6d28d9" font-size="11.2" font-weight="800" text-anchor="end" x="432" y="104.0">Antecubital fossa</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="432" y="114.6">distal biceps — hook test</text><path d="M 304.5 100.4 L 223.0 140.0" fill="none" stroke="#6d28d9" stroke-width=".9"></path><circle cx="304.5" cy="100.4" fill="#6d28d9" r="1.5"></circle><circle cx="223.0" cy="140.0" fill="#fff" r="2" stroke="#6d28d9" stroke-width="1.2"></circle>
+<text fill="#1d4ed8" font-size="11.2" font-weight="800" text-anchor="end" x="432" y="156.0">Medial epicondyle</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="432" y="166.6">golfer’s elbow · UCL</text><path d="M 325.0 152.4 L 245.0 152.0" fill="none" stroke="#1d4ed8" stroke-width=".9"></path><circle cx="325.0" cy="152.4" fill="#1d4ed8" r="1.5"></circle><circle cx="245.0" cy="152.0" fill="#fff" r="2" stroke="#1d4ed8" stroke-width="1.2"></circle>
+<text fill="#a16207" font-size="11.2" font-weight="800" text-anchor="end" x="432" y="262.0">Ring + little finger</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="432" y="272.6">ulnar nerve · cubital tunnel</text><path d="M 289.8 258.4 L 236.0 300.0" fill="none" stroke="#a16207" stroke-width=".9"></path><circle cx="289.8" cy="258.4" fill="#a16207" r="1.5"></circle><circle cx="236.0" cy="300.0" fill="#fff" r="2" stroke="#a16207" stroke-width="1.2"></circle>
+</g><g>
+<path d="M 629.0 6 C 629.0 29.0 631.0 29.0 631.0 52 C 631.0 76.0 634.0 76.0 634.0 100 C 634.0 119.0 636.0 119.0 636.0 138 C 636.0 147.0 634.0 147.0 634.0 156 C 634.0 170.0 634.0 170.0 634.0 184 C 634.0 205.0 643.0 205.0 643.0 226 C 643.0 242.0 651.0 242.0 651.0 258 L 648.0 262 C 646 282 647 300 651 316 C 657 322 671 322 678 316 C 682 300 684 282 682.0 262 L 679.0 258 C 679.0 242.0 683.0 242.0 683.0 226 C 683.0 205.0 688.0 205.0 688.0 184 C 688.0 170.0 686.0 170.0 686.0 156 C 686.0 147.0 684.0 147.0 684.0 138 C 684.0 119.0 686.0 119.0 686.0 100 C 686.0 76.0 689.0 76.0 689.0 52 C 689.0 29.0 691.0 29.0 691.0 6 Z" fill="#f4dccb" stroke="#b88a6e" stroke-linejoin="round" stroke-width="1.1"></path>
+<path d="M 678 10 C 682 60 680 120 679 150 C 680 190 678 230 676 258 L 671 258 C 673 230 675 190 674 150 C 675 120 676 60 672 10 Z" fill="#d9a888" fill-opacity=".22"></path>
+<path d="M 656.5 300 L 656.5 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 665.0 300 L 665.0 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 673.5 300 L 673.5 320" stroke="#b88a6e" stroke-width=".7"></path><ellipse cx="684" cy="282" fill="#f4dccb" rx="4" ry="11" stroke="#b88a6e" stroke-width="1" transform="rotate(-16 684 282)"></ellipse>
+<path d="M 638 148 C 646 160 674 160 682 148" fill="none" stroke="#b9a88a" stroke-width="1"></path>
+<ellipse cx="661" cy="160" fill="#f7f1e3" rx="9" ry="8" stroke="#b9a88a" stroke-width=".9"></ellipse>
+<path d="M 661 168 C 657 200 654 230 652 256" fill="none" opacity=".7" stroke="#b9a88a" stroke-width="1.2"></path>
+<path d="M 656 40 C 652 90 654 130 660 150" fill="none" stroke="#c9997c" stroke-width="1"></path>
+<path d="M 642 34 C 638 80 644 120 652 138 M 678 34 C 682 80 676 120 668 138" fill="none" stroke="#c9997c" stroke-width=".9"></path>
+<path d="M 684 170 C 678 195 672 215 668 240" fill="none" stroke="#c9997c" stroke-width=".9"></path>
+<ellipse cx="661.0" cy="163.0" fill="#dc2626" fill-opacity="0.32" rx="11" ry="10" stroke="#dc2626" stroke-width="1.1" transform="rotate(0 661.0 163.0)"></ellipse>
+<ellipse cx="645.0" cy="152.0" fill="#ca8a04" fill-opacity="0.48" rx="6" ry="13" stroke="#ca8a04" stroke-width="1.1" transform="rotate(0 645.0 152.0)"></ellipse>
+<ellipse cx="651.0" cy="150.0" fill="#ea580c" fill-opacity="0.45" rx="5" ry="7" stroke="#ea580c" stroke-width="1.1" transform="rotate(0 651.0 150.0)"></ellipse>
+<ellipse cx="678.0" cy="166.0" fill="#0d9488" fill-opacity="0.42" rx="7" ry="10" stroke="#0d9488" stroke-width="1.1" transform="rotate(0 678.0 166.0)"></ellipse>
+<ellipse cx="663.0" cy="212.0" fill="#16a34a" fill-opacity="0.24" rx="12" ry="26" stroke="#16a34a" stroke-width="1.1" transform="rotate(0 663.0 212.0)"></ellipse>
+<text fill="#a16207" font-size="11.2" font-weight="800" text-anchor="start" x="448" y="96.0">Cubital tunnel</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="448" y="106.6">ulnar nerve — Tinel / flexion</text><path d="M 595.1 92.4 L 644.0 148.0" fill="none" stroke="#a16207" stroke-width=".9"></path><circle cx="595.1" cy="92.4" fill="#a16207" r="1.5"></circle><circle cx="644.0" cy="148.0" fill="#fff" r="2" stroke="#a16207" stroke-width="1.2"></circle>
+<text fill="#c2410c" font-size="11.2" font-weight="800" text-anchor="start" x="448" y="146.0">Posteromedial olecranon</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="448" y="156.6">thrower’s overload</text><path d="M 591.0 142.4 L 650.0 152.0" fill="none" stroke="#c2410c" stroke-width=".9"></path><circle cx="591.0" cy="142.4" fill="#c2410c" r="1.5"></circle><circle cx="650.0" cy="152.0" fill="#fff" r="2" stroke="#c2410c" stroke-width="1.2"></circle>
+<text fill="#a16207" font-size="11.2" font-weight="800" text-anchor="start" x="448" y="230.0">Ulnar border of hand</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="start" x="448" y="240.6">ulnar nerve sensory</text><path d="M 573.0 226.4 L 648.0 306.0" fill="none" stroke="#a16207" stroke-width=".9"></path><circle cx="573.0" cy="226.4" fill="#a16207" r="1.5"></circle><circle cx="648.0" cy="306.0" fill="#fff" r="2" stroke="#a16207" stroke-width="1.2"></circle>
+<text fill="#b91c1c" font-size="11.2" font-weight="800" text-anchor="end" x="872" y="70.0">Olecranon</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="872" y="80.6">swelling + heat + fever —</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="872" y="91.2">septic bursitis RED FLAG</text><path d="M 744.5 66.4 L 666.0 160.0" fill="none" stroke="#b91c1c" stroke-width=".9"></path><circle cx="744.5" cy="66.4" fill="#b91c1c" r="1.5"></circle><circle cx="666.0" cy="160.0" fill="#fff" r="2" stroke="#b91c1c" stroke-width="1.2"></circle>
+<text fill="#0f766e" font-size="11.2" font-weight="800" text-anchor="end" x="872" y="150.0">Radiocapitellar joint</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="872" y="160.6">PLRI · lateral pivot-shift</text><path d="M 739.6 146.4 L 680.0 168.0" fill="none" stroke="#0f766e" stroke-width=".9"></path><circle cx="739.6" cy="146.4" fill="#0f766e" r="1.5"></circle><circle cx="680.0" cy="168.0" fill="#fff" r="2" stroke="#0f766e" stroke-width="1.2"></circle>
+<text fill="#15803d" font-size="11.2" font-weight="800" text-anchor="end" x="872" y="214.0">Wrist extensor mass</text><text fill="#334155" font-size="9.6" font-weight="500" text-anchor="end" x="872" y="224.6">LET — resisted extension</text><path d="M 749.4 210.4 L 670.0 210.0" fill="none" stroke="#15803d" stroke-width=".9"></path><circle cx="749.4" cy="210.4" fill="#15803d" r="1.5"></circle><circle cx="670.0" cy="210.0" fill="#fff" r="2" stroke="#15803d" stroke-width="1.2"></circle>
+</g><text fill="#475569" font-size="10.5" font-weight="800" letter-spacing="1" text-anchor="middle" x="220" y="328">ANTERIOR · RIGHT ARM</text><text fill="#64748b" font-size="9" font-weight="800" text-anchor="middle" x="122" y="312">LAT</text><text fill="#64748b" font-size="9" font-weight="800" text-anchor="middle" x="318" y="312">MED</text><text fill="#475569" font-size="10.5" font-weight="800" letter-spacing="1" text-anchor="middle" x="660" y="328">POSTERIOR · RIGHT ARM</text><text fill="#64748b" font-size="9" font-weight="800" text-anchor="middle" x="562" y="312">MED</text><text fill="#64748b" font-size="9" font-weight="800" text-anchor="middle" x="758" y="312">LAT</text><line stroke="#e2e8f0" stroke-width="1" x1="440" x2="440" y1="6" y2="316"></line></svg>
+<div class="row xs" style="gap:2mm;margin-top:.2mm;align-items:flex-start">
+<div style="flex:1;color:var(--mut)"><b style="color:var(--ink)">Mark on the chart:</b> shade = pain · //// = pins &amp; needles · ×× = numbness · → = radiation · write 0–10 beside each area</div>
+<div style="flex:1.25;padding:.2mm 1mm;border-radius:1mm;background:#fff7ed;color:#7c2d12;line-height:1.15"><b>Unable to fully extend after trauma</b> → <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-extension-test" rel="noopener" target="_blank">elbow extension test</a> (X-ray). <b>Pop/ecchymosis in antecubital fossa</b> → <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#hook-test" rel="noopener" target="_blank">hook test</a>.</div>
+</div>
+</div>
+</section>
+<div class="dots fill" id="p1-notes"><span class="dots-l">Subjective History · Mechanism · Patient Goals (PSFS)</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab on" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 2 ===================== -->
+<div class="clinical-page" id="page-2" data-accent="blue">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Differential Diagnosis, Epidemiology &amp; Prognostic Trajectories</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">02 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Differential Diagnosis Matrix -->
+<section class="card" id="p2-diff-matrix">
+<div class="card-h"><span>A · Elbow Differential Diagnosis Matrix (Lateral, Medial, Anterior &amp; Posterior Compartments)</span><span class="tag">DIFFERENTIAL</span></div>
+<div class="card-b">
+<table class="t">
+<thead>
+<tr>
+<th style="width:20%">Condition</th>
+<th style="width:28%">Hallmark History &amp; Pain Location</th>
+<th style="width:32%">Key Physical Findings &amp; Provocation</th>
+<th style="width:20%">Evidence &amp; Atlas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-epidemiology-prognosis" rel="noopener" target="_blank">Lateral epicondylalgia (LET)</a></b></td>
+<td>Lateral epicondyle pain aggravated by gripping &amp; repetitive + forceful arm activity (OR 5.6, 1.9–16.5)</td>
+<td>Tender common extensor origin; pain on <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#cozens-test" rel="noopener" target="_blank">Cozen</a>, <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#mills-test" rel="noopener" target="_blank">Mill</a>, <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#maudsleys-test" rel="noopener" target="_blank">Maudsley</a>, <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-chair-test" rel="noopener" target="_blank">chair test</a>; reduced <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">pain-free grip</a></td>
+<td><span class="eb eb-h">H</span> Prevalence 1.3% (Shiri 2006)</td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-differential-pathologies" rel="noopener" target="_blank">Medial epicondylalgia</a></b></td>
+<td>Insidious medial epicondyle ache with forceful wrist flexion, pronation, or gripping</td>
+<td>Tender common flexor-pronator origin; pain on <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#medial-epicondylitis-test" rel="noopener" target="_blank">medial epicondylitis test</a>; stable to valgus stress</td>
+<td><span class="eb eb-h">H</span> Prevalence 0.4% (Shiri 2006) · <span class="eb eb-e">E</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tinel-sign-elbow" rel="noopener" target="_blank">Cubital tunnel syndrome</a></b></td>
+<td>Medial elbow ache with paraesthesia/numbness in ring &amp; little fingers, worse with sustained elbow flexion</td>
+<td>(+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-flexion-test" rel="noopener" target="_blank">Pressure + flexion</a> (Sn 0.91 at 30 s), <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tinel-sign-elbow" rel="noopener" target="_blank">Tinel</a> (Sn 0.70 / 54%, NPV 98%), <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#scratch-collapse-test" rel="noopener" target="_blank">scratch collapse</a> (Sn 69%), <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#ultt3-ulnar" rel="noopener" target="_blank">ULTT3</a></td>
+<td><span class="eb eb-m">M</span> Novak 1994 · <span class="eb eb-l">L</span> Cheng 2008</td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-differential-pathologies" rel="noopener" target="_blank">Radial tunnel / PIN</a></b></td>
+<td>Deep aching pain over mobile wad / supinator mass distal to lateral epicondyle (or pure motor finger-extensor weakness in PIN)</td>
+<td>Maximal tenderness over radial tunnel distal to lateral epicondyle; pain with resisted supination / <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#maudsleys-test" rel="noopener" target="_blank">Maudsley</a> &amp; <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#ultt2b-radial" rel="noopener" target="_blank">ULTT2b</a></td>
+<td><span class="eb eb-e">E</span> Clinical differentiation</td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#moving-valgus-stress-test" rel="noopener" target="_blank">UCL injury</a></b></td>
+<td>Overhead thrower or acute valgus trauma; medial pain during late cocking / acceleration phase or pop</td>
+<td>(+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#moving-valgus-stress-test" rel="noopener" target="_blank">Moving valgus stress test</a> (Sn 100% / 98%, pain arc 120° to 70°, max 90°) &amp; <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#modified-milking-manoeuvre" rel="noopener" target="_blank">milking manoeuvre</a> (LR+ 5.1, Sn 77%)</td>
+<td><span class="eb eb-m">M</span> Sciascia 2026 · <span class="eb eb-l">L</span> O'Driscoll 2005</td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tabletop-relocation-plri" rel="noopener" target="_blank">Posterolateral rotatory instability (PLRI)</a></b></td>
+<td>Lateral clicking, locking, or slipping after prior elbow dislocation, trauma, or lateral surgery</td>
+<td>(+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tabletop-relocation-plri" rel="noopener" target="_blank">Chair / push-up / tabletop</a> (chair and push-up signs each 7 of 8 positive), <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#lateral-pivot-shift-test" rel="noopener" target="_blank">lateral pivot-shift</a> (3/8 awake), <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#posterolateral-rotatory-drawer-test" rel="noopener" target="_blank">posterolateral drawer</a></td>
+<td><span class="eb eb-l">L</span> Regan 2006</td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#hook-test" rel="noopener" target="_blank">Distal biceps rupture</a></b></td>
+<td>Sudden eccentric extension load against flexed elbow; audible pop, antecubital ecchymosis, proximal belly retraction</td>
+<td>Abnormal <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#hook-test" rel="noopener" target="_blank">hook test</a> (Sn 100%, Sp 100%); (+) <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#biceps-squeeze-test" rel="noopener" target="_blank">biceps squeeze test</a> (24/25); weakness in supination &gt; flexion</td>
+<td><span class="eb eb-m">M</span> O'Driscoll 2007 · <span class="eb eb-l">L</span> Ruland 2005</td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-differential-pathologies" rel="noopener" target="_blank">OCD capitellum</a></b></td>
+<td>Adolescent thrower or gymnast with lateral elbow pain, effusion, catching, or locking on valgus loading</td>
+<td>Radiocapitellar joint-line tenderness, loss of terminal extension, crepitus or mechanical catching</td>
+<td><span class="eb eb-e">E</span> Clinical differentiation</td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-differential-pathologies" rel="noopener" target="_blank">OA / stiffness</a></b></td>
+<td>Post-traumatic contracture or degenerative joint pain at terminal flexion and extension</td>
+<td>Hard bony or capsular end-feel limiting <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-active-rom" rel="noopener" target="_blank">AROM</a> / <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-passive-rom" rel="noopener" target="_blank">PROM</a> flexion, extension, pronation, or supination</td>
+<td><span class="eb eb-e">E</span> Clinical differentiation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- B : Epidemiology, Risk Factors & Natural Course -->
+<section class="card" id="p2-prognosis">
+<div class="card-h"><span>B · Prevalence, Risk Factors &amp; Natural Course vs Corticosteroid Injection / Physiotherapy</span><span class="tag">PROGNOSIS</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Epidemiology &amp; Risk Factors (Shiri 2006)</span><a class="guide-badge" href="https://doi.org/10.1093/aje/kwj325" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Shiri 2006</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-epidemiology-prognosis" rel="noopener" target="_blank"><b>Prevalence (age 30–64, n = 4,783)</b></a> (Shiri 2006 Am J Epidemiol) <span class="eb eb-h">H</span>: <b class="nav">definite lateral epicondylitis 1.3%, medial 0.4%; highest at 45–54 years; no sex difference</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-epidemiology-prognosis" rel="noopener" target="_blank"><b>Lateral epicondylitis — risk factors</b></a> (Shiri 2006 Am J Epidemiol) <span class="eb eb-h">H</span>: <b class="nav">current smoking OR 3.4 (1.4–8.3); former smoking OR 3.0 (1.3–6.6); repetitive + forceful arm activity OR 5.6 (1.9–16.5)</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Natural Course vs Injection &amp; Physiotherapy RCTs</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1633771/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Bisset 2006</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-epidemiology-prognosis" rel="noopener" target="_blank"><b>Natural course vs treatment (RCT, n = 185)</b></a> (Smidt 2002 Lancet) <span class="eb eb-h">H</span>: <b class="nav">success at 6 weeks: injection 92%, physiotherapy 47%, wait-and-see 32%; at 52 weeks: injection 69%, physiotherapy 91%, wait-and-see 83%</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-epidemiology-prognosis" rel="noopener" target="_blank"><b>MWM + exercise vs injection vs wait-and-see (RCT, n = 198)</b></a> (Bisset 2006 BMJ) <span class="eb eb-h">H</span>: <b class="nav">at 52 weeks injection worse than physiotherapy (0.3, 0.1 to 0.5; NNT 4) and than wait-and-see on 2 of 3 measures (0.3, 0.04 to 0.4; NNT 4); after injection 47/65 (72%) deteriorated after 3 or 6 weeks</b></div></div>
+</div>
+</div>
+</section>
+<!-- C : Cubital Tunnel, UCL & PLRI Diagnostic Evidence -->
+<section class="card" id="p2-diagnostic-evidence">
+<div class="card-h"><span>C · Diagnostic Accuracy Summary: Cubital Tunnel, Ulnar Collateral Ligament &amp; PLRI</span><span class="tag">ACCURACY</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Cubital Tunnel Provocative Tests (Novak 1994 · Cheng 2008)</span><span class="stat">Ulnar Nerve</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-flexion-test" rel="noopener" target="_blank"><b>Cubital tunnel provocative tests</b></a> (Novak 1994 J Hand Surg Am, 32 patients, EMG-proven) <span class="eb eb-m">M</span>: <b class="nav">Tinel Sn 0.70; at 30 seconds: elbow flexion 0.32, pressure 0.55, pressure + flexion 0.91 (most sensitive)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#scratch-collapse-test" rel="noopener" target="_blank"><b>Scratch collapse test</b></a> (Cheng 2008 J Hand Surg Am) <span class="eb eb-l">L</span>: <b class="nav">cubital tunnel: Sn 69% (Tinel 54%, flexion/compression 46%), accuracy 89%; Tinel NPV 98%; carpal tunnel Sn 64%</b></div></div>
+<div class="sh" style="margin:.6mm 0 .5px;"><span>PLRI Apprehension Signs (Regan 2006)</span><span class="stat">LUCL / PLRI</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tabletop-relocation-plri" rel="noopener" target="_blank"><b>PLRI apprehension signs (n = 8)</b></a> (Regan 2006 J Shoulder Elbow Surg) <span class="eb eb-l">L</span>: <b class="nav">chair sign positive in 7, push-up sign positive in 7; pivot-shift positive awake in 3 (all under anaesthesia); chair + push-up more sensitive than awake pivot-shift</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>UCL Moving Valgus &amp; Milking Tests (O'Driscoll 2005 · Sciascia 2026)</span><span class="stat">Medial / UCL</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#moving-valgus-stress-test" rel="noopener" target="_blank"><b>UCL — moving valgus stress test</b></a> (O'Driscoll 2005 Am J Sports Med, n = 21, surgery / arthroscopy reference) <span class="eb eb-l">L</span>: <b class="nav">Sn 100% (17/17), Sp 75% (3/4); pain arc 120° to 70°, maximum at 90°</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#modified-milking-manoeuvre" rel="noopener" target="_blank"><b>UCL — moving valgus vs milking</b></a> (Sciascia 2026 Am J Sports Med) <span class="eb eb-m">M</span>: <b class="nav">moving valgus stress test Sn 98%, accuracy 93% (best to rule out); milking manoeuvre LR+ 5.1, Sn 77% (best to rule in); combining tests added nothing</b></div></div>
+<div class="box" style="margin-top:1mm;padding:.6mm 1.2mm;">
+<div class="row xs"><span class="lb">Primary Working Diagnosis:</span><span class="fl"></span></div>
+<div class="row xs" style="margin-top:.5mm;"><span class="lb">Secondary / Contributing Factors:</span><span class="fl"></span></div>
+</div>
+</div>
+</div>
+</section>
+<div class="dots fill" id="p2-notes"><span class="dots-l">Differential Reasoning · Prognostic Counselling · Risk-Factor Modification Notes</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab on" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 3 ===================== -->
+<div class="clinical-page" id="page-3" data-accent="blue">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Objective Examination, Goniometry, Grip Strength &amp; Neuro Screen</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">03 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Elbow & Forearm Goniometry Write-In Table -->
+<section class="card" id="p3-rom">
+<div class="card-h"><span>A · Elbow &amp; Forearm Range of Motion Write-In Table &amp; Goniometric Real-Change Thresholds</span><span class="tag">GONIOMETRY</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<table class="t">
+<thead>
+<tr>
+<th style="width:22%">Motion (<a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-active-rom" rel="noopener" target="_blank">AROM</a> / <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-passive-rom" rel="noopener" target="_blank">PROM</a>)</th>
+<th class="c" style="width:13%">Affected AROM</th>
+<th class="c" style="width:13%">Affected PROM</th>
+<th class="c" style="width:13%">Unaffected</th>
+<th style="width:17%">End-Feel / Pain</th>
+<th style="width:22%"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-goniometry" rel="noopener" target="_blank">Armstrong 1998 Real Change</a> <span class="eb eb-m">M</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Elbow Flexion</b></td>
+<td></td><td></td><td></td>
+<td><span class="cio"><span class="cb sm"></span>Soft</span><span class="cio"><span class="cb sm"></span>Caps</span><span class="cio"><span class="cb sm r"></span>Pain</span></td>
+<td>Same tester <b>&gt; 6°</b> · Between testers <b>10°</b></td>
+</tr>
+<tr>
+<td><b>Elbow Extension</b></td>
+<td></td><td></td><td></td>
+<td><span class="cio"><span class="cb sm"></span>Bony</span><span class="cio"><span class="cb sm"></span>Caps</span><span class="cio"><span class="cb sm r"></span>Pain</span></td>
+<td>Same tester <b>&gt; 7°</b> · Between testers <b>10°</b></td>
+</tr>
+<tr>
+<td><b>Forearm Pronation</b></td>
+<td></td><td></td><td></td>
+<td><span class="cio"><span class="cb sm"></span>Firm</span><span class="cio"><span class="cb sm r"></span>Pain</span></td>
+<td>Same tester <b>&gt; 8°</b> · Between testers <b>10°</b></td>
+</tr>
+<tr>
+<td><b>Forearm Supination</b></td>
+<td></td><td></td><td></td>
+<td><span class="cio"><span class="cb sm"></span>Firm</span><span class="cio"><span class="cb sm r"></span>Pain</span></td>
+<td>Same tester <b>&gt; 8°</b> · Between testers <b>11°</b></td>
+</tr>
+<tr>
+<td><b>Wrist Flex / Ext (CPG)</b></td>
+<td></td><td></td><td></td>
+<td><span class="cio"><span class="cb sm"></span>Full</span><span class="cio"><span class="cb sm r"></span>Pain</span></td>
+<td>Baseline &amp; follow-up / discharge (<a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#jospt-2022-let-cpg" rel="noopener" target="_blank">Lucado 2022</a>)</td>
+</tr>
+</tbody>
+</table>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-goniometry" rel="noopener" target="_blank"><b>Goniometry (universal goniometer, same tester)</b></a> (Armstrong 1998 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">real change if greater than 6° flexion, 7° extension, 8° pronation, 8° supination; between testers 10° flexion, 10° extension, 10° pronation, 11° supination</b></div></div>
+</div>
+</section>
+<!-- B : Grip Strength & JOSPT LET CPG Core Measures -->
+<section class="card" id="p3-grip">
+<div class="card-h"><span>B · Pain-Free Grip, Maximum Grip &amp; JOSPT LET CPG Physical Impairment Measures</span><span class="tag">DYNAMOMETRY</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Grip Strength Dynamometry &amp; Change Scores</span><a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Grip Calc</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Grip strength in LET (interobserver)</b></a> (Smidt 2002 Arch Phys Med Rehabil) <span class="eb eb-m">M</span>: <b class="nav">ICC pain-free grip .97, maximum grip .98, severity of complaints .90, pressure pain threshold .77 (unsatisfactory)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Pain-free grip — change scores</b></a> (Sveinall 2025 Shoulder Elbow) <span class="eb eb-m">M</span>: <b class="nav">SDC95 6.4 kg pain-free grip, 8.4 kg maximum grip; MIC 6.5 kg pain-free, 1 kg maximum; pain on gripping SDC95 4, MIC 3.5 (0–10)</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>JOSPT LET CPG Core Measures (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#jospt-2022-let-cpg" rel="noopener" target="_blank"><b>JOSPT LET CPG — measures</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should include the physical impairment measures of elbow and wrist range of motion, pressure pain threshold, pain-free grip strength, and maximum grip strength at baseline and at least one other follow-up point that includes discharge”</b></div></div>
+</div>
+</div>
+<table class="t" style="margin-top:1px;">
+<thead>
+<tr>
+<th style="width:24%">Measure</th>
+<th class="c" style="width:15%">Affected</th>
+<th class="c" style="width:15%">Unaffected</th>
+<th class="c" style="width:16%">Ratio (%)</th>
+<th style="width:30%">Verified Change Benchmark (Sveinall 2025)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Pain-Free Grip (kg)</a></b></td>
+<td></td><td></td><td></td>
+<td><b>SDC95 6.4 kg · MIC 6.5 kg</b> (ICC .97, Smidt 2002)</td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Maximum Grip (kg)</a></b></td>
+<td></td><td></td><td></td>
+<td><b>SDC95 8.4 kg · MIC 1 kg</b> (ICC .98, Smidt 2002)</td>
+</tr>
+<tr>
+<td><b>Pain on Gripping (0–10) &amp; PPT</b></td>
+<td></td><td></td><td></td>
+<td><b>Pain on gripping SDC95 4 · MIC 3.5 (0–10)</b> · PPT ICC .77</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- C : Palpation Map, Carrying Angle, C5-T1 Neuro Screen & Neurodynamics -->
+<section class="card" id="p3-neuro-palp">
+<div class="card-h"><span>C · Regional Palpation Map, Carrying Angle, C5–T1 Neurological Screen &amp; ULTT2b / ULTT3</span><span class="tag">NEURO &amp; PALP</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Compartment Palpation Map &amp; Alignment</span><span class="stat"><span class="eb eb-e">E</span></span></div>
+<div class="fr flex-wrap xs"><span class="lb"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#c5-t1-neuro-screen-elbow" rel="noopener" target="_blank">Lateral</a>:</span><span class="cio"><span class="cb sm"></span>Lat epicondyle / ECRB</span><span class="cio"><span class="cb sm"></span>Radial head</span><span class="cio"><span class="cb sm"></span>Radial tunnel / supinator</span><span class="cio"><span class="cb sm"></span>Soft-spot effusion</span></div>
+<div class="fr flex-wrap xs"><span class="lb"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#c5-t1-neuro-screen-elbow" rel="noopener" target="_blank">Medial</a>:</span><span class="cio"><span class="cb sm"></span>Med epicondyle / flexor-pronator</span><span class="cio"><span class="cb sm"></span>Sublime tubercle / UCL</span><span class="cio"><span class="cb sm"></span>Cubital tunnel / ulnar n. subluxation</span></div>
+<div class="fr flex-wrap xs"><span class="lb"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#c5-t1-neuro-screen-elbow" rel="noopener" target="_blank">Ant / Post</a>:</span><span class="cio"><span class="cb sm"></span>Distal biceps tendon</span><span class="cio"><span class="cb sm"></span>Brachialis</span><span class="cio"><span class="cb sm"></span>Olecranon tip / bursa</span><span class="cio"><span class="cb sm"></span>Triceps insertion</span></div>
+<div class="fr flex-wrap xs"><span class="lb">Carrying angle:</span><span class="cio"><span class="cb sm"></span>Symmetric</span><span class="cio"><span class="cb sm"></span>Cubitus valgus</span><span class="cio"><span class="cb sm"></span>Cubitus varus</span><span class="lb">Notes:</span><span class="fl"></span></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Radial &amp; Ulnar Neurodynamic Testing</span><span class="stat"><span class="eb eb-e">E</span></span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#ultt2b-radial" rel="noopener" target="_blank"><b>ULTT2b (radial nerve / PIN bias)</b></a> <span class="eb eb-e">E</span>: shoulder depression, elbow extension, shoulder IR + forearm pronation, wrist/finger flexion; structural differentiation via cervical lateral flexion</div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#ultt3-ulnar" rel="noopener" target="_blank"><b>ULTT3 (ulnar nerve / cubital tunnel bias)</b></a> <span class="eb eb-e">E</span>: shoulder depression, wrist/finger extension, forearm pronation, elbow flexion, shoulder ER + abduction; structural differentiation</div></div>
+<div class="row xs"><span class="lb">ULTT2b L / R:</span><span class="fl"></span><span class="lb">ULTT3 L / R:</span><span class="fl"></span></div>
+</div>
+</div>
+<table class="t" style="margin-top:1px;">
+<thead>
+<tr>
+<th style="width:12%">Root <span class="eb eb-e">E</span></th>
+<th style="width:28%">Myotome Key Action</th>
+<th style="width:26%">Dermatome Sensory Zone</th>
+<th style="width:18%">Deep Tendon Reflex</th>
+<th class="c" style="width:16%">Finding (L / R)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><b>C5</b></td><td>Shoulder abduction / elbow flexion</td><td>Lateral arm (regimental badge)</td><td>Biceps</td><td></td></tr>
+<tr><td><b>C6</b></td><td>Elbow flexion / wrist extension</td><td>Lateral forearm, thumb &amp; index finger</td><td>Brachioradialis</td><td></td></tr>
+<tr><td><b>C7</b></td><td>Elbow extension / wrist flexion</td><td>Middle finger &amp; dorsal hand</td><td>Triceps</td><td></td></tr>
+<tr><td><b>C8</b></td><td>Thumb extension / finger flexion</td><td>Medial forearm, ring &amp; little fingers</td><td>—</td><td></td></tr>
+<tr><td><b>T1</b></td><td>Finger abduction / adduction (interossei)</td><td>Medial elbow &amp; proximal forearm</td><td>—</td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="dots fill" id="p3-notes"><span class="dots-l">Objective Examination · Goniometry · Grip Dynamometry · Neurodynamic Notes</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab on" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 4 ===================== -->
+<div class="clinical-page" id="page-4" data-accent="blue">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Tendinopathy, Instability &amp; Nerve Special Tests + Validated PROMs</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">04 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Tendinopathy & Instability Special Tests -->
+<section class="card" id="p4-special-tests">
+<div class="card-h"><span>A · Epicondylalgia, Collateral Ligament (UCL / LCL) &amp; Posterolateral Rotatory Instability Special Tests</span><span class="tag">SPECIAL TESTS</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<table class="t">
+<thead>
+<tr>
+<th style="width:24%">Test &amp; Category</th>
+<th style="width:38%">Technique &amp; Positive Criterion</th>
+<th style="width:26%">Verified Diagnostic Performance</th>
+<th class="c" style="width:12%">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#cozens-test" rel="noopener" target="_blank">Cozen's test</a></b> (LET)</td>
+<td>Pronated fist, radial deviation + resisted wrist extension → lateral epicondyle pain</td>
+<td>Provocative contractile test <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#mills-test" rel="noopener" target="_blank">Mill's test</a></b> (LET)</td>
+<td>Passive forearm pronation, full wrist/finger flexion + passive elbow extension → lateral pain</td>
+<td>Passive extensor stretch test <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#maudsleys-test" rel="noopener" target="_blank">Maudsley's</a> &amp; <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-chair-test" rel="noopener" target="_blank">chair test</a></b> (LET)</td>
+<td>Resisted middle-finger extension (Maudsley) or pronated 3-finger chair lift → lateral epicondyle pain</td>
+<td>Extensor digitorum / ECRB provocation <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#medial-epicondylitis-test" rel="noopener" target="_blank">Medial epicondylitis test</a></b></td>
+<td>Palpate medial epicondyle; passive forearm supination + elbow/wrist extension or resisted flexion/pronation</td>
+<td>Flexor-pronator origin provocation <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-valgus-stress-test" rel="noopener" target="_blank">Valgus</a> &amp; <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-varus-stress-test" rel="noopener" target="_blank">varus stress tests</a></b></td>
+<td>Static valgus (UCL) or varus (LCL) torque with elbow unlocked from extension → joint gapping or pain</td>
+<td>Static collateral laxity assessment <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#moving-valgus-stress-test" rel="noopener" target="_blank">Moving valgus stress test</a></b> (UCL)</td>
+<td>Abducted/ER shoulder; constant valgus torque while extending from full flexion; medial pain in <b>120° to 70°</b> arc (max <b>90°</b>)</td>
+<td><b>Sn 100% (17/17), Sp 75% (3/4)</b> (O'Driscoll 2005) <span class="eb eb-l">L</span> · <b>Sn 98%, accuracy 93% (best to rule out)</b> (Sciascia 2026) <span class="eb eb-m">M</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#modified-milking-manoeuvre" rel="noopener" target="_blank">Modified milking manoeuvre</a></b> (UCL)</td>
+<td>Pull thumb laterally with forearm supinated &amp; elbow flexed to apply valgus load across UCL</td>
+<td><b>LR+ 5.1, Sn 77% (best to rule in)</b>; combining tests added nothing (Sciascia 2026) <span class="eb eb-m">M</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#lateral-pivot-shift-test" rel="noopener" target="_blank">Lateral pivot-shift</a> &amp; <a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#posterolateral-rotatory-drawer-test" rel="noopener" target="_blank">drawer</a></b> (PLRI)</td>
+<td>Supine overhead arm: axial compression + valgus + supination (pivot-shift) or posterolateral translation (drawer)</td>
+<td>Pivot-shift positive awake in <b>3 of 8</b> (all under anaesthesia) (Regan 2006) <span class="eb eb-l">L</span> · Drawer <span class="eb eb-e">E</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tabletop-relocation-plri" rel="noopener" target="_blank">Chair, push-up &amp; tabletop relocation</a></b> (PLRI)</td>
+<td>Supinated chair rise, push-up, or tabletop press-up relieved by radial head thumb stabilisation</td>
+<td><b>Chair sign positive in 7 of 8, push-up sign positive in 7 of 8</b>; more sensitive than awake pivot-shift (Regan 2006) <span class="eb eb-l">L</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- B : Nerve Provocation Tests -->
+<section class="card" id="p4-nerve-tests">
+<div class="card-h"><span>B · Cubital Tunnel &amp; Peripheral Nerve Provocation Tests (Novak 1994 · Cheng 2008)</span><span class="tag">NERVE TESTS</span></div>
+<div class="card-b">
+<table class="t">
+<thead>
+<tr>
+<th style="width:24%">Nerve Test</th>
+<th style="width:36%">Protocol &amp; Positive Finding</th>
+<th style="width:28%">Verified Accuracy (Novak 1994 · Cheng 2008)</th>
+<th class="c" style="width:12%">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#tinel-sign-elbow" rel="noopener" target="_blank">Tinel sign at elbow</a></b></td>
+<td>Percussion over ulnar nerve in retrocondylar groove / cubital tunnel → ring/little finger tingling</td>
+<td><b>Sn 0.70</b> (Novak 1994) <span class="eb eb-m">M</span> · <b>Sn 54%, NPV 98%</b> (Cheng 2008) <span class="eb eb-l">L</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#elbow-flexion-test" rel="noopener" target="_blank">Elbow flexion &amp; pressure + flexion</a></b></td>
+<td>Sustained maximal elbow flexion, direct ulnar nerve pressure, or combined pressure + flexion for <b>30 seconds</b></td>
+<td>At 30 s: <b>elbow flexion Sn 0.32, pressure 0.55, pressure + flexion 0.91 (most sensitive)</b> (Novak 1994) <span class="eb eb-m">M</span> · Flexion/compression <b>46%</b> (Cheng 2008) <span class="eb eb-l">L</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+<tr>
+<td><b><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#scratch-collapse-test" rel="noopener" target="_blank">Scratch collapse test</a></b></td>
+<td>Cutaneous scratch over cubital tunnel followed immediately by resisted bilateral shoulder ER → unilateral give-way</td>
+<td>Cubital tunnel: <b>Sn 69%, accuracy 89%</b>; carpal tunnel <b>Sn 64%</b> (Cheng 2008) <span class="eb eb-l">L</span></td>
+<td class="c"><span class="cio"><span class="cb sm"></span>−</span><span class="cio"><span class="cb sm r"></span>+</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- C : Validated PROM Dashboard -->
+<section class="card" id="p4-proms">
+<div class="card-h"><span>C · Validated Elbow PROM Dashboard (PRTEE, Oxford Elbow Score, QuickDASH, KJOC, MEPS, NPRS, PSFS)</span><span class="tag">PROMS</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<table class="t">
+<thead>
+<tr>
+<th style="width:22%">Outcome Scale</th>
+<th style="width:24%">Scoring Rule &amp; Range</th>
+<th style="width:36%">Verified Reliability, SDC / MDC &amp; MIC / MCID</th>
+<th class="c" style="width:9%">Initial</th>
+<th class="c" style="width:9%">Follow-Up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#prtee" rel="noopener" target="_blank">PRTEE</a></b> <a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#prtee" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Calc</a></td>
+<td>15 items (0–10): Pain (5 items, 0–50) + Function (10 items ÷ 2, 0–50) = Total 0–100</td>
+<td>Test-retest <b>0.96 (0.94–0.97)</b>, SEM <b>3.1 (1.8 to 4.4)</b>, MDC95 <b>8.9 (5.3–12.5)</b> (Shafiee 2022) <span class="eb eb-m">M</span> · Tennis elbow: total <b>SDC95 17, MIC 9</b>; pain <b>SDC95 8, MIC 11</b>; function <b>SDC95 12, MIC 4</b> (Sveinall 2025) <span class="eb eb-m">M</span></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#oxford-elbow-score" rel="noopener" target="_blank">Oxford Elbow Score (OES)</a></b> <a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#oxford-elbow-score" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Calc</a></td>
+<td>12 items (0–4), 3 domains (Function, Pain, Social-Psych, 4 items each; sum ÷ 16 × 100 = 0–100)</td>
+<td>After surgery: <b>MCID ≈ 10 for Function (similar to DASH), ≈ 18 for Pain and Social-Psychological</b> (Dawson 2008) <span class="eb eb-m">M</span> · Elbow injury: <b>SDC 12.1</b> (Wänström 2024) <span class="eb eb-m">M</span></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#quickdash" rel="noopener" target="_blank">QuickDASH</a></b> <a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#quickdash" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Calc</a></td>
+<td>11 items (1–5, ≥ 10 answered): ((sum ÷ n) − 1) × 25 (0–100)</td>
+<td>Elbow injury: <b>SDC QuickDASH 11.4, SANE 1.94</b> (Wänström 2024) <span class="eb eb-m">M</span></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#kjoc-score" rel="noopener" target="_blank">KJOC Score</a></b></td>
+<td>Overhead throwers (0–100, higher = better performance)</td>
+<td>Correlates with DASH (<b>−.693</b>) and DASH sports (<b>−0.804</b>); <b>threshold 81.3 separates category 1 from 3</b> (Domb 2010) <span class="eb eb-l">L</span></td>
+<td></td><td></td>
+</tr>
+<tr>
+<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#meps-score" rel="noopener" target="_blank">MEPS</a> · <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#nprs" rel="noopener" target="_blank">NPRS</a> · <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#psfs" rel="noopener" target="_blank">PSFS</a></b> <a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#psfs" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Calc</a></td>
+<td>MEPS (pain, arc, stability, ADL) · NPRS (0–10) · PSFS (mean 0–10)</td>
+<td>Clinical tracking scales <span class="eb eb-e">E</span>; pain on gripping (0–10) <b>SDC95 4, MIC 3.5</b> (Sveinall 2025) <span class="eb eb-m">M</span></td>
+<td></td><td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="dots fill" id="p4-notes"><span class="dots-l">Special Tests Synthesis · Baseline PROM Scores · Functional Goal Setting</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab on" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 5 ===================== -->
+<div class="clinical-page" id="page-5" data-accent="purple">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Post-Surgical Rehabilitation, Biceps / UCL / Stiffness &amp; Radial Head</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">05 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Surgeon-Directed Banner & Distal Biceps / UCL Evidence -->
+<section class="card" id="p5-biceps-ucl">
+<div class="card-h"><span>A · Post-Surgical Rehabilitation: Distal Biceps Repair, UCL Reconstruction / Repair &amp; LET Sham Trial</span><span class="tag">POST-OP</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="box r" style="padding:.4mm 1.2mm;text-align:center;">
+<b class="crim" style="font-size:7.6px;letter-spacing:.04em;">POST-OP RESTRICTIONS ARE SURGEON-DIRECTED <span class="eb eb-e">E</span></b>
+</div>
+<div class="grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Distal Biceps Repair (Amarasooriya 2020 · Amin 2016 · Bergman 2021)</span><span class="stat">Distal Biceps</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#distal-biceps-repair-rehab" rel="noopener" target="_blank"><b>Complications (SR)</b></a> (Amarasooriya 2020 Am J Sports Med) <span class="eb eb-m">M</span>: <b class="nav">major complications 4.6%; minor 20.4% (n = 630); most common lateral (antebrachial) cutaneous nerve injury 9.2% (n = 283); LABCN injury higher with limited anterior vs extensile single incision (9.7% vs 5.2%, P = .03); superficial radial nerve injury higher with extensile vs limited incision (6% vs 2.1%, P = .002); fixation technique had no effect on rerupture or PIN injury</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#distal-biceps-repair-rehab" rel="noopener" target="_blank"><b>Single vs double incision (MA)</b></a> (Amin 2016 Orthop J Sports Med) <span class="eb eb-m">M</span>: <b class="nav">LABCN neurapraxia most common after single incision: 77 of 785 (9.8%)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#distal-biceps-repair-rehab" rel="noopener" target="_blank"><b>Early motion vs immobilisation (RCT, cortical button)</b></a> (Bergman 2021 J Bone Joint Surg Am) <span class="eb eb-h">H</span>: <b class="nav">no difference in return to work (p ≥ 0.83); “No clinically important group differences were seen”</b></div></div>
+<div class="sh" style="margin:.5mm 0 .5px;"><span>Surgery vs Sham for LET (Kroslak 2018)</span><span class="stat">LET Surgery</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#let-surgery-vs-sham-kroslak" rel="noopener" target="_blank"><b>Surgery vs sham for LET (RCT, n = 26)</b></a> (Kroslak 2018 Am J Sports Med) <span class="eb eb-h">H</span>: <b class="nav">no significant difference in any parameter at any stage; &gt; 6500 patients per group would be needed to show a difference</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>UCL Reconstruction &amp; Internal Brace Repair</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4687831/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Erickson 2015</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-reconstruction-repair" rel="noopener" target="_blank"><b>UCL reconstruction (SR, 20 studies, 2019 athletes)</b></a> (Erickson 2015 Orthop J Sports Med) <span class="eb eb-m">M</span>: <b class="nav">pooled return to sport 86.2%; 90% excellent/good (Conway-Jobe); RTS collegiate 95.5% vs high school 89.4% vs professional 86.4%; docking 97.0%, ASMI 93.3%, Jobe 66.7%</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-reconstruction-repair" rel="noopener" target="_blank"><b>UCL reconstruction — large series</b></a> (Cain 2010 Am J Sports Med, 743 athletes ≥ 2 y) <span class="eb eb-l">L</span>: <b class="nav">83% returned to the same or higher level in less than 1 year</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-reconstruction-repair" rel="noopener" target="_blank"><b>UCL repair with internal brace</b></a> (Dugas 2019 Am J Sports Med, 111 throwers) <span class="eb eb-l">L</span>: <b class="nav">92% (102/111) returned to the same or higher level at a mean 6.7 months; mean KJOC 88.2</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-reconstruction-repair" rel="noopener" target="_blank"><b>UCL reconstruction — rehab &amp; RTS criteria (SR, 33 studies, 3480 athletes)</b></a> (Kemler 2022 Am J Sports Med) <span class="eb eb-m">M</span>: <b class="nav">RTS timelines 6.5 to 16 months; protocols most often used bracing with progressive ROM (93.9%), strengthening (84.8%) and an interval throwing programme (81.8%); no study fully defined RTS criteria</b></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- B : Stiffness, Heterotopic Ossification & Radial Head Fractures -->
+<section class="card" id="p5-stiffness-ho-fracture">
+<div class="card-h"><span>B · Post-Traumatic Stiffness / Arthrolysis, Heterotopic Ossification &amp; Radial Head Fractures</span><span class="tag">TRAUMA &amp; STIFFNESS</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Post-Traumatic Stiffness: Arthrolysis &amp; Splinting</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10110632/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Lanzerath 2023</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-stiffness-arthrolysis-splinting" rel="noopener" target="_blank"><b>Arthrolysis (SR, 30 studies, 798 pts)</b></a> (Kodde 2013 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">ROM gain 51°, 40°, 88°, 56° and complications 23, 5, 73, 58% for open, arthroscopic, open + external fixator, open + distraction arthroplasty</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-stiffness-arthrolysis-splinting" rel="noopener" target="_blank"><b>Arthrolysis (SR, 27 studies, 1666 pts)</b></a> (Lanzerath 2023 Arch Orthop Trauma Surg) <span class="eb eb-m">M</span>: <b class="nav">success (MEPS excellent/good): open 88.8% (revision 6.3%, other complications 18.1%); arthroscopic 91.8% (revision 1.6%, complications 9.1%)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-stiffness-arthrolysis-splinting" rel="noopener" target="_blank"><b>Splinting for post-traumatic stiffness (RCT, n = 66)</b></a> (Lindenhovius 2012 J Bone Joint Surg Am) <span class="eb eb-h">H</span>: <b class="nav">no difference between static progressive and dynamic splinting; stiffness “can improve with exercises and dynamic or static splinting over a period of six to twelve months, and patience is warranted”</b></div></div>
+<div class="sh" style="margin:.5mm 0 .5px;"><span>Heterotopic Ossification (Shukla 2015 · Khan 2019)</span><span class="stat">HO Risk</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-heterotopic-ossification" rel="noopener" target="_blank"><b>Heterotopic ossification</b></a> (Shukla 2015 J Shoulder Elbow Surg) <span class="eb eb-l">L</span>: <b class="nav">after surgical fracture-dislocation 12 of 28 elbows (43%); 7 of 9 (77%) after multiple closed reductions</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-heterotopic-ossification" rel="noopener" target="_blank"><b>HO after total elbow arthroplasty (SR)</b></a> (Khan 2019 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">radiographic 10%, symptomatic 3%</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Radial Head &amp; Mason I–II Fracture Trials</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12641243/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Harding 2011</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#radial-head-fracture-rehab" rel="noopener" target="_blank"><b>Radial head fracture — early mobilisation (RCT, n = 60)</b></a> (Liow 2002 Injury) <span class="eb eb-m">M</span>: <b class="nav">immediate mobilisation: less pain and better function at 1 week, no harm</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#radial-head-fracture-rehab" rel="noopener" target="_blank"><b>Radial head fracture — protocols (RCT, n = 180)</b></a> (Paschos 2013 J Orthop Trauma) <span class="eb eb-m">M</span>: <b class="nav">early mobilisation safe and effective; a delay of 48 hours before early mobilisation “could be advantageous”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#radial-head-fracture-rehab" rel="noopener" target="_blank"><b>Elbow fractures — early mobilisation (Cochrane)</b></a> (Harding 2011 Cochrane) <span class="eb eb-l">L</span>: <b class="nav">no difference between early and delayed mobilisation in pain or ROM limitation (Mason I–II); all participants returned to full ADL, none changed occupation</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#radial-head-fracture-rehab" rel="noopener" target="_blank"><b>Mason II — operative vs non-operative (RCT)</b></a> (Mulders 2021 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">similar function at 1 year</b></div></div>
+</div>
+</div>
+</section>
+<!-- C : Post-Op Re-Check & Blank Operative Log -->
+<section class="card" id="p5-oplog">
+<div class="card-h"><span>C · Wound / Neuro / HO Re-Check Box &amp; Operative Details Log</span><span class="tag">OPERATIVE LOG</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="box r" style="padding:.4mm 1.2mm;">
+<div class="fr flex-wrap xs">
+<span class="lb crim">Post-Op Re-Check <span class="eb eb-e">E</span>:</span>
+<span class="cio"><span class="cb sm r"></span>Wound erythema / drainage / infection</span>
+<span class="cio"><span class="cb sm r"></span>LABCN / superficial radial / PIN / ulnar deficit</span>
+<span class="cio"><span class="cb sm r"></span>Suspected heterotopic ossification (loss of arc + warmth)</span>
+<span class="cio"><span class="cb sm r"></span>Graft / button / hardware failure</span>
+</div>
+</div>
+<div class="row xs">
+<div class="fr" style="flex:2"><span class="lb">Procedure / Graft / Fixation</span><span class="fl"></span></div>
+<div class="fr" style="flex:1.2"><span class="lb">Surgery Date</span><span class="fl"></span></div>
+<div class="fr" style="flex:1.5"><span class="lb">Surgeon</span><span class="fl"></span></div>
+</div>
+<div class="row xs">
+<div class="fr" style="flex:1"><span class="lb">Surgeon-Directed Restrictions &amp; Splint / Hinge Settings</span><span class="fl"></span></div>
+</div>
+<div class="row xs">
+<div class="fr" style="flex:1"><span class="lb">Ulnar Nerve / LABCN / PIN Status</span><span class="fl"></span></div>
+<div class="fr" style="flex:1"><span class="lb">Target RTS / RTW Milestone</span><span class="fl"></span></div>
+</div>
+</div>
+</section>
+<div class="dots fill" id="p5-notes"><span class="dots-l">Post-Operative Communication · Surgeon Orders · Splinting Progression Notes</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab on" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 6 ===================== -->
+<div class="clinical-page" id="page-6" data-accent="orange">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Injections, Orthoses, Taping &amp; Electrophysical Agents</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">06 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Injections (CSI, PRP, Autologous Blood) -->
+<section class="card" id="p6-injections">
+<div class="card-h"><span>A · Corticosteroid, PRP &amp; Autologous Blood Injections in Lateral Epicondylalgia</span><span class="tag">INJECTIONS</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Corticosteroid Injection (Bisset 2006 · Coombes 2010 &amp; 2013)</span><a class="guide-badge" href="https://doi.org/10.1001/jama.2013.129" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Coombes 2013</a></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#corticosteroid-injection-let" rel="noopener" target="_blank"><b>Corticosteroid injection (Bisset)</b></a> (Bisset 2006 BMJ) <span class="eb eb-h">H</span>: <b class="crim">better at 6 weeks, but “paradoxically reversed after six weeks, with high recurrence rates”; worse than physiotherapy at 52 weeks (NNT 4) — see page 2</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#corticosteroid-injection-let" rel="noopener" target="_blank"><b>Corticosteroid injection (SR, 41 RCTs)</b></a> (Coombes 2010 Lancet) <span class="eb eb-h">H</span>: <b class="crim">lateral epicondylalgia: large short-term pain effect vs no intervention (SMD 1·44, 1·17–1·71) but no intervention favoured at intermediate term (−0·40, −0·67 to −0·14) and long term (−0·31, −0·61 to −0·01); serious adverse event (tendon rupture) in 1 of 991 (0·1%)</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#corticosteroid-injection-let" rel="noopener" target="_blank"><b>Corticosteroid vs placebo injection ± physio (RCT, n = 165)</b></a> (Coombes 2013 JAMA) <span class="eb eb-h">H</span>: <b class="crim">1 year: recovery 83% vs 96% (RR 0.86, 99% CI 0.75–0.99); recurrence 54% vs 12% (RR 0.23, 0.10–0.51); 26 weeks: 55% vs 85% (RR 0.79, 0.62–0.99)</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>PRP, Autologous Blood &amp; Non-Operative MA</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8481072/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Karjalainen 2021</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#prp-autologous-blood-let" rel="noopener" target="_blank"><b>PRP / autologous blood (Cochrane, 8 studies)</b></a> (Karjalainen 2021 Cochrane) <span class="eb eb-h">H</span>: <b class="nav">vs placebo at 3 months: pain 0.16 points better (0–10), function 2 points (0–100) — not clinically important</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#prp-autologous-blood-let" rel="noopener" target="_blank"><b>Non-operative treatments (MA)</b></a> (Kim 2021 JSES Int) <span class="eb eb-m">M</span>: <b class="nav">PRP vs control: function SMD 0.14 (−0.45 to 0.73); autologous blood vs control: function −0.07 (−0.64 to 0.50); strengthening vs no treatment: pain MD −0.07 (−0.56 to 0.41), function SMD −0.08 (−0.46 to 0.30); “does not support the use of nonoperative treatment options including physiotherapy (strengthening), CSI, PRP, or AB”</b></div></div>
+</div>
+</div>
+</section>
+<!-- B : ESWT, Laser, Orthoses & JOSPT LET CPG Quotes -->
+<section class="card" id="p6-epas-orthoses">
+<div class="card-h"><span>B · ESWT, Laser, Orthoses, Taping &amp; JOSPT 2022 LET CPG Modalities Recommendations</span><span class="tag">EPAS &amp; ORTHOSES</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>ESWT, Low-Level Laser &amp; Orthoses Reviews</span><a class="guide-badge" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2442599/" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Bjordal 2008</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>ESWT (Cochrane)</b></a> (Buchbinder 2005 Cochrane) <span class="eb eb-m">M</span>: <b class="nav">one trial (93 participants): steroid injection may be more effective than ESWT</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Low-level laser (MA)</b></a> (Bjordal 2008 BMC Musculoskelet Disord) <span class="eb eb-m">M</span>: <b class="nav">vs control: pain WMD 10.2 mm (3.0 to 17.5) on 100 mm VAS; 904 nm directly on the tendon (5 trials): 17.2 mm (8.5 to 25.9) more than placebo; pain-free grip SMD 0.66 (0.42 to 0.90)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-orthoses-taping" rel="noopener" target="_blank"><b>Orthoses / counterforce brace (Cochrane)</b></a> (Struijs 2002 Cochrane) <span class="eb eb-l">L</span>: <b class="nav">“No definitive conclusions can be drawn concerning effectiveness of orthotic devices”</b></div></div>
+<div class="sh" style="margin:.5mm 0 .5px;"><span>JOSPT LET CPG — Orthoses &amp; Taping (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-orthoses-taping" rel="noopener" target="_blank"><b>Counterforce / wrist orthosis</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians may use a forearm counterforce or wrist support orthosis to be worn during activity for immediate improvement of pain and strength in those with LET whose symptoms are aggravated with activity”</b>; for intermediate or long-term symptoms: <b class="nav">“a recommendation cannot be made”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-orthoses-taping" rel="noopener" target="_blank"><b>Rigid &amp; kinesiology taping</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should use rigid taping techniques for immediate/short-term pain relief and improvement in pain-free muscle function in those with irritable LET”</b>; <b class="nav">“Clinicians may use kinesiology tape application as part of a multimodal treatment program for immediate and short-term management of pain and muscle function”</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>JOSPT LET CPG — Electrophysical Agents (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Ultrasound</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“a recommendation cannot be made for the use of ultrasound as a stand-alone treatment”</b></div></div>
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Phonophoresis</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="crim">“Clinicians should not use phonophoresis with 10% hydrocortisone gel, topical prednisolone (2 mg/d), or 1% diclofenac sodium gel”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Iontophoresis</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use iontophoresis with an anti-inflammatory drug, early in the rehabilitation phase (no later than 2–4 weeks from onset or aggravation of symptoms), in individuals presenting with highly irritable symptoms”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Laser therapy</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use laser therapy for improvements in pain and grip strength, seen in follow-up periods &gt;4 weeks to 6 months”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#eswt-laser-elbow" rel="noopener" target="_blank"><b>Cryotherapy + burst TENS</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use cryotherapy combined with burst transcutaneous electrical nerve stimulation (TENS) to reduce pain in the short term in individuals with symptoms of LET for greater than 30 days”</b></div></div>
+</div>
+</div>
+</section>
+<!-- C : Blank Parameter Log -->
+<section class="card" id="p6-param-log">
+<div class="card-h"><span>C · Orthosis, Taping &amp; Electrophysical Agent Delivery Log</span><span class="tag">PARAMETER LOG</span></div>
+<div class="card-b">
+<table class="t">
+<thead>
+<tr>
+<th style="width:14%">Date</th>
+<th style="width:24%">Modality / Orthosis / Tape</th>
+<th style="width:28%">Site, Wavelength / Dose / Tension</th>
+<th style="width:18%">Pre / Post PFG or NPRS</th>
+<th style="width:16%">Patient Response</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="dots fill" id="p6-notes"><span class="dots-l">Injection Counselling · Taping / Orthosis Fit · Modality Notes</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab on" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 7 ===================== -->
+<div class="clinical-page" id="page-7" data-accent="teal">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Manual Therapy, Mobilisation with Movement &amp; Informed Consent</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">07 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : MWM, Joint Mobilisation & Friction Evidence -->
+<section class="card" id="p7-mwm-mob">
+<div class="card-h"><span>A · Mobilisation with Movement (MWM), Joint Mobilisation &amp; Deep Transverse Friction Evidence</span><span class="tag">MANUAL THERAPY</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>Mobilisation with Movement (Vicenzino 2001 · Coombes 2013)</span><a class="guide-badge" href="https://doi.org/10.1001/jama.2013.129" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Coombes 2013</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#mwm-elbow" rel="noopener" target="_blank"><b>MWM (lateral glide) — crossover RCT</b></a> (Vicenzino 2001 Man Ther) <span class="eb eb-m">M</span>: <b class="nav">specific, immediate hypoalgesia on the affected side</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#mwm-elbow" rel="noopener" target="_blank"><b>MWM + exercise (Coombes 2013)</b></a> (Coombes 2013 JAMA) <span class="eb eb-h">H</span>: <b class="nav">at 4 weeks, placebo injection + physiotherapy: recovered/much improved 39% vs 10% without physio (RR 4.00, 1.07–15.00); at 1 year physio vs no physio 91% vs 88% (RR 1.04, 0.90–1.19), recurrence 29% vs 38%</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Joint Mobilisation SR &amp; Deep Transverse Friction</span><a class="guide-badge" href="https://doi.org/10.1016/j.jht.2018.01.010" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>Lucado 2019</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>Joint mobilisation (SR / MA)</b></a> (Lucado 2019 J Hand Ther) <span class="eb eb-m">M</span>: <b class="nav">“compelling evidence that joint mobilizations have a positive effect on both pain and/or functional grip scores across all time frames compared to control groups”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>Deep transverse friction (Cochrane)</b></a> (Loew 2014 Cochrane) <span class="eb eb-l">L</span>: <b class="nav">uncertain whether it improves pain and function (very low-quality evidence)</b></div></div>
+</div>
+</div>
+</section>
+<!-- B : JOSPT LET CPG Manual Therapy, Dry Needling & Cubital Tunnel Care -->
+<section class="card" id="p7-cpg-manual">
+<div class="card-h"><span>B · JOSPT LET CPG Manual Therapy &amp; Dry Needling Quotes + Cubital Tunnel Conservative Care</span><span class="tag">CPG &amp; NEURAL</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>JOSPT LET CPG — Manual Therapy &amp; Dry Needling (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>Local elbow manipulation / mobilisation</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should use local elbow joint manipulation or mobilization techniques to reduce pain and increase pain-free grip strength … for those who can tolerate the specific technique”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>Cervical, thoracic &amp; wrist adjuncts</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use manipulation or mobilization techniques directed at the cervical spine, thoracic spine, and/or wrist as an adjunct to local treatment for short-term pain relief … when impairments in those regions are identified”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>IASTM &amp; deep transverse friction</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use instrument-assisted soft tissue mobilization combined with exercise to improve pain and function in those with chronic LET”</b>; deep transverse friction: <b class="nav">“a recommendation cannot be made”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-joint-mobilisation-friction" rel="noopener" target="_blank"><b>Dry needling</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should use either tendon or trigger point dry needling for the treatment of pain and functional deficits associated with LET”</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Cubital Tunnel Syndrome Conservative Care</span><span class="stat"><span class="eb eb-e">E</span></span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#cubital-tunnel-conservative-care" rel="noopener" target="_blank"><b>Patient education &amp; posture modification</b></a> <span class="eb eb-e">E</span>: avoid sustained elbow flexion, leaning on the medial epicondyle / retrocondylar groove, and repetitive flexion-extension under load</div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#cubital-tunnel-conservative-care" rel="noopener" target="_blank"><b>Night splinting / extension towel wrap</b></a> <span class="eb eb-e">E</span>: maintain comfortable elbow extension during sleep to reduce nocturnal ulnar nerve traction and intraneural pressure</div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#cubital-tunnel-conservative-care" rel="noopener" target="_blank"><b>Neural mobilisation</b></a> <span class="eb eb-e">E</span>: gentle, non-provocative ulnar nerve gliding exercises; monitor intrinsic hand strength and refer if progressive motor deficit develops</div></div>
+</div>
+</div>
+</section>
+<!-- C : Safety Screen, Informed Consent & Manual Therapy Log -->
+<section class="card" id="p7-consent">
+<div class="card-h"><span>C · Pre-Intervention Safety Screen, Informed Consent &amp; Manual Therapy / Dry Needling Log</span><span class="tag">CONSENT</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="fr flex-wrap xs">
+<span class="lb">Contraindications / Precautions Screened <span class="eb eb-e">E</span>:</span>
+<span class="cio"><span class="cb sm g"></span>Fracture / unreduced dislocation excluded</span>
+<span class="cio"><span class="cb sm g"></span>No acute HO / myositis ossificans</span>
+<span class="cio"><span class="cb sm g"></span>No septic bursitis / overlying infection</span>
+<span class="cio"><span class="cb sm g"></span>Anticoagulation / needle precautions checked</span>
+</div>
+<div class="box g" style="padding:.5mm 1.2mm;">
+<div class="row xs">
+<span class="lb emer">CONSENT OBTAINED FOR:</span>
+<span class="cio"><span class="cb sm g"></span>Elbow MWM / joint mobilisation</span>
+<span class="cio"><span class="cb sm g"></span>Cervical / thoracic / wrist adjunct</span>
+<span class="cio"><span class="cb sm g"></span>Tendon / trigger-point dry needling</span>
+<span class="cio"><span class="cb sm g"></span>IASTM / neural mobilisation</span>
+</div>
+<div class="row xs" style="margin-top:.5mm;">
+<div class="fr" style="flex:2"><span class="lb">Patient / Guardian Signature</span><span class="fl"></span></div>
+<div class="fr" style="flex:1.5"><span class="lb">Clinician</span><span class="fl"></span></div>
+<div class="fr" style="flex:1"><span class="lb">Date</span><span class="fl"></span></div>
+</div>
+</div>
+<table class="t" style="margin-top:1px;">
+<thead>
+<tr>
+<th style="width:14%">Date</th>
+<th style="width:28%">Technique (MWM / Joint Mob / Needling / Neural)</th>
+<th style="width:24%">Segment / Direction / Dosage</th>
+<th style="width:18%">Immediate PFG / ROM</th>
+<th style="width:16%">Adverse Events</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="dots fill" id="p7-notes"><span class="dots-l">Manual Therapy Response · MWM Glide Vector · Home Self-MWM Instructions</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab on" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 8 ===================== -->
+<div class="clinical-page" id="page-8" data-accent="green">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Exercise Therapy, Return to Activity &amp; 12-Week / Throwing Logs</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">08 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <!-- A : Exercise Evidence & JOSPT LET CPG Quotes -->
+<section class="card" id="p8-exercise-evidence">
+<div class="card-h"><span>A · JOSPT LET CPG Exercise Recommendations, Strengthening MA, UCL &amp; Stiffness Rehabilitation</span><span class="tag">EXERCISE &amp; RTS</span></div>
+<div class="card-b grid grid-cols-2 gap-x-2">
+<div>
+<div class="sh" style="margin:0 0 .5px;"><span>JOSPT LET CPG — Exercise (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#let-exercise-rehab" rel="noopener" target="_blank"><b>Wrist extensor loading</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should use isometric, concentric, and/or eccentric therapeutic resisted exercises of the wrist extensors in the treatment of individuals with subacute or chronic LET”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#let-exercise-rehab" rel="noopener" target="_blank"><b>Multimodal combination</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“should use therapeutic resisted wrist extension strengthening exercises in combination with other therapeutic interventions, including manual therapy”</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#let-exercise-rehab" rel="noopener" target="_blank"><b>Phased return &amp; kinetic chain</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“may use a phased approach to reintroduce stress, increase strength, improve endurance, and restore optimal motor control”</b> in high-demand occupations, hobbies, performing arts or sport; <b class="nav">“may include shoulder and scapular stabilizer muscle training exercises, when impairments are identified”</b></div></div>
+</div>
+<div class="divider-v">
+<div class="sh" style="margin:0 0 .5px;"><span>Strengthening MA, Natural Course, UCL &amp; Stiffness</span><span class="stat">Evidence</span></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#let-exercise-rehab" rel="noopener" target="_blank"><b>Strengthening vs no treatment (MA)</b></a> (Kim 2021 JSES Int) <span class="eb eb-m">M</span>: <b class="nav">no difference in pain (MD −0.07) or function (SMD −0.08) — see page 6</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link has-video" href="https://azhry-x.github.io/elbow-atlas/#let-exercise-rehab" rel="noopener" target="_blank"><b>Natural course comparison</b></a> (Smidt 2002 Lancet · Coombes 2013 JAMA) <span class="eb eb-h">H</span>: <b class="nav">at 52 weeks physiotherapy 91% vs wait-and-see 83% success (Smidt 2002, page 2); MWM + exercise vs no physio 91% vs 88% at 1 year (Coombes 2013)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-nonop-interval-throwing" rel="noopener" target="_blank"><b>UCL non-operative rehab</b></a> (Erickson 2015 Sports Health) <span class="eb eb-l">L</span>: <b class="nav">“Nonoperative treatment should be attempted, but limited studies have not shown promising results”</b> · <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#ucl-nonop-interval-throwing" rel="noopener" target="_blank"><b>UCL post-op</b></a> (Kemler 2022) <span class="eb eb-m">M</span>: <b class="nav">interval throwing programme in 81.8% of protocols; RTS 6.5 to 16 months</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-stiffness-arthrolysis-splinting" rel="noopener" target="_blank"><b>Post-traumatic stiffness</b></a> (Lindenhovius 2012) <span class="eb eb-h">H</span>: <b class="nav">exercise + splinting improves over six to twelve months</b> · <b>Medial epicondylalgia, loading specifics &amp; RTW:</b> graded flexor-pronator loading, isometric/eccentric/heavy slow resistance progression &amp; ergonomic task modification <span class="eb eb-e">E</span></div></div>
+</div>
+</div>
+</section>
+<!-- B : 12-Week LET Loading Log -->
+<section class="card" id="p8-loading-log">
+<div class="card-h"><span>B · 12-Week Lateral / Medial Elbow Progressive Loading Log</span><span class="tag">12-WEEK LOG</span></div>
+<div class="card-b">
+<table class="t">
+<thead>
+<tr>
+<th style="width:22%">Exercise / Drill</th>
+<th class="c" style="width:6.5%">Wk 1</th><th class="c" style="width:6.5%">Wk 2</th><th class="c" style="width:6.5%">Wk 3</th><th class="c" style="width:6.5%">Wk 4</th>
+<th class="c" style="width:6.5%">Wk 5</th><th class="c" style="width:6.5%">Wk 6</th><th class="c" style="width:6.5%">Wk 7</th><th class="c" style="width:6.5%">Wk 8</th>
+<th class="c" style="width:6.5%">Wk 9</th><th class="c" style="width:6.5%">Wk 10</th><th class="c" style="width:6.5%">Wk 11</th><th class="c" style="width:6.5%">Wk 12</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height:5.5mm;"><td><b>Isometric Wrist Ext / Flex</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td><b>Concentric / Eccentric Wrist Ext</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td><b>Supination / Pronation Hammer Load</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td><b>Grip / Carry Progression</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td><b>Scapular &amp; Rotator Cuff Kinetic Chain</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- C : Interval Throwing Log -->
+<section class="card" id="p8-throwing-log">
+<div class="card-h"><span>C · Interval Throwing Programme Log (Flat-Ground &amp; Mound Progression)</span><span class="tag">THROWING LOG</span></div>
+<div class="card-b">
+<table class="t">
+<thead>
+<tr>
+<th style="width:12%">Date / Phase</th>
+<th style="width:18%">Distance / Surface</th>
+<th style="width:18%">Throws &amp; Effort</th>
+<th style="width:18%">Warm-Up / Crow-Hop</th>
+<th style="width:18%">Medial Pain / Next-Day Soreness</th>
+<th style="width:16%">Progression Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="dots fill" id="p8-notes"><span class="dots-l">Home Exercise Prescription · Occupational / Sport Conditioning · Interval Throwing Notes</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Clinician</b> <span class="fl l"></span> <b>Date</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab on" href="#page-8">8</a>
+        <a class="ptab" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- ===================== PAGE 9 ===================== -->
+<div class="clinical-page" id="page-9" data-accent="slate">
+  <header class="pg-hdr">
+    <div class="brand">
+      <div class="logo">ELB</div>
+      <div>
+        <div class="kicker">Elbow &middot; Master Clinical Assessment &amp; Rehabilitation Dossier</div>
+        <h1 class="pg-title">Longitudinal Session-by-Session Tracking Flowsheet</h1>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="fr"><span class="lb">Patient</span><span class="fl l"></span></div>
+      <div class="pgno">09 / 09</div>
+    </div>
+  </header>
+  <main class="pg-body">
+ <table class="t flow slate" id="p9-flowsheet" style="table-layout:fixed;">
+<thead>
+<tr>
+<th class="c" style="width:4%">#</th>
+<th style="width:7%">Date</th>
+<th style="width:6%">NPRS</th>
+<th style="width:8.5%">Flex / Ext</th>
+<th style="width:8.5%">Pron / Sup</th>
+<th style="width:9%">PFG / Max (kg)</th>
+<th style="width:22%">Exercise &amp; Loading Delivered</th>
+<th style="width:16%">Manual / Tape / EPA</th>
+<th style="width:8%">Irritability</th>
+<th style="width:7%">PROM</th>
+<th class="c" style="width:4%">Init</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height:11.2mm;">
+<td class="vnum">1</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">2</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">3</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">4</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">5</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">6</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">7</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">8</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">9</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">10</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">11</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+<tr style="height:11.2mm;">
+<td class="vnum">12</td>
+<td></td><td></td><td></td><td></td><td></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
+<td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
+<td></td><td></td>
+</tr>
+</tbody>
+</table>
+<!-- Discharge Milestones & Summary -->
+<section class="card" id="p9-discharge">
+<div class="card-h"><span>Discharge Milestones (Population-Specific MIC / MCID &amp; SDC / MDC Benchmarks) &amp; Discharge Summary</span><span class="tag">DISCHARGE</span></div>
+<div class="card-b flex flex-col gap-[1.5px]">
+<div class="grid grid-cols-2 gap-x-2">
+<div>
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#prtee" rel="noopener" target="_blank"><b>PRTEE</b></a> <span class="eb eb-m">M</span>: <b>Tennis elbow</b> (Sveinall 2025): total (0–100) <b>SDC95 17, MIC 9</b>; pain (0–50) <b>SDC95 8, MIC 11</b>; function (0–50) <b>SDC95 12, MIC 4</b> · <b>SR</b> (Shafiee 2022): <b>MDC95 8.9 (5.3–12.5), SEM 3.1 (1.8 to 4.4)</b></div></div>
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#oxford-elbow-score" rel="noopener" target="_blank"><b>Oxford Elbow Score</b></a> <span class="eb eb-m">M</span>: <b>After surgery</b> (Dawson 2008): <b>MCID ≈ 10 for Function, ≈ 18 for Pain and Social-Psychological</b> · <b>Elbow injury</b> (Wänström 2024): <b>SDC 12.1</b></div></div>
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#quickdash" rel="noopener" target="_blank"><b>QuickDASH &amp; SANE</b></a> <span class="eb eb-m">M</span>: <b>Elbow injury</b> (Wänström 2024): <b>SDC QuickDASH 11.4, SANE 1.94</b></div></div>
+</div>
+<div class="divider-v">
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Pain-free &amp; maximum grip</b></a> <span class="eb eb-m">M</span>: <b>Tennis elbow</b> (Sveinall 2025): <b>SDC95 6.4 kg pain-free grip, 8.4 kg maximum grip; MIC 6.5 kg pain-free, 1 kg maximum; pain on gripping SDC95 4, MIC 3.5 (0–10)</b></div></div>
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-goniometry" rel="noopener" target="_blank"><b>Goniometry real change</b></a> <span class="eb eb-m">M</span> (Armstrong 1998): same tester <b>&gt; 6° flex, 7° ext, 8° pron, 8° sup</b>; between testers <b>10° flex, 10° ext, 10° pron, 11° sup</b></div></div>
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#kjoc-score" rel="noopener" target="_blank"><b>KJOC</b></a> <span class="eb eb-l">L</span>: <b>Throwers after UCL reconstruction</b> (Domb 2010): <b>threshold 81.3 separates category 1 from 3</b></div></div>
+</div>
+</div>
+<div class="row xs" style="margin-top:1px;">
+<div class="fr" style="flex:1"><span class="lb">Final PRTEE / OES / QuickDASH</span><span class="fl"></span></div>
+<div class="fr" style="flex:1"><span class="lb">Final PFG / Max Grip (kg)</span><span class="fl"></span></div>
+<div class="fr" style="flex:1"><span class="lb">Final Flex / Ext / Pron / Sup</span><span class="fl"></span></div>
+<div class="fr" style="flex:1.2"><span class="lb">Disposition</span><span class="cio"><span class="cb sm g"></span>Self-Mgmt / RTS</span><span class="cio"><span class="cb sm r"></span>Ortho Refer</span></div>
+</div>
+</div>
+</section>
+<div class="dots fill" id="p9-notes"><span class="dots-l">Discharge Summary · Long-Term Relapse Prevention · Return-to-Sport / Work Clearance</span></div>
+
+  </main>
+  <footer class="pg-ftr">
+    <div class="ftr-top">
+      <span><b>Discharging Clinician</b> <span class="fl l"></span> <b>Sig.</b> <span class="fl l"></span></span>
+      <span>Underline = Atlas card &middot; &#9656; = video &middot; Evidence: <span class="eb eb-h">H</span> high <span class="eb eb-m">M</span> moderate <span class="eb eb-l">L</span> low <span class="eb eb-e">E</span> expert &middot; Confidential &middot; v2026.10</span>
+    </div>
+    <div class="pnav-wrap">
+      <nav class="pnav" aria-label="Dossier pages">
+        <span class="nl">GO TO</span>
+        <a class="ptab" href="#page-1">1</a>
+        <a class="ptab" href="#page-2">2</a>
+        <a class="ptab" href="#page-3">3</a>
+        <a class="ptab" href="#page-4">4</a>
+        <a class="ptab" href="#page-5">5</a>
+        <a class="ptab" href="#page-6">6</a>
+        <a class="ptab" href="#page-7">7</a>
+        <a class="ptab" href="#page-8">8</a>
+        <a class="ptab on" href="#page-9">9</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

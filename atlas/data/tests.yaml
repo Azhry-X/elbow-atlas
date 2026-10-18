@@ -1,0 +1,1271 @@
+- id: elbow-extension-test
+  title: Elbow Extension Test & Post-Trauma ROM Radiography Rules
+  page: 1
+  type: test
+  review_status: approved
+  evidence: H
+  video_url: https://www.youtube.com/watch?v=1TILxnuB4P0
+  video_title: 'Physiotutors: Elbow Extension Test | Olecranon Fracture'
+  summary: Clinical decision rule assessing active elbow extension after acute trauma to screen for fracture and determine whether radiography can be safely deferred.
+  steps:
+  - Seat or stand the patient with the injured arm exposed and supinated.
+  - Ask the patient to actively extend both elbows fully and compare symmetry with the uninjured side.
+  - Also check active flexion, pronation, and supination and palpate the olecranon directly.
+  - 'Decision rule in words: if the patient achieves full active extension and an olecranon fracture is not suspected, radiography can be deferred with safety-net advice; if active extension is incomplete, refer for radiograph.'
+  positive: Inability to fully extend the elbow actively after acute injury (or limited active flexion, extension, pronation, or supination).
+  interpretation: 'Appelboam 2008 (adults + children, n = 1740): Sn 96.8% (95.0–98.2), Sp 48.5% (45.6–51.4); worst-case Sn 95.3%; Sp similar in adults (47.7%) and children (49.5%). In adults, full extension gives NPV 98.4% (96.3–99.5), LR− 0.03 (0.01–0.08); radiography can be deferred if an olecranon fracture is not suspected, and patients not X-rayed "should return if symptoms have not resolved within 7-10 days". Lennon 2007: for detecting a normal radiograph, full extension Sp 0.916 (0.863–0.969), Sn 0.478; equal ROM Sp 0.976 (0.940–0.991), Sn 0.211; under 16 years equal ROM Sp 1 (0.941–1.000). Darracq 2008 (n = 113): limited active ROM (flexion, extension, pronation, supination) Sn 100% (0.93–1.00) for fracture or effusion; preserved active ROM Sp 97% (0.89–1.00) for absence of fracture.'
+  metrics: 'SN: 96.8% (95.0–98.2) Appelboam; 100% (0.93–1.00) Darracq limited AROM · SP: 48.5% (45.6–51.4) Appelboam; normal radiograph Sp 0.916 full ext / 0.976 equal ROM (Lennon); 97% (0.89–1.00) Darracq · NPV: 98.4% (96.3–99.5) in adults · LR_NEG: 0.03 (0.01–0.08) in adults'
+  sources:
+  - text: Appelboam 2008 BMJ
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2600962/
+    free_full_text: true
+  - text: Lennon 2007 Emerg Med J
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2658213/
+    free_full_text: true
+  - text: Darracq 2008 Am J Emerg Med
+    url: https://doi.org/10.1016/j.ajem.2007.11.005
+- id: hook-test
+  title: Hook Test (Distal Biceps Avulsion)
+  page: 1
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=YsqdHsuLgC4
+  video_title: 'Physiotutors: Hook Test | Distal Biceps Tendon Rupture'
+  summary: Direct digital palpation test for complete distal biceps tendon avulsion in the antecubital fossa.
+  steps:
+  - Ask the patient to actively flex the elbow to 90° and fully supinate the forearm.
+  - Bring your index finger from the lateral side of the antecubital fossa beneath the lateral edge of the biceps tendon.
+  - Attempt to hook the cord-like distal biceps tendon anteriorly and compare with the contralateral elbow.
+  positive: Absence of a palpable cord-like tendon under which the examiner's finger can hook (abnormal hook test) or pain/instability with partial tearing.
+  interpretation: 'O''Driscoll 2007 (n = 45, surgery reference): Sn and Sp both 100%, outperforming MRI (Sn 92%, Sp 85%) in the same cohort.'
+  metrics: 'SN: 100% (hook test) vs 92% (MRI) · SP: 100% (hook test) vs 85% (MRI) · n = 45, surgical reference standard'
+  sources:
+  - text: O'Driscoll 2007 Am J Sports Med
+    url: https://doi.org/10.1177/0363546507305016
+- id: biceps-squeeze-test
+  title: Biceps Squeeze Test (Distal Biceps Rupture)
+  page: 1
+  type: test
+  review_status: approved
+  evidence: L
+  video_url: https://www.youtube.com/watch?v=EGKj3rB2Jn8
+  video_title: 'Physiotutors: Biceps Squeeze Test | Distal Biceps Tendon Rupture'
+  summary: Compression test of the distal biceps muscle belly assessing mechanical continuity of the distal biceps insertion.
+  steps:
+  - Seat the patient with the forearm resting comfortably in slight pronation across the lap and the elbow flexed.
+  - Place both hands around the distal myotendinous junction and muscle belly of the biceps brachii.
+  - Firmly squeeze the biceps belly and observe for reflex forearm supination.
+  positive: Failure of the forearm to supinate when the biceps belly is squeezed.
+  interpretation: 'Ruland 2005: positive in 24 of 25 patients; complete rupture confirmed at surgery in 21 of 22.'
+  metrics: Positive in 24 of 25 patients; complete rupture confirmed at surgery in 21 of 22 (Ruland 2005)
+  sources:
+  - text: Ruland 2005 Clin Orthop Relat Res
+    url: https://doi.org/10.1097/01.blo.0000167668.18444.f5
+- id: elbow-red-flags-triage
+  title: Elbow Emergency Red Flags & Systemic / Proximal Referral Screen
+  page: 1
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Clinical red flags requiring emergency medical or orthopaedic referral and proximal referral sources mimicking elbow pathology.
+  steps:
+  - 'Dislocation with neurovascular compromise: gross deformity after trauma with absent/diminished radial or ulnar pulse, pallor, or acute median/ulnar/radial nerve deficit → emergency reduction and vascular assessment.'
+  - 'Forearm compartment syndrome: severe pain out of proportion to injury, tense swollen forearm compartments, pain on passive finger extension, paraesthesia, or paresis → emergency surgical decompression.'
+  - 'Septic olecranon bursitis or septic arthritis: acute hot, red, swollen olecranon bursa or elbow joint with fever, systemic malaise, or overlying skin breach → urgent aspiration/medical referral.'
+  - 'Fracture in a child: acute trauma with refusal to use the arm, swelling, or incomplete active ROM → paediatric radiographic assessment.'
+  - 'Cardiac referral to the left medial arm: non-mechanical medial arm/elbow ache associated with exertional chest tightness, dyspnoea, or jaw pain → emergency cardiac workup.'
+  - 'Cervical radiculopathy referral: lateral or medial elbow pain reproduced by neck movement or accompanied by proximal arm paraesthesia/myotomal weakness → cervical spine and neurodynamic screen.'
+  positive: Any red flag present mandates immediate or urgent medical/orthopaedic referral prior to mechanical rehabilitation.
+  interpretation: Expert consensus triage gate ensuring limb-threatening, infectious, paediatric fracture, visceral cardiac, and cervical radicular presentations are identified at intake.
+  metrics: Emergency / urgent referral screen (E)
+  sources: []
+- id: let-epidemiology-prognosis
+  title: Epicondylitis Prevalence, Risk Factors & Natural Course vs Treatment
+  page: 2
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Population prevalence, occupational and smoking risk factors, and 52-week RCT trajectories comparing wait-and-see, physiotherapy, and corticosteroid injection.
+  steps:
+  - 'Prevalence (Shiri 2006, age 30–64, n = 4,783): definite lateral epicondylitis 1.3%, medial 0.4%; highest at 45–54 years; no sex difference.'
+  - 'Risk factors for lateral epicondylitis (Shiri 2006): current smoking OR 3.4 (1.4–8.3); former smoking OR 3.0 (1.3–6.6); repetitive + forceful arm activity OR 5.6 (1.9–16.5).'
+  - 'Natural course vs treatment (Smidt 2002 Lancet RCT, n = 185): success at 6 weeks: injection 92%, physiotherapy 47%, wait-and-see 32%; at 52 weeks: injection 69%, physiotherapy 91%, wait-and-see 83%.'
+  - 'MWM + exercise vs injection vs wait-and-see (Bisset 2006 BMJ RCT, n = 198): at 52 weeks injection worse than physiotherapy (0.3, 0.1 to 0.5; NNT 4) and than wait-and-see on 2 of 3 measures (0.3, 0.04 to 0.4; NNT 4); after injection 47/65 (72%) deteriorated after 3 or 6 weeks.'
+  positive: High 52-week recovery with wait-and-see (83%) and physiotherapy (91%), whereas corticosteroid injection shows high recurrence (72%).
+  interpretation: Counselling patients on the favourable 52-week natural course and high post-injection recurrence rate is central to shared decision-making.
+  metrics: Prevalence LET 1.3%, medial 0.4%; repetitive + forceful OR 5.6 (1.9–16.5); 52-wk success physio 91%, wait-and-see 83%, injection 69% (NNT 4)
+  sources:
+  - text: Shiri 2006 Am J Epidemiol
+    url: https://doi.org/10.1093/aje/kwj325
+  - text: Smidt 2002 Lancet
+    url: https://doi.org/10.1016/S0140-6736(02)07811-X
+  - text: Bisset 2006 BMJ
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1633771/
+    free_full_text: true
+- id: elbow-differential-pathologies
+  title: Elbow Differential Diagnosis Guide (Medial Epicondylalgia, Radial Tunnel / PIN, OCD Capitellum, OA / Stiffness)
+  page: 2
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Clinical differentiation of medial flexor-pronator tendinopathy, radial tunnel / posterior interosseous nerve entrapment, capitellar osteochondritis dissecans, and elbow osteoarthritis / post-traumatic stiffness.
+  steps:
+  - 'Medial epicondylalgia (golfer''s elbow): insidious medial epicondyle pain aggravated by resisted wrist flexion and forearm pronation; tender over the common flexor-pronator origin just distal/anterior to the medial epicondyle; differentiate from UCL insufficiency and cubital tunnel syndrome.'
+  - 'Radial tunnel / posterior interosseous nerve (PIN) syndrome: deep aching pain over the mobile wad / supinator mass distal to the lateral epicondyle (radial tunnel) or pure motor weakness of finger/thumb extension without sensory loss (PIN).'
+  - 'Osteochondritis dissecans (OCD) of the capitellum: lateral elbow pain, catching, locking, or effusion in adolescent overhead throwers or gymnasts exacerbated by valgus compression.'
+  - 'Osteoarthritis / post-traumatic stiffness: global or capsular loss of flexion-extension and/or forearm rotation, end-range impingement pain, or crepitus after trauma or degenerative joint disease.'
+  positive: Pattern recognition guides targeted special testing and imaging referral when mechanical locking or motor denervation is present.
+  interpretation: Expert clinical differentiation across lateral, medial, anterior, and posterior elbow compartments.
+  metrics: Clinical differential signposts (E)
+  sources: []
+- id: elbow-active-rom
+  title: Elbow Active Range of Motion (AROM)
+  page: 3
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=PNWRcx6ZYKg
+  video_title: 'Physiotutors: Active Range of Motion: Elbow'
+  summary: Active range-of-motion assessment of elbow flexion, extension, forearm pronation, and supination.
+  steps:
+  - Ask the patient to actively flex and extend the elbow through full available range while observing end-range symmetry and symptom provocation.
+  - With the elbow tucked at the side at 90° flexion, ask the patient to actively pronate and supinate the forearm and compare with the uninvolved side.
+  - Include active wrist flexion and extension range of motion per the JOSPT LET CPG.
+  positive: Asymmetric loss of active motion, pain reproduction, or mechanical block.
+  interpretation: 'Lucado 2022 JOSPT LET CPG: "Clinicians should include the physical impairment measures of elbow and wrist range of motion, pressure pain threshold, pain-free grip strength, and maximum grip strength at baseline and at least one other follow-up point that includes discharge".'
+  metrics: Compare against contralateral side and Armstrong 1998 goniometric real-change thresholds
+  sources:
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: elbow-passive-rom
+  title: Elbow Passive Range of Motion (PROM) & End-Feel
+  page: 3
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=309Q8IJDq7s
+  video_title: 'Physiotutors: Elbow Passive Range of Motion (PROM)'
+  summary: Passive range-of-motion and end-feel assessment of the ulnohumeral, radiocapitellar, and proximal radioulnar joints.
+  steps:
+  - Stabilise the distal humerus and passively move the elbow into full flexion (soft tissue approximation) and extension (bony olecranon-fossa contact).
+  - With the elbow flexed to 90°, passively pronate and supinate the radius on the ulna to assess capsular/tissue stretch end-feel.
+  - Note any capsular stiffness, bony block, springy loose-body block, or pain before tissue resistance.
+  positive: Loss of passive motion, abnormal bony/springy end-feel, or concordant pain reproduction.
+  interpretation: Differentiates true capsular/intra-articular restriction (OA, arthrofibrosis, OCD loose body) from contractile pain inhibition.
+  metrics: Compare bilaterally alongside goniometric real-change values (E)
+  sources: []
+- id: elbow-goniometry
+  title: Elbow & Forearm Universal Goniometry (Real-Change Thresholds)
+  page: 3
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Universal goniometer intra-rater and inter-rater real-change thresholds for elbow flexion, extension, pronation, and supination.
+  steps:
+  - Align the universal goniometer over the lateral epicondyle (humeral shaft stationary arm, radial shaft moving arm) for flexion and extension.
+  - Measure forearm pronation and supination with the elbow stabilised at 90° against the trunk.
+  - Apply Armstrong 1998 real-change thresholds to distinguish true clinical progress from measurement error.
+  positive: Change exceeding the intra-rater or inter-rater threshold represents real change in joint motion.
+  interpretation: 'Armstrong 1998 (universal goniometer): same tester real change if greater than 6° flexion, 7° extension, 8° pronation, 8° supination; between testers 10° flexion, 10° extension, 10° pronation, 11° supination.'
+  metrics: 'Same tester real change: > 6° flex, 7° ext, 8° pron, 8° sup; between testers: 10° flex, 10° ext, 10° pron, 11° sup'
+  sources:
+  - text: Armstrong 1998 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/s1058-2746(98)90003-9
+- id: pain-free-grip-strength
+  title: Pain-Free & Maximum Grip Strength (Dynamometry & Ratio Calculator)
+  page: 3
+  type: test
+  review_status: approved
+  evidence: M
+  summary: Core physical impairment measure for lateral epicondylalgia assessing pain-free grip force, maximum grip force, and limb symmetry ratio.
+  steps:
+  - Position the patient with the elbow in standardized extension (or repeatable test posture) holding a calibrated hand-held dynamometer.
+  - 'For pain-free grip (PFG): instruct the patient to squeeze slowly and stop at the very first onset of elbow pain; record in kg.'
+  - 'For maximum grip: instruct the patient to squeeze maximally; record in kg and rate pain on gripping (0–10).'
+  - Compute the affected ÷ unaffected × 100 (%) ratio and compare longitudinal change against the Sveinall 2025 SDC95 and MIC values.
+  positive: Reduced pain-free grip on the affected side relative to the unaffected side; improvement ≥ 6.5 kg (MIC) / ≥ 6.4 kg (SDC95) indicates meaningful change.
+  interpretation: 'Smidt 2002 Arch Phys Med Rehabil: interobserver ICC pain-free grip .97, maximum grip .98, severity of complaints .90, pressure pain threshold .77 (unsatisfactory). Sveinall 2025: SDC95 6.4 kg pain-free grip, 8.4 kg maximum grip; MIC 6.5 kg pain-free, 1 kg maximum; pain on gripping SDC95 4, MIC 3.5 (0–10).'
+  metrics: 'ICC: PFG .97, max grip .98, severity .90, PPT .77 (Smidt 2002) · MDC: SDC95: 6.4 kg PFG, 8.4 kg max grip, 4 pain on gripping (0–10) (Sveinall 2025) · MCID: MIC: 6.5 kg PFG, 1 kg max grip, 3.5 pain on gripping (0–10) (Sveinall 2025)'
+  calculator:
+    kind: formula
+    decimals: 1
+    value_label: '% Pain-Free Grip Ratio (Affected ÷ Unaffected × 100)'
+    expr: '(affected > 0 && unaffected > 0) ? (affected / unaffected * 100) : NaN'
+    inputs:
+    - heading: Pain-Free Grip Strength (kg)
+    - key: affected
+      label: Affected arm pain-free grip (kg)
+      type: number
+    - key: unaffected
+      label: Unaffected arm pain-free grip (kg)
+      type: number
+    outputs:
+    - when: v >= 0
+      text: 'Affected/Unaffected Ratio: {v|1}% · Sveinall 2025 change thresholds: Pain-free grip SDC95 = 6.4 kg, MIC = 6.5 kg · Maximum grip SDC95 = 8.4 kg, MIC = 1 kg · Pain on gripping (0–10) SDC95 = 4, MIC = 3.5'
+      tone: good
+  sources:
+  - text: Smidt 2002 Arch Phys Med Rehabil
+    url: https://doi.org/10.1053/apmr.2002.33728
+  - text: Sveinall 2025 Shoulder Elbow
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12122481/
+    free_full_text: true
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: jospt-2022-let-cpg
+  title: JOSPT 2022 Lateral Elbow Tendinopathy Clinical Practice Guideline
+  page: 3
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Academy of Hand and Upper Extremity Physical Therapy / APTA Clinical Practice Guideline for Lateral Elbow Tendinopathy (Lucado 2022).
+  steps:
+  - 'Impairment measures: "Clinicians should include the physical impairment measures of elbow and wrist range of motion, pressure pain threshold, pain-free grip strength, and maximum grip strength at baseline and at least one other follow-up point that includes discharge".'
+  - 'Exercise: "Clinicians should use isometric, concentric, and/or eccentric therapeutic resisted exercises of the wrist extensors in the treatment of individuals with subacute or chronic LET" and "should use therapeutic resisted wrist extension strengthening exercises in combination with other therapeutic interventions, including manual therapy".'
+  - 'Manual therapy & dry needling: "Clinicians should use local elbow joint manipulation or mobilization techniques to reduce pain and increase pain-free grip strength … for those who can tolerate the specific technique" and "Clinicians should use either tendon or trigger point dry needling for the treatment of pain and functional deficits associated with LET".'
+  - 'Orthoses, taping & EPAs: "Clinicians should use rigid taping techniques for immediate/short-term pain relief and improvement in pain-free muscle function in those with irritable LET"; see Page 6 and Page 7 cards for full verbatim recommendations.'
+  positive: Guideline strength is indicated by "should", "may", "should not", or "a recommendation cannot be made".
+  interpretation: Provides the framework for baseline/discharge impairment testing and multimodal rehabilitation in LET.
+  metrics: Clinical Practice Guideline (Lucado 2022 JOSPT)
+  sources:
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: c5-t1-neuro-screen-elbow
+  title: C5–T1 Neurological Screen, Carrying Angle & Elbow Palpation Map
+  page: 3
+  type: test
+  review_status: approved
+  evidence: E
+  summary: Regional anatomical palpation, carrying angle inspection, and C5–T1 myotomal, dermatomal, and deep tendon reflex screening.
+  steps:
+  - Inspect carrying angle in full extension/supination and check for joint effusion in the lateral soft spot (infracondylar recess between lateral epicondyle, radial head, and olecranon tip).
+  - 'Palpate systematically: lateral epicondyle & ECRB tendon origin, radial head & annular ligament, radial tunnel / supinator belly, antecubital fossa & distal biceps tendon, medial epicondyle & common flexor-pronator origin, sublime tubercle & anterior bundle of UCL, olecranon tip/bursa, and cubital tunnel / ulnar nerve.'
+  - Screen C5–T1 dermatomes, myotomes (C5 shoulder abduction, C6 elbow flexion/wrist extension, C7 elbow extension/wrist flexion, C8 thumb extension/finger flexion, T1 finger abduction), and reflexes (C5 biceps, C6 brachioradialis, C7 triceps).
+  positive: Focal anatomical tenderness, joint effusion, or segment-specific dermatomal/myotomal/reflex deficit.
+  interpretation: Clears cervical radicular and peripheral nerve involvement while localising the primary elbow pain generator.
+  metrics: Systematic palpation & C5–T1 neurological examination (E)
+  sources: []
+- id: ultt2b-radial
+  title: Upper Limb Tension Test 2b — Radial Nerve Bias (ULTT2b)
+  page: 3
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=rir6x6Iiqc4
+  video_title: 'Physiotutors: All Upper Limb Tension Tests | ULTT | ULNT'
+  summary: Neurodynamic provocation test biasing the radial nerve and posterior interosseous nerve across the lateral elbow and radial tunnel.
+  steps:
+  - Position the patient supine; depress the shoulder girdle and extend the elbow.
+  - Internally rotate the shoulder and pronate the forearm.
+  - Flex the wrist and fingers (and ulnarly deviate the wrist), then gently abduct the shoulder.
+  - Perform structural differentiation via contralateral cervical side-bending or releasing shoulder depression.
+  positive: Reproduction of the patient's concordant lateral elbow or dorsal forearm pain that alters with structural differentiation, and side-to-side asymmetry.
+  interpretation: Helps identify radial nerve / posterior interosseous nerve mechanosensitivity contributing to lateral elbow pain.
+  metrics: Radial nerve / PIN neurodynamic screen (E)
+  sources: []
+- id: ultt3-ulnar
+  title: Upper Limb Tension Test 3 — Ulnar Nerve Bias (ULTT3)
+  page: 3
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=rir6x6Iiqc4
+  video_title: 'Physiotutors: All Upper Limb Tension Tests | ULTT | ULNT'
+  summary: Neurodynamic provocation test biasing the ulnar nerve through the cubital tunnel and medial aspect of the upper limb.
+  steps:
+  - Position the patient supine; depress the shoulder girdle.
+  - Extend the wrist and fingers and pronate (or supinate) the forearm.
+  - Flex the elbow fully, externally rotate the shoulder, and abduct the glenohumeral joint toward the ear.
+  - Perform structural differentiation via cervical lateral flexion or releasing wrist extension.
+  positive: Reproduction of concordant medial elbow, ulnar forearm, or ring/little finger symptoms modified by structural differentiation.
+  interpretation: Assesses ulnar nerve mechanosensitivity in suspected cubital tunnel syndrome or C8–T1 radiculopathy.
+  metrics: Ulnar nerve / cubital tunnel neurodynamic screen (E)
+  sources: []
+- id: cozens-test
+  title: Cozen's Test (Resisted Wrist Extension)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=vPCkCcvD7P8
+  video_title: 'Physiotutors: Cozen''s Test | Lateral Epicondylalgia / Tennis Elbow'
+  summary: Classic contractile provocation test for lateral epicondylalgia (ECRB / common extensor origin).
+  steps:
+  - Stabilise the patient's elbow with your thumb palpating the lateral epicondyle.
+  - Ask the patient to make a fist, pronate the forearm, and radially deviate and extend the wrist.
+  - Apply downward resistance against wrist extension.
+  positive: Reproduction of sudden or concordant pain over the lateral epicondyle.
+  interpretation: Loads the extensor carpi radialis brevis (ECRB) and common extensor tendon origin.
+  metrics: Provocative contractile test for LET (E)
+  sources: []
+- id: mills-test
+  title: Mill's Test (Passive Wrist Flexion in Extension)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=r_HB-wUXcAQ
+  video_title: 'Physiotutors: Mill''s Test | Lateral Epicondylalgia / Tennis Elbow'
+  summary: Passive tensile stretch test of the common wrist extensor origin at the lateral epicondyle.
+  steps:
+  - Palpate the lateral epicondyle while pronating the patient's forearm and fully flexing the wrist and fingers.
+  - Passively extend the elbow fully to place maximal tensile stretch across the wrist extensor origin.
+  positive: Reproduction of concordant lateral epicondyle pain.
+  interpretation: Provokes lateral epicondylalgia via passive elongation of the wrist extensors (and may also sensitise the radial nerve).
+  metrics: Passive stretch test for LET (E)
+  sources: []
+- id: maudsleys-test
+  title: Maudsley's Test (Resisted Middle Finger Extension)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=BaxgmHT_2eQ
+  video_title: 'Physiotutors: Maudsley''s Lateral Epicondylitis Test⎟Lateral Epicondylitis or Tennis Elbow'
+  summary: Resisted third-digit extension test loading the extensor digitorum communis and ECRB/supinator interface.
+  steps:
+  - Support the forearm in pronation with the elbow extended or flexed and the wrist neutral.
+  - Apply downward resistance to the distal phalanx of the middle (third) finger while the patient actively extends the digit.
+  positive: Reproduction of pain over the lateral epicondyle (LET) or slightly distal over the radial tunnel / supinator mass.
+  interpretation: Selective loading of the extensor digitorum and deep radial tunnel structures.
+  metrics: Provocative test for LET / radial tunnel (E)
+  sources: []
+- id: let-chair-test
+  title: Chair Lift Test (Lateral Epicondylalgia)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  summary: Functional provocation test for lateral epicondylalgia using a pronated three-finger chair lift.
+  steps:
+  - Ask the patient to stand behind a light chair with the elbow extended and the forearm fully pronated.
+  - Instruct the patient to grasp the back of the chair using the thumb, index, and middle fingers and lift the chair.
+  positive: Reproduction of concordant pain at the lateral epicondyle.
+  interpretation: Combines elbow extension, forearm pronation, and wrist/finger extensor loading.
+  metrics: Functional provocation test for LET (E)
+  sources: []
+- id: medial-epicondylitis-test
+  title: Medial Epicondylitis Test (Golfer's Elbow)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=u5H9iG8QhYA
+  video_title: 'Physiotutors: Medial Epicondylitis Test | "Golfer''s Elbow"'
+  summary: Passive stretch and resisted wrist flexion/pronation provocation test for medial epicondylalgia.
+  steps:
+  - Palpate the medial epicondyle and common flexor-pronator tendon origin.
+  - Passively supinate the forearm and extend the elbow and wrist (passive stretch component), or resist active wrist flexion and forearm pronation.
+  positive: Reproduction of concordant pain directly over the medial epicondyle / common flexor-pronator origin.
+  interpretation: Provokes flexor-pronator tendinopathy; always screen the ulnar nerve and UCL in overhead athletes.
+  metrics: Provocative test for medial epicondylalgia (E)
+  sources: []
+- id: elbow-valgus-stress-test
+  title: Elbow Valgus Instability Stress Test (UCL)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=3xF9_5fbJ8A
+  video_title: 'Physiotutors: Elbow Valgus Instability Stress Test⎟Medial Collateral Ligament'
+  summary: Static valgus stress test assessing the integrity of the ulnar (medial) collateral ligament complex.
+  steps:
+  - Flex the patient's elbow slightly (unlocking the olecranon from the olecranon fossa) with the humerus externally rotated.
+  - Palpate the medial joint line / UCL while applying a valgus force at the distal forearm against a stabilised distal humerus.
+  positive: Medial joint-line gapping, soft end-feel, or reproduction of medial elbow pain compared with the uninjured elbow.
+  interpretation: Tests the anterior bundle of the UCL; combine with the moving valgus stress test and modified milking manoeuvre in throwers.
+  metrics: Static UCL laxity & pain provocation test (E)
+  sources: []
+- id: elbow-varus-stress-test
+  title: Elbow Varus Instability Stress Test (LCL)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=5zl8GsG3hR4
+  video_title: 'Physiotutors: Elbow Varus Instability Stress Test⎟Lateral Collateral Ligament'
+  summary: Static varus stress test assessing the lateral collateral ligament complex.
+  steps:
+  - Flex the patient's elbow slightly (unlocking the olecranon from its fossa) with the humerus internally rotated.
+  - Palpate the lateral joint line while applying a varus force at the distal forearm against a stabilised distal humerus.
+  positive: Excessive lateral gapping, loss of firm end-feel, or lateral joint-line pain compared with the uninjured side.
+  interpretation: Assesses lateral collateral ligament integrity; evaluate alongside posterolateral rotatory instability tests.
+  metrics: Static LCL laxity & pain provocation test (E)
+  sources: []
+- id: moving-valgus-stress-test
+  title: Moving Valgus Stress Test (UCL Tear)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=JIU_kv5VoQk
+  video_title: 'Physiotutors: The Moving Valgus Stress Test for MCL Tears of the Elbow'
+  summary: Dynamic valgus torque test across the throwing arc to detect ulnar collateral ligament tears.
+  steps:
+  - Abduct the shoulder to 90° and flex the elbow maximally.
+  - Apply a modest constant valgus torque to the elbow (externally rotating the shoulder to its limit).
+  - Quickly extend the elbow while maintaining the valgus torque and record the angle of maximum medial pain.
+  positive: Medial elbow pain over the UCL reproduced in the shear arc between 120° and 70° of flexion, with maximum pain near 90°.
+  interpretation: 'O''Driscoll 2005 (n = 21, surgery / arthroscopy reference): Sn 100% (17/17), Sp 75% (3/4); pain arc 120° to 70°, maximum at 90°. Sciascia 2026: moving valgus stress test Sn 98%, accuracy 93% (best to rule out); combining tests added nothing.'
+  metrics: 'SN: 100% (17/17) O''Driscoll 2005; 98% Sciascia 2026 (best to rule out) · SP: 75% (3/4) O''Driscoll 2005 · Accuracy 93% (Sciascia 2026); pain arc 120° to 70°, max at 90° (O''Driscoll 2005)'
+  sources:
+  - text: O'Driscoll 2005 Am J Sports Med
+    url: https://doi.org/10.1177/0363546504267804
+  - text: Sciascia 2026 Am J Sports Med
+    url: https://doi.org/10.1177/03635465261439107
+- id: modified-milking-manoeuvre
+  title: Modified Milking Manoeuvre (UCL)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=SwigwaZxBXE
+  video_title: 'Physiotutors: Modified Milking Maneuver | Medial/Ulnar Collateral Ligament Injury'
+  summary: Valgus stress manoeuvre pulling the patient's thumb with the forearm supinated to test the anterior bundle of the UCL.
+  steps:
+  - Seat the patient with the shoulder adducted, elbow flexed, and forearm fully supinated.
+  - Support the elbow while pulling inferiorly/laterally on the patient's thumb to impart a valgus stress across the medial elbow, palpating the UCL.
+  positive: Medial elbow pain, apprehension, or joint-line opening over the UCL.
+  interpretation: 'Sciascia 2026: milking manoeuvre LR+ 5.1, Sn 77% (best to rule in); moving valgus stress test Sn 98%, accuracy 93% (best to rule out); combining tests added nothing.'
+  metrics: 'SN: 77% · LR_POS: 5.1 (best to rule in)'
+  sources:
+  - text: Sciascia 2026 Am J Sports Med
+    url: https://doi.org/10.1177/03635465261439107
+- id: lateral-pivot-shift-test
+  title: Lateral Pivot-Shift / Apprehension Test (PLRI)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: L
+  video_url: https://www.youtube.com/watch?v=nBYWkxNu0Dw
+  video_title: 'Physiotutors: The Lateral Pivot-Shift / Apprehension Test | Posterolateral Rotatory Instability of the Elbow'
+  summary: Supine axial-valgus-supination manoeuvre testing for posterolateral rotatory instability (PLRI) of the elbow.
+  steps:
+  - Place the patient supine with the affected arm overhead and the shoulder externally rotated.
+  - With the forearm fully supinated, apply axial compression and valgus stress while flexing the elbow from full extension.
+  - Observe for posterolateral subluxation/dimpling of the radial head or patient apprehension, followed by a palpable clunk on reduction.
+  positive: Apprehension in the awake patient or visible/palpable subluxation and reduction clunk of the radial head.
+  interpretation: 'Regan 2006 (n = 8): pivot-shift positive awake in 3 (all under anaesthesia), whereas chair sign positive in 7 and push-up sign positive in 7; chair + push-up more sensitive than awake pivot-shift.'
+  metrics: Positive awake in 3 of 8 (all under anaesthesia); chair + push-up more sensitive awake (Regan 2006)
+  sources:
+  - text: Regan 2006 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2005.03.009
+- id: posterolateral-rotatory-drawer-test
+  title: Posterolateral Rotatory Drawer Test (PLRI)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: E
+  video_url: https://www.youtube.com/watch?v=uV--DOtjtb4
+  video_title: 'Physiotutors: The Posterolateral Rotatory Drawer Test | Posterolateral Rotatory Instability of the Elbow'
+  summary: Manual posterolateral translation test of the proximal radius and ulna on the humerus for LUCL insufficiency.
+  steps:
+  - Position the patient supine with the arm overhead and the elbow flexed.
+  - Stabilise the distal humerus with one hand and grasp the proximal forearm with the other.
+  - Apply a posterolateral rotatory force to the proximal radius (supinating the forearm around the intact medial collateral ligament) and assess translation/dimpling.
+  positive: Posterolateral subluxation of the radial head with a skin dimple proximal to the radial head or patient apprehension.
+  interpretation: Allows graded assessment of LUCL laxity in the awake patient without requiring high valgus/axial loads.
+  metrics: Posterolateral rotatory laxity test for LUCL insufficiency (E)
+  sources: []
+- id: tabletop-relocation-plri
+  title: Tabletop Relocation, Chair & Push-Up Apprehension Tests (PLRI)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: L
+  video_url: https://www.youtube.com/watch?v=gqCcdxWNVcw
+  video_title: 'Physiotutors: Tabletop Relocation Test | Posterolateral Rotatory Instability of the Elbow'
+  summary: Active weight-bearing axial-supination apprehension tests (chair sign, push-up sign, and tabletop relocation test) for posterolateral rotatory instability.
+  steps:
+  - 'Tabletop relocation test: patient stands in front of a table, places the hand over the lateral edge of the table with the forearm supinated, and performs a single-arm press-up; repeat while the examiner applies thumb pressure over the radial head to prevent subluxation, then release.'
+  - 'Chair sign (Regan 2006): seated patient pushes up from the armrests of a chair with the forearms supinated and elbows extending from flexion.'
+  - 'Push-up sign (Regan 2006): patient performs a floor push-up with the forearms maximally supinated.'
+  positive: Pain and apprehension during the supinated push-up/chair rise that is relieved by examiner thumb stabilisation of the radial head and recurs upon release.
+  interpretation: 'Regan 2006 (n = 8): chair sign positive in 7, push-up sign positive in 7; pivot-shift positive awake in 3 (all under anaesthesia); chair + push-up more sensitive than awake pivot-shift.'
+  metrics: Chair sign positive in 7 of 8; push-up sign positive in 7 of 8 (Regan 2006)
+  sources:
+  - text: Regan 2006 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2005.03.009
+- id: tinel-sign-elbow
+  title: Tinel Sign at the Elbow (Cubital Tunnel Syndrome)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=ASRatLbu8i0
+  video_title: 'Physiotutors: Tinel Sign Elbow | Cubital Tunnel Syndrome'
+  summary: Percussion test over the ulnar nerve in the retrocondylar groove / cubital tunnel.
+  steps:
+  - Support the patient's arm in slight elbow flexion and locate the ulnar nerve in the groove between the medial epicondyle and olecranon.
+  - Lightly percuss 4 to 6 times over the ulnar nerve pathway through the cubital tunnel.
+  positive: Reproduction of tingling or paraesthesia radiating distally into the ulnar distribution (ring and little fingers).
+  interpretation: 'Novak 1994 (32 patients, EMG-proven): Tinel Sn 0.70 (vs pressure + flexion at 30 seconds Sn 0.91). Cheng 2008: cubital tunnel Tinel Sn 54%, NPV 98% (scratch collapse Sn 69%, accuracy 89%).'
+  metrics: 'SN: 0.70 (Novak 1994); 54% (Cheng 2008) · NPV: 98% (Cheng 2008)'
+  sources:
+  - text: Novak 1994 J Hand Surg Am
+    url: https://doi.org/10.1016/0363-5023(94)90193-7
+  - text: Cheng 2008 J Hand Surg Am
+    url: https://doi.org/10.1016/j.jhsa.2008.05.022
+- id: elbow-flexion-test
+  title: Elbow Flexion & Pressure Provocation Test (Cubital Tunnel)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: M
+  video_url: https://www.youtube.com/watch?v=brN-VLUETVU
+  video_title: 'Physiotutors: Elbow Flexion Test | Cubital Tunnel Syndrome'
+  summary: Sustained elbow flexion and combined ulnar nerve compression test for cubital tunnel syndrome.
+  steps:
+  - 'Elbow flexion test: ask the patient to maximally flex the elbow with the forearm supinated and wrist neutral.'
+  - 'Combined pressure + flexion test (Novak 1994): apply direct digital pressure over the ulnar nerve just proximal to the cubital tunnel while holding the elbow in flexion for 30 seconds.'
+  positive: Reproduction of numbness or paraesthesia in the ulnar nerve distribution (ring and little fingers).
+  interpretation: 'Novak 1994 (32 patients, EMG-proven): at 30 seconds, elbow flexion Sn 0.32, pressure Sn 0.55, pressure + flexion Sn 0.91 (most sensitive); Tinel Sn 0.70. Cheng 2008: flexion/compression Sn 46%.'
+  metrics: 'SN: At 30 seconds: pressure + flexion 0.91 (most sensitive), pressure 0.55, elbow flexion 0.32 (Novak 1994); flexion/compression 46% (Cheng 2008)'
+  sources:
+  - text: Novak 1994 J Hand Surg Am
+    url: https://doi.org/10.1016/0363-5023(94)90193-7
+  - text: Cheng 2008 J Hand Surg Am
+    url: https://doi.org/10.1016/j.jhsa.2008.05.022
+- id: scratch-collapse-test
+  title: Scratch Collapse Test (Cubital Tunnel Syndrome)
+  page: 4
+  type: test
+  review_status: approved
+  evidence: L
+  video_url: https://www.youtube.com/watch?v=9oxXcL7nmK4
+  video_title: 'Physiotutors: Scratch Collapse Test | Cubital Tunnel Syndrome'
+  summary: Cutaneous silent-period provocation test over the cubital tunnel assessing transient loss of resisted shoulder external rotation.
+  steps:
+  - Seat the patient with the elbows flexed at the sides and forearms neutral; resist bilateral shoulder external rotation to establish baseline symmetric strength.
+  - Lightly scratch/swipe the skin directly over the ulnar nerve at the cubital tunnel.
+  - Immediately repeat resisted bilateral shoulder external rotation.
+  positive: Momentary unilateral collapse/give-way of resisted shoulder external rotation on the affected side immediately after scratching over the cubital tunnel.
+  interpretation: 'Cheng 2008: cubital tunnel Sn 69% (Tinel 54%, flexion/compression 46%), accuracy 89%; Tinel NPV 98%; carpal tunnel Sn 64%.'
+  metrics: 'SN: 69% (cubital tunnel); 64% (carpal tunnel) · Accuracy 89% in cubital tunnel (Cheng 2008)'
+  sources:
+  - text: Cheng 2008 J Hand Surg Am
+    url: https://doi.org/10.1016/j.jhsa.2008.05.022
+- id: prtee
+  title: PRTEE (Patient-Rated Tennis Elbow Evaluation)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Condition-specific questionnaire (5 pain items + 10 function items, 0–10 per item) evaluating elbow pain (0–50) and functional disability (0–50) for a total score of 0–100.
+  steps:
+  - 'Pain subscale (5 items, each 0–10): at rest, doing a task with repeated arm movement, carrying a plastic bag of groceries, when at its least, and when at its worst. Pain = sum of 5 pain items (0–50).'
+  - 'Function subscale (10 items, each 0–10: 6 specific activities + 4 usual activities). Function = sum of 10 function items ÷ 2 (0–50).'
+  - Total score = Pain + Function (0–100, higher score = worse pain and disability).
+  positive: Total score change ≥ 9 (MIC) / ≥ 17 (SDC95) in tennis elbow (Sveinall 2025) or ≥ 8.9 (MDC95, Shafiee 2022).
+  interpretation: 'Shafiee 2022 (SR): test-retest 0.96 (0.94–0.97); SEM 3.1 (1.8 to 4.4); MDC95 8.9 (5.3–12.5). Sveinall 2025 (tennis elbow): total (0–100) SDC95 17, MIC 9; pain subscale (0–50) SDC95 8, MIC 11; function subscale (0–50) SDC95 12, MIC 4.'
+  metrics: 'ICC: 0.96 (0.94–0.97); SEM 3.1 (1.8 to 4.4) (Shafiee 2022) · MDC: MDC95 8.9 (5.3–12.5) (Shafiee 2022); Sveinall 2025 SDC95: Total 17, Pain 8, Function 12 · MCID: Sveinall 2025 MIC: Total 9, Pain 11, Function 4'
+  calculator:
+    kind: formula
+    decimals: 1
+    value_label: / 100 PRTEE Total Score (Pain 0–50 + Function 0–50)
+    expr: (p1+p2+p3+p4+p5) + (f1+f2+f3+f4+f5+f6+f7+f8+f9+f10)/2
+    inputs:
+    - heading: Pain Subscale (5 items, 0–10 each; sum 0–50)
+    - key: p1
+      label: 1. Pain at rest
+      type: select
+      options: &id001
+      - - '0'
+        - 0 — No pain / no difficulty
+      - - '1'
+        - 1 — 1
+      - - '2'
+        - 2 — 2
+      - - '3'
+        - 3 — 3
+      - - '4'
+        - 4 — 4
+      - - '5'
+        - 5 — 5
+      - - '6'
+        - 6 — 6
+      - - '7'
+        - 7 — 7
+      - - '8'
+        - 8 — 8
+      - - '9'
+        - 9 — 9
+      - - '10'
+        - 10 — Worst pain / unable to do
+    - key: p2
+      label: 2. Pain when doing a task with repeated arm movement
+      type: select
+      options: *id001
+    - key: p3
+      label: 3. Pain when carrying a plastic bag of groceries
+      type: select
+      options: *id001
+    - key: p4
+      label: 4. Pain when it is at its least
+      type: select
+      options: *id001
+    - key: p5
+      label: 5. Pain when it is at its worst
+      type: select
+      options: *id001
+    - heading: Function Subscale — Specific & Usual Activities (10 items, 0–10 each; sum ÷ 2 = 0–50)
+    - key: f1
+      label: 6. Turn a doorknob or key
+      type: select
+      options: *id001
+    - key: f2
+      label: 7. Carry a grocery bag or briefcase by the handle
+      type: select
+      options: *id001
+    - key: f3
+      label: 8. Lift a full coffee cup or glass of milk to your mouth
+      type: select
+      options: *id001
+    - key: f4
+      label: 9. Open a jar
+      type: select
+      options: *id001
+    - key: f5
+      label: 10. Pull up pants
+      type: select
+      options: *id001
+    - key: f6
+      label: 11. Wring out a washcloth or wet towel
+      type: select
+      options: *id001
+    - key: f7
+      label: 12. Personal activities (dressing, washing)
+      type: select
+      options: *id001
+    - key: f8
+      label: 13. Household work (cleaning, maintenance)
+      type: select
+      options: *id001
+    - key: f9
+      label: 14. Work (your job or everyday main work)
+      type: select
+      options: *id001
+    - key: f10
+      label: 15. Recreational or sporting activities
+      type: select
+      options: *id001
+    outputs:
+    - when: v >= 0
+      text: 'Pain Subscale: {p1+p2+p3+p4+p5|1} / 50 (SDC95 = 8, MIC = 11) · Function Subscale: {(f1+f2+f3+f4+f5+f6+f7+f8+f9+f10)/2|1} / 50 (SDC95 = 12, MIC = 4) · Total Score: {v|1} / 100 (Sveinall 2025 SDC95 = 17, MIC = 9; Shafiee 2022 MDC95 = 8.9)'
+      tone: good
+  sources:
+  - text: Shafiee 2022 Disabil Rehabil
+    url: https://doi.org/10.1080/09638288.2021.1938248
+  - text: Sveinall 2025 Shoulder Elbow
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12122481/
+    free_full_text: true
+- id: oxford-elbow-score
+  title: Oxford Elbow Score (OES)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: M
+  summary: 12-item patient-reported outcome measure (each 0–4) with three 4-item domains (Function, Pain, Social-Psychological), converted to 0–100 where higher is better.
+  steps:
+  - Score 12 items from 0 to 4 across three domains (Function, Pain, Social-Psychological), 4 items each.
+  - Domain score = domain sum ÷ 16 × 100 (0–100, higher = better).
+  - Compare change against Dawson 2008 post-surgical MCIDs and Wänström 2024 elbow-injury SDC.
+  positive: Change ≥ 10 for Function, ≥ 18 for Pain and Social-Psychological after surgery (Dawson 2008); SDC 12.1 in elbow injury (Wänström 2024).
+  interpretation: 'Dawson 2008 (after surgery): MCID ≈ 10 for Function (similar to DASH), ≈ 18 for Pain and Social-Psychological. Wänström 2024 (elbow injury): SDC OES 12.1 (QuickDASH 11.4, SANE 1.94).'
+  metrics: 'MCID: ≈ 10 for Function, ≈ 18 for Pain and Social-Psychological (Dawson 2008) · MDC: SDC 12.1 in elbow injury (Wänström 2024)'
+  calculator:
+    kind: formula
+    decimals: 1
+    value_label: / 100 Oxford Elbow Score Overall (0–100, higher = better)
+    expr: ((fn1+fn2+fn3+fn4+pn1+pn2+pn3+pn4+sp1+sp2+sp3+sp4)/48)*100
+    inputs:
+    - heading: Function Domain (4 items, 0–4 each; sum ÷ 16 × 100)
+    - key: fn1
+      label: 1. Lifting objects in the home
+      type: select
+      options: &id002
+      - - '4'
+        - 4 — No difficulty / no pain (best)
+      - - '3'
+        - 3 — Mild / very little
+      - - '2'
+        - 2 — Moderate
+      - - '1'
+        - 1 — Extreme / severe
+      - - '0'
+        - 0 — Impossible / unremitting (worst)
+    - key: fn2
+      label: 2. Carrying bags of shopping
+      type: select
+      options: *id002
+    - key: fn3
+      label: 3. Washing yourself all over
+      type: select
+      options: *id002
+    - key: fn4
+      label: 4. Dressing yourself
+      type: select
+      options: *id002
+    - heading: Pain Domain (4 items, 0–4 each; sum ÷ 16 × 100)
+    - key: pn1
+      label: 5. Worst elbow pain during the day
+      type: select
+      options: *id002
+    - key: pn2
+      label: 6. Usual elbow pain during the day
+      type: select
+      options: *id002
+    - key: pn3
+      label: 7. Elbow pain at night in bed
+      type: select
+      options: *id002
+    - key: pn4
+      label: 8. Elbow pain interfering with sleep
+      type: select
+      options: *id002
+    - heading: Social-Psychological Domain (4 items, 0–4 each; sum ÷ 16 × 100)
+    - key: sp1
+      label: 9. Interference with work or everyday activities
+      type: select
+      options: *id002
+    - key: sp2
+      label: 10. Interference with leisure/social activities
+      type: select
+      options: *id002
+    - key: sp3
+      label: 11. Elbow controlling your life
+      type: select
+      options: *id002
+    - key: sp4
+      label: 12. Psychological distress / frustration from elbow
+      type: select
+      options: *id002
+    outputs:
+    - when: v >= 0
+      text: 'Function: {(fn1+fn2+fn3+fn4)/16*100|1}/100 (MCID ≈ 10) · Pain: {(pn1+pn2+pn3+pn4)/16*100|1}/100 (MCID ≈ 18) · Social-Psychological: {(sp1+sp2+sp3+sp4)/16*100|1}/100 (MCID ≈ 18) · Overall SDC = 12.1 (Wänström 2024)'
+      tone: good
+  sources:
+  - text: Dawson 2008 Qual Life Res
+    url: https://doi.org/10.1007/s11136-008-9409-3
+  - text: Wänström 2024 JSES Int
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11258825/
+    free_full_text: true
+- id: quickdash
+  title: QuickDASH (11-Item Upper Extremity Disability Scale)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: M
+  summary: 11-item upper-limb disability questionnaire (scored 1–5 per item; at least 10 items required) transformed to a 0–100 scale.
+  steps:
+  - Rate 11 upper-extremity symptom and function items from 1 (no difficulty/none) to 5 (unable/extreme). At least 10 items must be answered.
+  - Compute Score = ((sum ÷ n) − 1) × 25 (0–100, higher = greater disability).
+  - Compare change in elbow injury against the Wänström 2024 SDC.
+  positive: Change exceeding SDC 11.4 in elbow injury (Wänström 2024).
+  interpretation: 'Wänström 2024 (elbow injury): SDC QuickDASH 11.4 (OES 12.1, SANE 1.94).'
+  metrics: 'MDC: SDC 11.4 in elbow injury (Wänström 2024)'
+  calculator:
+    kind: formula
+    decimals: 1
+    value_label: / 100 QuickDASH Score (0–100, at least 10 items answered)
+    expr: '(((q1>0)+(q2>0)+(q3>0)+(q4>0)+(q5>0)+(q6>0)+(q7>0)+(q8>0)+(q9>0)+(q10>0)+(q11>0)) >= 10) ? ((((q1+q2+q3+q4+q5+q6+q7+q8+q9+q10+q11) / ((q1>0)+(q2>0)+(q3>0)+(q4>0)+(q5>0)+(q6>0)+(q7>0)+(q8>0)+(q9>0)+(q10>0)+(q11>0))) - 1) * 25) : NaN'
+    inputs:
+    - heading: QuickDASH Items (1–5 each; answer at least 10 of 11 items)
+    - key: q1
+      label: 1. Open a tight or new jar
+      type: select
+      options: &id003
+      - - '0'
+        - — Not answered —
+      - - '1'
+        - 1 — No difficulty / none
+      - - '2'
+        - 2 — Mild difficulty / mild
+      - - '3'
+        - 3 — Moderate difficulty / moderate
+      - - '4'
+        - 4 — Severe difficulty / severe
+      - - '5'
+        - 5 — Unable / extreme
+    - key: q2
+      label: 2. Do heavy household chores
+      type: select
+      options: *id003
+    - key: q3
+      label: 3. Carry a shopping bag or briefcase
+      type: select
+      options: *id003
+    - key: q4
+      label: 4. Wash your back
+      type: select
+      options: *id003
+    - key: q5
+      label: 5. Use a knife to cut food
+      type: select
+      options: *id003
+    - key: q6
+      label: 6. Recreational activities with force/impact through arm
+      type: select
+      options: *id003
+    - key: q7
+      label: 7. Interference with normal social activities
+      type: select
+      options: *id003
+    - key: q8
+      label: 8. Limited in work or regular daily activities
+      type: select
+      options: *id003
+    - key: q9
+      label: 9. Arm, shoulder, or hand pain severity
+      type: select
+      options: *id003
+    - key: q10
+      label: 10. Tingling (pins and needles) in arm, shoulder, or hand
+      type: select
+      options: *id003
+    - key: q11
+      label: 11. Difficulty sleeping because of arm, shoulder, or hand pain
+      type: select
+      options: *id003
+    outputs:
+    - when: v >= 0
+      text: 'QuickDASH Score: {v|1} / 100 · Elbow injury SDC = 11.4 (Wänström 2024)'
+      tone: good
+  sources:
+  - text: Wänström 2024 JSES Int
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11258825/
+    free_full_text: true
+- id: kjoc-score
+  title: KJOC Shoulder and Elbow Score (Overhead Throwers)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: L
+  summary: Kerlan-Jobe Orthopaedic Clinic overhead-athlete performance scale validated in throwers after UCL reconstruction and repair.
+  steps:
+  - Administer the 10-item visual analogue scale (0–100, higher = better performance) to overhead throwers returning to competition.
+  - Evaluate against the Domb 2010 threshold separating playing without pain (category 1) from not playing due to arm trouble (category 3).
+  positive: Threshold 81.3 separates category 1 from category 3 in throwers after UCL reconstruction.
+  interpretation: 'Domb 2010: correlates with DASH (−.693) and DASH sports (−0.804); threshold 81.3 separates category 1 from 3. Dugas 2019 (UCL repair with internal brace in 111 throwers): mean KJOC 88.2.'
+  metrics: Threshold 81.3 separates category 1 from 3 (Domb 2010); mean 88.2 after UCL internal brace repair (Dugas 2019)
+  sources:
+  - text: Domb 2010 Am J Sports Med
+    url: https://doi.org/10.1177/0363546509359060
+  - text: Dugas 2019 Am J Sports Med
+    url: https://doi.org/10.1177/0363546519833684
+- id: meps-score
+  title: Mayo Elbow Performance Score (MEPS)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Clinician- and patient-rated elbow score combining pain, ulnohumeral motion arc, stability, and daily functional tasks.
+  steps:
+  - 'Assess four domains: Pain, Motion arc, Stability, and Daily Function.'
+  - Use longitudinally in post-traumatic stiffness, arthrolysis, fracture, and arthroplasty populations.
+  positive: Higher scores reflect superior pain relief, motion, stability, and function.
+  interpretation: 'Widely used surgical outcome scale (e.g., Lanzerath 2023 arthrolysis SR: MEPS excellent/good 88.8% open, 91.8% arthroscopic).'
+  metrics: Used across post-traumatic stiffness & surgical outcome studies (E)
+  sources: []
+- id: nprs
+  title: Numeric Pain Rating Scale (NPRS 0–10)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: E
+  summary: 11-point numeric scale (0–10) rating current, best, and worst elbow pain and pain on gripping.
+  steps:
+  - Ask the patient to rate their elbow pain from 0 (no pain) to 10 (worst imaginable pain) at rest, with activity, and during pain-free/maximum grip testing.
+  positive: In tennis elbow, pain on gripping (0–10) has SDC95 4 and MIC 3.5 (Sveinall 2025).
+  interpretation: 'Sveinall 2025: pain on gripping (0–10) SDC95 4, MIC 3.5.'
+  metrics: 'MDC: Pain on gripping SDC95 4 (0–10) (Sveinall 2025) · MCID: Pain on gripping MIC 3.5 (0–10) (Sveinall 2025)'
+  calculator:
+    kind: scale
+    items: 1
+    min: 0
+    max: 10
+    step: 1
+    aggregate: sum
+    decimals: 0
+    value_label: / 10 NPRS Pain Rating
+    item_labels:
+    - Current / gripping elbow pain (0 = no pain, 10 = worst imaginable pain)
+  sources:
+  - text: Sveinall 2025 Shoulder Elbow
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12122481/
+    free_full_text: true
+- id: psfs
+  title: Patient-Specific Functional Scale (PSFS 0–10)
+  page: 4
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Patient-nominated activity scale rating 3 functional tasks from 0 (unable to perform) to 10 (able to perform at pre-injury level).
+  steps:
+  - Ask the patient to identify up to 3 important activities limited by their elbow problem (e.g., lifting, gripping, throwing, desk work).
+  - Score each activity from 0 (unable to perform) to 10 (able to perform at prior level) and average the scores.
+  positive: Higher average score (0–10) indicates improved patient-specific function.
+  interpretation: Tracks individualized functional goals across conservative and post-operative elbow rehabilitation.
+  metrics: Mean of patient-selected functional activities (0–10) (E)
+  calculator:
+    kind: scale
+    items: 3
+    min: 0
+    max: 10
+    step: 1
+    aggregate: mean
+    decimals: 1
+    value_label: / 10 PSFS Mean Score
+    item_labels:
+    - Activity 1 (0 = unable to perform, 10 = pre-injury level)
+    - Activity 2 (0 = unable to perform, 10 = pre-injury level)
+    - Activity 3 (0 = unable to perform, 10 = pre-injury level)
+  sources: []
+- id: distal-biceps-repair-rehab
+  title: 'Distal Biceps Repair: Complications, Incision Approach & Early Motion RCT'
+  page: 5
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Evidence on neurological complications, single vs double incision, and early motion vs immobilisation after distal biceps tendon repair.
+  steps:
+  - POST-OP RESTRICTIONS ARE SURGEON-DIRECTED.
+  - 'Complications (Amarasooriya 2020 SR): major complications 4.6%; minor 20.4% (n = 630); most common lateral (antebrachial) cutaneous nerve injury 9.2% (n = 283); LABCN injury higher with limited anterior vs extensile single incision (9.7% vs 5.2%, P = .03); superficial radial nerve injury higher with extensile vs limited incision (6% vs 2.1%, P = .002); fixation technique had no effect on rerupture or PIN injury.'
+  - 'Single vs double incision (Amin 2016 MA): LABCN neurapraxia most common after single incision: 77 of 785 (9.8%).'
+  - 'Early motion vs immobilisation (Bergman 2021 RCT, cortical button): no difference in return to work (p ≥ 0.83); "No clinically important group differences were seen".'
+  positive: Monitor lateral antebrachial cutaneous nerve (LABCN), superficial radial nerve, and posterior interosseous nerve (PIN) function post-operatively.
+  interpretation: In a cortical-button RCT, early motion vs immobilisation made no difference to return to work (p ≥ 0.83) and "No clinically important group differences were seen" (Bergman 2021). POST-OP RESTRICTIONS ARE SURGEON-DIRECTED.
+  metrics: Major complications 4.6%, minor 20.4%, LABCN 9.2% (Amarasooriya 2020) / 9.8% (Amin 2016); early motion vs immobilisation p ≥ 0.83 (Bergman 2021)
+  sources:
+  - text: Amarasooriya 2020 Am J Sports Med
+    url: https://doi.org/10.1177/0363546519899933
+  - text: Amin 2016 Orthop J Sports Med
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5056595/
+    free_full_text: true
+  - text: Bergman 2021 J Bone Joint Surg Am
+    url: https://doi.org/10.2106/JBJS.20.02047
+- id: ucl-reconstruction-repair
+  title: 'UCL Reconstruction & Internal Brace Repair: RTS & Rehabilitation'
+  page: 5
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Return-to-sport rates, surgical technique comparisons, internal brace repair outcomes, and rehabilitation components after UCL surgery.
+  steps:
+  - POST-OP RESTRICTIONS ARE SURGEON-DIRECTED.
+  - 'UCL reconstruction SR (Erickson 2015 OJSM, 20 studies, 2019 athletes): pooled return to sport 86.2%; 90% excellent/good (Conway-Jobe); RTS collegiate 95.5% vs high school 89.4% vs professional 86.4%; docking 97.0%, ASMI 93.3%, Jobe 66.7%.'
+  - 'Large series (Cain 2010, 743 athletes ≥ 2 y): 83% returned to the same or higher level in less than 1 year.'
+  - 'UCL repair with internal brace (Dugas 2019, 111 throwers): 92% (102/111) returned to the same or higher level at a mean 6.7 months; mean KJOC 88.2.'
+  - 'Rehab & RTS criteria SR (Kemler 2022, 33 studies, 3480 athletes): RTS timelines 6.5 to 16 months; protocols most often used bracing with progressive ROM (93.9%), strengthening (84.8%) and an interval throwing programme (81.8%); no study fully defined RTS criteria.'
+  positive: High return-to-sport rates across UCL reconstruction (86.2% pooled; 83% in < 1 year) and internal brace repair (92% at mean 6.7 months).
+  interpretation: Rehabilitation integrates progressive ROM, strengthening, and a structured interval throwing programme.
+  metrics: Pooled RTS 86.2% (Erickson 2015); 83% < 1 y (Cain 2010); internal brace 92% at 6.7 mo, KJOC 88.2 (Dugas 2019); RTS 6.5–16 mo (Kemler 2022)
+  sources:
+  - text: Erickson 2015 Orthop J Sports Med
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4687831/
+    free_full_text: true
+  - text: Cain 2010 Am J Sports Med
+    url: https://doi.org/10.1177/0363546510378100
+  - text: Dugas 2019 Am J Sports Med
+    url: https://doi.org/10.1177/0363546519833684
+  - text: Kemler 2022 Am J Sports Med
+    url: https://doi.org/10.1177/03635465211033994
+- id: let-surgery-vs-sham-kroslak
+  title: Surgical Excision vs Sham Surgery for Lateral Epicondylitis (Kroslak 2018)
+  page: 5
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Double-blind randomised controlled trial comparing surgical excision of the macroscopically degenerated portion of ECRB with sham skin-incision surgery.
+  steps:
+  - 'Kroslak 2018 (RCT, n = 26): compared open nirschl-type excision of the degenerated ECRB tendon origin against sham surgery (skin exposure only).'
+  - 'Result: no significant difference in any parameter at any stage; > 6500 patients per group would be needed to show a difference.'
+  positive: Surgical ECRB debridement offers no benefit over sham surgery.
+  interpretation: In a small sham-controlled RCT (n = 26), ECRB excision was no better than sham surgery in any parameter at any stage (Kroslak 2018).
+  metrics: n = 26; no significant difference in any parameter; > 6500 patients/group needed to show difference
+  sources:
+  - text: Kroslak 2018 Am J Sports Med
+    url: https://doi.org/10.1177/0363546517753385
+- id: elbow-stiffness-arthrolysis-splinting
+  title: 'Post-Traumatic Elbow Stiffness: Arthrolysis & Static Progressive vs Dynamic Splinting'
+  page: 5
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Evidence on open vs arthroscopic elbow arthrolysis and static progressive vs dynamic splinting for post-traumatic elbow contracture.
+  steps:
+  - 'Arthrolysis SR (Kodde 2013, 30 studies, 798 pts): ROM gain 51°, 40°, 88°, 56° and complications 23, 5, 73, 58% for open, arthroscopic, open + external fixator, open + distraction arthroplasty.'
+  - 'Arthrolysis SR (Lanzerath 2023, 27 studies, 1666 pts): success (MEPS excellent/good): open 88.8% (revision 6.3%, other complications 18.1%); arthroscopic 91.8% (revision 1.6%, complications 9.1%).'
+  - 'Splinting RCT (Lindenhovius 2012, n = 66): no difference between static progressive and dynamic splinting; stiffness "can improve with exercises and dynamic or static splinting over a period of six to twelve months, and patience is warranted".'
+  positive: Exercises plus static progressive or dynamic splinting improve motion over 6–12 months; arthroscopic arthrolysis has lower complication rates than open procedures.
+  interpretation: Post-traumatic stiffness "can improve with exercises and dynamic or static splinting over a period of six to twelve months, and patience is warranted" (Lindenhovius 2012); arthrolysis gains and complication rates differ by technique (Kodde 2013, Lanzerath 2023).
+  metrics: Open vs arthroscopic MEPS excellent/good 88.8% vs 91.8% (Lanzerath 2023); splinting improves over 6–12 mo (Lindenhovius 2012)
+  sources:
+  - text: Kodde 2013 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2012.11.010
+  - text: Lanzerath 2023 Arch Orthop Trauma Surg
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10110632/
+    free_full_text: true
+  - text: Lindenhovius 2012 J Bone Joint Surg Am
+    url: https://doi.org/10.2106/JBJS.J.01761
+- id: elbow-heterotopic-ossification
+  title: Heterotopic Ossification (HO) After Elbow Fracture-Dislocation & Arthroplasty
+  page: 5
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Incidence and risk factors for heterotopic ossification following surgical elbow fracture-dislocation and total elbow arthroplasty.
+  steps:
+  - 'Shukla 2015: heterotopic ossification occurred in 12 of 28 elbows (43%) after surgical fracture-dislocation, and in 7 of 9 (77%) after multiple closed reductions.'
+  - 'Khan 2019 (SR, total elbow arthroplasty): radiographic HO 10%, symptomatic HO 3%.'
+  positive: Progressive loss of motion with firm/bony end-feel and local warmth/swelling after elbow trauma or surgery.
+  interpretation: In one retrospective cohort, HO formed in 12 of 28 elbows (43%) after surgical fracture-dislocation and in 7 of 9 (77%) after multiple closed reductions (Shukla 2015); after total elbow arthroplasty HO was radiographic in 10%, symptomatic in 3% (Khan 2019).
+  metrics: Fracture-dislocation 43% (12/28), multiple closed reductions 77% (7/9) (Shukla 2015); TEA radiographic 10%, symptomatic 3% (Khan 2019)
+  sources:
+  - text: Shukla 2015 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2014.11.037
+  - text: Khan 2019 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2018.10.003
+- id: radial-head-fracture-rehab
+  title: 'Radial Head & Mason I–II Elbow Fractures: Early Mobilisation & Non-Operative Trials'
+  page: 5
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Randomised trials and Cochrane evidence on early mobilisation and non-operative management of Mason I–II radial head fractures.
+  steps:
+  - 'Liow 2002 (RCT, n = 60): immediate mobilisation gave less pain and better function at 1 week, with no harm.'
+  - 'Paschos 2013 (RCT, n = 180): early mobilisation is safe and effective; a delay of 48 hours before early mobilisation "could be advantageous".'
+  - 'Harding 2011 (Cochrane): no difference between early and delayed mobilisation in pain or ROM limitation (Mason I–II); all participants returned to full ADL, none changed occupation.'
+  - 'Mulders 2021 (RCT, Mason II): operative vs non-operative management showed similar function at 1 year.'
+  positive: Early active mobilisation (immediate or after 48 hours) is safe and effective in stable Mason I–II radial head fractures.
+  interpretation: Early mobilisation of minimally displaced / Mason I–II radial head fractures was safe in RCTs (Liow 2002, Paschos 2013); Cochrane found no difference between early and delayed mobilisation in pain or ROM limitation (Harding 2011).
+  metrics: Immediate/48-h early mobilisation safe & effective (Liow 2002, Paschos 2013, Harding 2011); Mason II op vs non-op similar at 1 y (Mulders 2021)
+  sources:
+  - text: Liow 2002 Injury
+    url: https://doi.org/10.1016/s0020-1383(02)00164-x
+  - text: Paschos 2013 J Orthop Trauma
+    url: https://doi.org/10.1097/BOT.0b013e31825cf765
+  - text: Harding 2011 Cochrane
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12641243/
+    free_full_text: true
+  - text: Mulders 2021 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/j.jse.2021.02.025
+- id: corticosteroid-injection-let
+  title: Corticosteroid Injection in Lateral Epicondylalgia (Bisset 2006, Coombes 2010 & 2013)
+  page: 6
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Short-term analgesia vs intermediate/long-term harm and recurrence after corticosteroid injection for lateral epicondylalgia.
+  steps:
+  - 'Bisset 2006 (BMJ RCT, n = 198): better at 6 weeks, but "paradoxically reversed after six weeks, with high recurrence rates"; worse than physiotherapy at 52 weeks (NNT 4); 47/65 (72%) deteriorated after 3 or 6 weeks.'
+  - 'Coombes 2010 (Lancet SR, 41 RCTs): lateral epicondylalgia: large short-term pain effect vs no intervention (SMD 1·44, 1·17–1·71) but no intervention favoured at intermediate term (−0·40, −0·67 to −0·14) and long term (−0·31, −0·61 to −0·01); serious adverse event (tendon rupture) in 1 of 991 (0·1%).'
+  - 'Coombes 2013 (JAMA RCT, n = 165, corticosteroid vs placebo injection ± physio): 1 year: recovery 83% vs 96% (RR 0.86, 99% CI 0.75–0.99); recurrence 54% vs 12% (RR 0.23, 0.10–0.51); 26 weeks: 55% vs 85% (RR 0.79, 0.62–0.99).'
+  positive: Corticosteroid injection increases 1-year recurrence (54% vs 12%) and lowers 1-year recovery (83% vs 96%) compared with placebo.
+  interpretation: 'Short-term benefit reverses: outcomes at 26–52 weeks are worse than placebo, physiotherapy or wait-and-see, with high recurrence (Bisset 2006; Coombes 2010; Coombes 2013).'
+  metrics: Short-term SMD 1·44 (1·17–1·71), intermediate −0·40, long-term −0·31 (Coombes 2010); 1-y recurrence 54% vs 12% (Coombes 2013); 72% deteriorated (Bisset 2006)
+  sources:
+  - text: Bisset 2006 BMJ
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC1633771/
+    free_full_text: true
+  - text: Coombes 2010 Lancet
+    url: https://doi.org/10.1016/S0140-6736(10)61160-9
+  - text: Coombes 2013 JAMA
+    url: https://doi.org/10.1001/jama.2013.129
+- id: prp-autologous-blood-let
+  title: PRP & Autologous Blood Injections for Lateral Epicondylalgia (Karjalainen 2021, Kim 2021)
+  page: 6
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Cochrane review and meta-analysis evidence comparing platelet-rich plasma (PRP) and autologous blood (AB) injections against placebo/control.
+  steps:
+  - 'Karjalainen 2021 (Cochrane, 8 studies): vs placebo at 3 months: pain 0.16 points better (0–10), function 2 points (0–100) — not clinically important.'
+  - 'Kim 2021 (JSES Int MA): PRP vs control: function SMD 0.14 (−0.45 to 0.73); autologous blood vs control: function −0.07 (−0.64 to 0.50); strengthening vs no treatment: pain MD −0.07 (−0.56 to 0.41), function SMD −0.08 (−0.46 to 0.30); "does not support the use of nonoperative treatment options including physiotherapy (strengthening), CSI, PRP, or AB".'
+  positive: Neither PRP nor autologous blood provides clinically important benefit over placebo.
+  interpretation: 'Cochrane review: PRP / autologous blood gave no clinically important benefit over placebo at 3 months (pain 0.16 points on 0–10; function 2 points on 0–100) (Karjalainen 2021).'
+  metrics: '3-mo vs placebo: pain 0.16 pts (0–10), function 2 pts (0–100) (Karjalainen 2021); PRP SMD 0.14, AB −0.07 (Kim 2021)'
+  sources:
+  - text: Karjalainen 2021 Cochrane
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8481072/
+    free_full_text: true
+  - text: Kim 2021 JSES Int
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8888180/
+    free_full_text: true
+- id: eswt-laser-elbow
+  title: ESWT, Low-Level Laser (904 nm) & Electrophysical Agents in LET
+  page: 6
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Evidence and JOSPT LET CPG recommendations for shockwave therapy, 904 nm low-level laser, ultrasound, phonophoresis, iontophoresis, and cryotherapy + TENS.
+  steps:
+  - 'ESWT (Buchbinder 2005 Cochrane): one trial (93 participants): steroid injection may be more effective than ESWT.'
+  - 'Low-level laser (Bjordal 2008 MA): vs control: pain WMD 10.2 mm (3.0 to 17.5) on 100 mm VAS; 904 nm directly on the tendon (5 trials): 17.2 mm (8.5 to 25.9) more than placebo; pain-free grip SMD 0.66 (0.42 to 0.90).'
+  - 'JOSPT LET CPG (Lucado 2022) — electrophysical agents: ultrasound: "a recommendation cannot be made for the use of ultrasound as a stand-alone treatment"; "Clinicians should not use phonophoresis with 10% hydrocortisone gel, topical prednisolone (2 mg/d), or 1% diclofenac sodium gel"; "may use iontophoresis with an anti-inflammatory drug, early in the rehabilitation phase (no later than 2–4 weeks from onset or aggravation of symptoms), in individuals presenting with highly irritable symptoms"; "may use laser therapy for improvements in pain and grip strength, seen in follow-up periods >4 weeks to 6 months"; "may use cryotherapy combined with burst transcutaneous electrical nerve stimulation (TENS) to reduce pain in the short term in individuals with symptoms of LET for greater than 30 days".'
+  positive: 904 nm laser directly on the tendon improves pain (WMD 17.2 mm) and pain-free grip (SMD 0.66); phonophoresis is recommended against ("should not").
+  interpretation: Select passive modalities only as targeted adjuncts according to symptom irritability and duration.
+  metrics: 'Laser WMD 10.2 mm (904 nm: 17.2 mm), PFG SMD 0.66 (Bjordal 2008); ESWT 1 trial n = 93 (Buchbinder 2005)'
+  sources:
+  - text: Buchbinder 2005 Cochrane
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8717012/
+    free_full_text: true
+  - text: Bjordal 2008 BMC Musculoskelet Disord
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2442599/
+    free_full_text: true
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: elbow-orthoses-taping
+  title: Counterforce / Wrist Orthoses, Rigid Taping & Kinesiology Tape in LET
+  page: 6
+  type: info
+  review_status: approved
+  evidence: L
+  summary: Cochrane review and JOSPT LET CPG recommendations on forearm counterforce / wrist orthoses, rigid diamond/deloading taping, and kinesiology tape.
+  steps:
+  - 'Orthoses / counterforce brace (Struijs 2002 Cochrane): "No definitive conclusions can be drawn concerning effectiveness of orthotic devices".'
+  - 'JOSPT LET CPG (Lucado 2022): "Clinicians may use a forearm counterforce or wrist support orthosis to be worn during activity for immediate improvement of pain and strength in those with LET whose symptoms are aggravated with activity"; for intermediate or long-term symptoms: "a recommendation cannot be made".'
+  - 'Rigid taping (Lucado 2022): "Clinicians should use rigid taping techniques for immediate/short-term pain relief and improvement in pain-free muscle function in those with irritable LET".'
+  - 'Kinesiology tape (Lucado 2022): "Clinicians may use kinesiology tape application as part of a multimodal treatment program for immediate and short-term management of pain and muscle function".'
+  positive: Rigid taping ("should") and activity orthoses / kinesiology tape ("may") provide immediate/short-term symptom modulation in irritable LET.
+  interpretation: Use taping or counterforce bracing to enable pain-free loading and daily activity in irritable presentations.
+  metrics: Struijs 2002 Cochrane + Lucado 2022 JOSPT LET CPG
+  sources:
+  - text: Struijs 2002 Cochrane
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8407516/
+    free_full_text: true
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: mwm-elbow
+  title: Mobilisation with Movement (MWM Lateral Glide) for Lateral Epicondylalgia
+  page: 7
+  type: info
+  review_status: approved
+  evidence: H
+  summary: Mulligan lateral-glide mobilisation with movement combined with pain-free gripping and exercise in lateral epicondylalgia.
+  steps:
+  - Stabilise the distal humerus medially while applying a sustained pain-free lateral glide to the proximal ulna and radius just distal to the elbow joint line.
+  - While maintaining the lateral glide, instruct the patient to perform a pain-free grip squeeze; adjust glide angle/force so the grip is completely pain-free, and repeat in sets.
+  - 'Vicenzino 2001 (crossover RCT): specific, immediate hypoalgesia on the affected side.'
+  - 'Coombes 2013 (JAMA RCT, n = 165): at 4 weeks, placebo injection + physiotherapy (MWM + exercise): recovered/much improved 39% vs 10% without physio (RR 4.00, 1.07–15.00); at 1 year physio vs no physio 91% vs 88% (RR 1.04, 0.90–1.19), recurrence 29% vs 38%.'
+  positive: Immediate increase in pain-free grip force during the sustained lateral glide and accelerated 4-week recovery (RR 4.00).
+  interpretation: Physiotherapy (MWM + exercise) improved 4-week recovery vs no physiotherapy (39% vs 10%) but not 1-year outcomes (91% vs 88%) (Coombes 2013); MWM gives immediate, specific hypoalgesia (Vicenzino 2001).
+  metrics: '4-wk placebo + physio vs no physio: 39% vs 10% recovered/much improved, RR 4.00 (1.07–15.00); 1-y 91% vs 88%, RR 1.04 (0.90–1.19), recurrence 29% vs 38% (Coombes 2013)'
+  sources:
+  - text: Vicenzino 2001 Man Ther
+    url: https://doi.org/10.1054/math.2001.0411
+  - text: Coombes 2013 JAMA
+    url: https://doi.org/10.1001/jama.2013.129
+- id: elbow-joint-mobilisation-friction
+  title: Elbow Joint Mobilisation, Deep Friction, IASTM & Dry Needling in LET
+  page: 7
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Systematic review and JOSPT LET CPG evidence on local/regional joint mobilisation, deep transverse friction, IASTM, and dry needling.
+  steps:
+  - 'Joint mobilisation SR/MA (Lucado 2019): "compelling evidence that joint mobilizations have a positive effect on both pain and/or functional grip scores across all time frames compared to control groups".'
+  - 'Deep transverse friction (Loew 2014 Cochrane): uncertain whether it improves pain and function (very low-quality evidence).'
+  - 'JOSPT LET CPG (Lucado 2022): "Clinicians should use local elbow joint manipulation or mobilization techniques to reduce pain and increase pain-free grip strength … for those who can tolerate the specific technique"; "may use manipulation or mobilization techniques directed at the cervical spine, thoracic spine, and/or wrist as an adjunct to local treatment for short-term pain relief … when impairments in those regions are identified"; "may use instrument-assisted soft tissue mobilization combined with exercise to improve pain and function in those with chronic LET"; deep transverse friction: "a recommendation cannot be made"; "Clinicians should use either tendon or trigger point dry needling for the treatment of pain and functional deficits associated with LET".'
+  positive: Local elbow mobilisation/manipulation ("should") and tendon/trigger-point dry needling ("should") are recommended; deep transverse friction is not supported.
+  interpretation: Combine local elbow joint mobilisation with progressive wrist extensor loading.
+  metrics: Lucado 2019 SR + Loew 2014 Cochrane + Lucado 2022 JOSPT LET CPG
+  sources:
+  - text: Lucado 2019 J Hand Ther
+    url: https://doi.org/10.1016/j.jht.2018.01.010
+  - text: Loew 2014 Cochrane
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7154576/
+    free_full_text: true
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+- id: cubital-tunnel-conservative-care
+  title: 'Cubital Tunnel Syndrome: Conservative Management (Splinting, Education & Neural Gliding)'
+  page: 7
+  type: info
+  review_status: approved
+  evidence: E
+  summary: Non-operative management of mild-to-moderate cubital tunnel syndrome focusing on flexion avoidance, night splinting, ergonomic modification, and ulnar nerve gliding.
+  steps:
+  - 'Patient education and ergonomic modification: avoid prolonged elbow flexion (phone use, sleeping with flexed elbows) and direct pressure on the medial epicondyle / retrocondylar groove.'
+  - 'Night splinting / towel wrap: maintain the elbow in comfortable extension at night to prevent sustained intraneural traction and compression.'
+  - Gentle ulnar nerve sliders/gliding exercises performed without provoking distal paraesthesia or numbness.
+  positive: Reduction in nocturnal paraesthesia and ulnar sensory symptoms; refer for surgical consultation if progressive intrinsic hand weakness/atrophy occurs.
+  interpretation: First-line conservative management for cubital tunnel syndrome without motor denervation.
+  metrics: Activity modification, night splinting & non-provocative ulnar nerve gliding (E)
+  sources: []
+- id: let-exercise-rehab
+  title: Lateral Epicondylalgia Exercise Therapy & Progressive Loading
+  page: 8
+  type: info
+  review_status: approved
+  evidence: H
+  video_url: https://www.youtube.com/watch?v=Lf695_IJO8g
+  video_title: 'Physiotutors: Lateral Epicondylalgia Exercises | Tennis Elbow Rehab'
+  summary: JOSPT LET CPG therapeutic exercise recommendations, meta-analytic comparison, and 52-week RCT outcomes.
+  steps:
+  - 'JOSPT LET CPG (Lucado 2022): "Clinicians should use isometric, concentric, and/or eccentric therapeutic resisted exercises of the wrist extensors in the treatment of individuals with subacute or chronic LET"; "should use therapeutic resisted wrist extension strengthening exercises in combination with other therapeutic interventions, including manual therapy"; "may use a phased approach to reintroduce stress, increase strength, improve endurance, and restore optimal motor control" in high-demand occupations, hobbies, performing arts or sport; "may include shoulder and scapular stabilizer muscle training exercises, when impairments are identified".'
+  - 'Natural course comparison: at 52 weeks physiotherapy 91% vs wait-and-see 83% success (Smidt 2002); MWM + exercise vs no physio 91% vs 88% at 1 year (Coombes 2013).'
+  - 'Strengthening vs no treatment MA (Kim 2021): pain MD −0.07 (−0.56 to 0.41), function SMD −0.08 (−0.46 to 0.30).'
+  - Also address medial epicondylalgia (progressive flexor-pronator loading), kinetic-chain shoulder/scapular control, and graded return to work/sport (E).
+  positive: Multimodal resisted wrist extensor loading (isometric, concentric, eccentric) combined with manual therapy and kinetic-chain training.
+  interpretation: Match exercise contraction mode and load to symptom irritability and occupational/sporting demand.
+  metrics: '52-wk success: physio 91% vs wait-and-see 83% (Smidt 2002); MWM + exercise 91% vs 88% at 1 y (Coombes 2013); Kim 2021 pain MD −0.07, function SMD −0.08'
+  sources:
+  - text: Lucado 2022 JOSPT LET CPG
+    url: https://doi.org/10.2519/jospt.2022.0302
+  - text: Smidt 2002 Lancet
+    url: https://doi.org/10.1016/S0140-6736(02)07811-X
+  - text: Coombes 2013 JAMA
+    url: https://doi.org/10.1001/jama.2013.129
+  - text: Kim 2021 JSES Int
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8888180/
+    free_full_text: true
+- id: ucl-nonop-interval-throwing
+  title: UCL Non-Operative Rehabilitation & Interval Throwing Programme
+  page: 8
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Evidence on non-operative UCL rehabilitation and structured interval throwing programmes after UCL injury or reconstruction.
+  steps:
+  - 'UCL non-operative rehab (Erickson 2015 Sports Health): "Nonoperative treatment should be attempted, but limited studies have not shown promising results".'
+  - 'UCL rehab after reconstruction (Kemler 2022 SR, 33 studies, 3480 athletes): protocols most often used bracing with progressive ROM (93.9%), strengthening (84.8%) and an interval throwing programme (81.8%); RTS timelines 6.5 to 16 months; no study fully defined RTS criteria.'
+  positive: Progression through flat-ground distance/volume phases to mound throwing only when pain-free with full ROM and strength.
+  interpretation: Track throwing distance, effort, pitch count, and next-day medial elbow soreness alongside KJOC score.
+  metrics: Interval throwing programme in 81.8% of protocols; bracing + ROM 93.9%, strengthening 84.8%; RTS 6.5 to 16 months (Kemler 2022)
+  sources:
+  - text: Erickson 2015 Sports Health
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4622381/
+    free_full_text: true
+  - text: Kemler 2022 Am J Sports Med
+    url: https://doi.org/10.1177/03635465211033994
+- id: elbow-tracking-flowsheet
+  title: 12-Visit Elbow Rehabilitation Flowsheet & Discharge Milestones
+  page: 9
+  type: info
+  review_status: approved
+  evidence: M
+  summary: Longitudinal 12-visit session tracker and population-specific discharge thresholds for PRTEE, Oxford Elbow Score, QuickDASH, KJOC, goniometry, and grip strength.
+  steps:
+  - 'PRTEE: Shafiee 2022 (SR): test-retest 0.96 (0.94–0.97), SEM 3.1 (1.8 to 4.4), MDC95 8.9 (5.3–12.5); Sveinall 2025 (tennis elbow): total (0–100) SDC95 17, MIC 9; pain subscale (0–50) SDC95 8, MIC 11; function subscale (0–50) SDC95 12, MIC 4.'
+  - 'Oxford Elbow Score: Dawson 2008 (after surgery): MCID ≈ 10 for Function, ≈ 18 for Pain and Social-Psychological; Wänström 2024 (elbow injury): SDC 12.1.'
+  - 'QuickDASH & SANE (Wänström 2024, elbow injury): SDC QuickDASH 11.4, SANE 1.94.'
+  - 'Pain-free & maximum grip (Sveinall 2025, tennis elbow): SDC95 6.4 kg pain-free grip, 8.4 kg maximum grip; MIC 6.5 kg pain-free, 1 kg maximum; pain on gripping SDC95 4, MIC 3.5 (0–10).'
+  - 'Goniometry (Armstrong 1998): same tester real change > 6° flexion, 7° extension, 8° pronation, 8° supination; between testers 10° flexion, 10° extension, 10° pronation, 11° supination.'
+  positive: Attainment of MIC / SDC thresholds and functional return-to-work/sport goals.
+  interpretation: Combines objective impairment changes (ROM, pain-free/maximum grip) with validated PROM milestones.
+  metrics: PRTEE MIC 9 / SDC95 17 / MDC95 8.9; OES MCID ≈ 10 Fn / ≈ 18 Pain & Soc-Psych, SDC 12.1; QuickDASH SDC 11.4; PFG MIC 6.5 kg / SDC95 6.4 kg
+  sources:
+  - text: Sveinall 2025 Shoulder Elbow
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12122481/
+    free_full_text: true
+  - text: Shafiee 2022 Disabil Rehabil
+    url: https://doi.org/10.1080/09638288.2021.1938248
+  - text: Dawson 2008 Qual Life Res
+    url: https://doi.org/10.1007/s11136-008-9409-3
+  - text: Wänström 2024 JSES Int
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11258825/
+    free_full_text: true
+  - text: Armstrong 1998 J Shoulder Elbow Surg
+    url: https://doi.org/10.1016/s1058-2746(98)90003-9
