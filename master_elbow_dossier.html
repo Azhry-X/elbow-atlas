@@ -227,8 +227,10 @@ body{
 .sh .calc-badge, .sh .guide-badge{ text-transform:none; letter-spacing:.01em; }
 .t tr.sub .calc-badge, .t tr.sub .guide-badge{ text-transform:none; letter-spacing:.01em; }
 
+#p9-flowsheet .p { font-size: 4.9pt; letter-spacing: -0.15px; }
+
 /* ---- compiled utility classes (Tailwind v3, generated at build) ---- */
-.collapse{visibility:collapse}.static{position:static}.col-span-2{grid-column:span 2/span 2}.mt-\[1px\]{margin-top:1px}.flex{display:flex}.table{display:table}.grid{display:grid}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-3{gap:.75rem}.gap-\[1\.5px\]{gap:1.5px}.gap-\[1px\]{gap:1px}.gap-x-1{-moz-column-gap:.25rem;column-gap:.25rem}.gap-x-2{-moz-column-gap:.5rem;column-gap:.5rem}.border{border-width:1px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.pl-2{padding-left:.5rem}.pt-\[1px\]{padding-top:1px}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}
+.collapse{visibility:collapse}.static{position:static}.col-span-2{grid-column:span 2/span 2}.col-span-5{grid-column:span 5/span 5}.col-span-7{grid-column:span 7/span 7}.mb-\[1px\]{margin-bottom:1px}.mr-2{margin-right:.5rem}.mt-\[1px\]{margin-top:1px}.flex{display:flex}.table{display:table}.grid{display:grid}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-\[1\.5px\]{gap:1.5px}.gap-\[1px\]{gap:1px}.gap-x-1{-moz-column-gap:.25rem;column-gap:.25rem}.gap-x-2{-moz-column-gap:.5rem;column-gap:.5rem}.border{border-width:1px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.pl-2{padding-left:.5rem}.pt-\[1px\]{padding-top:1px}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}
 </style>
 </head>
 <body>
@@ -273,6 +275,13 @@ body{
 </div>
 <div class="fr" style="flex:1"><span class="lb">Compartment</span><span class="cio"><span class="cb sm"></span>Lat</span><span class="cio"><span class="cb sm"></span>Med</span><span class="cio"><span class="cb sm"></span>Ant</span><span class="cio"><span class="cb sm"></span>Post</span><span class="lb">Worst</span><span class="fl"></span></div>
 </div>
+<div class="fr xs" style="gap:2mm;border-top:1px dashed var(--line);padding-top:1px;margin-top:1px;">
+<span class="lb">Baseline Vitals (write-in):</span>
+<span class="lb">BP</span><span class="fl s"></span>
+<span class="lb">HR</span><span class="fl s"></span>
+<span class="lb">SpO₂</span><span class="fl s"></span>
+<span class="lb">Temp</span><span class="fl s"></span>
+</div>
 </div>
 </section>
 <!-- B : Red Flags -->
@@ -292,6 +301,9 @@ body{
 <div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Dislocation &amp; compartment syndrome:</b></a> <b class="crim">dislocation with neurovascular compromise</b> (absent pulse, pallor, acute nerve deficit); <b class="crim">forearm compartment syndrome</b> (severe pain out of proportion, tense swollen forearm, pain on passive finger stretch) <span class="eb eb-e">E</span></div></div>
 <div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Septic &amp; paediatric red flags:</b></a> <b class="crim">septic olecranon bursitis / septic arthritis</b> (fever, heat, swelling); <b class="crim">fracture in a child</b> (acute trauma, refusal to use arm, swelling or incomplete active ROM) <span class="eb eb-e">E</span></div></div>
 <div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-red-flags-triage" rel="noopener" target="_blank"><b>Visceral &amp; proximal referral:</b></a> <b class="crim">cardiac referral to the left medial arm</b> (non-mechanical ache, chest/jaw symptoms) <span class="eb eb-e">E</span> · <b class="nav">cervical radiculopathy referral</b> (C5–T1 neck/radicular screen) <span class="eb eb-e">E</span></div></div>
+</div>
+<div class="col-span-2 xs mt-[1px] pt-[1px] border-t border-dashed" style="border-color:var(--accent-line)">
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#epa-medication-safety" rel="noopener" target="_blank"><b>Medication &amp; Modality Safety:</b></a> Houghton 2010 (Guideline): electrophysical contraindications (malignancy, active DVT, pregnancy, electronic implants) • Kearns 2019 <span class="eb eb-e">E</span>: anticoagulants / coagulopathy — caution — possible increased incidence or severity of haematoma and bruising • Wise 2012 <span class="eb eb-m">M</span>: fluoroquinolones: tendonitis OR 4.3, rupture OR 2.0; stronger with oral glucocorticoids (OR 9.1) and age &gt; 60 (OR 8.3) • Waters 2023 <span class="eb eb-l">L</span>: quinolones after distal biceps repair: prescription within 90 days: reoperation 3.6 % vs 1.7 % (OR 2.13)</div></div>
 </div>
 <div class="col-span-2 flex flex-wrap items-center gap-x-1 mt-[1px] pt-[1px] border-t border-dashed" style="border-color:var(--accent-line)">
 <span class="lb crim">TRIAGE DISPOSITION:</span>
@@ -373,7 +385,7 @@ body{
 </div>
 </div>
 <div class="sh" style="margin:.4mm 0 .2mm;"><span>Body Chart — where is the pain?</span><span class="stat">Clinical signposts <span class="eb eb-e">E</span></span></div>
-<svg font-family="Source Sans 3, Arial, sans-serif" style="width:100%;max-height:56mm;height:56mm;display:block" viewbox="0 0 880 334" xmlns="http://www.w3.org/2000/svg"><g>
+<svg font-family="Source Sans 3, Arial, sans-serif" style="width:100%;max-height:51mm;height:51mm;display:block" viewbox="0 0 880 334" xmlns="http://www.w3.org/2000/svg"><g>
 <path d="M 189.0 6 C 189.0 29.0 191.0 29.0 191.0 52 C 191.0 76.0 194.0 76.0 194.0 100 C 194.0 119.0 196.0 119.0 196.0 138 C 196.0 147.0 194.0 147.0 194.0 156 C 194.0 170.0 194.0 170.0 194.0 184 C 194.0 205.0 203.0 205.0 203.0 226 C 203.0 242.0 211.0 242.0 211.0 258 L 208.0 262 C 206 282 207 300 211 316 C 217 322 231 322 238 316 C 242 300 244 282 242.0 262 L 239.0 258 C 239.0 242.0 243.0 242.0 243.0 226 C 243.0 205.0 248.0 205.0 248.0 184 C 248.0 170.0 246.0 170.0 246.0 156 C 246.0 147.0 244.0 147.0 244.0 138 C 244.0 119.0 246.0 119.0 246.0 100 C 246.0 76.0 249.0 76.0 249.0 52 C 249.0 29.0 251.0 29.0 251.0 6 Z" fill="#f4dccb" stroke="#b88a6e" stroke-linejoin="round" stroke-width="1.1"></path>
 <path d="M 238 10 C 242 60 240 120 239 150 C 240 190 238 230 236 258 L 231 258 C 233 230 235 190 234 150 C 235 120 236 60 232 10 Z" fill="#d9a888" fill-opacity=".22"></path>
 <path d="M 216.5 300 L 216.5 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 225.0 300 L 225.0 320" stroke="#b88a6e" stroke-width=".7"></path><path d="M 233.5 300 L 233.5 320" stroke="#b88a6e" stroke-width=".7"></path><ellipse cx="206" cy="282" fill="#f4dccb" rx="4" ry="11" stroke="#b88a6e" stroke-width="1" transform="rotate(16 206 282)"></ellipse>
@@ -427,7 +439,7 @@ body{
 </div>
 </div>
 </section>
-<div class="dots fill" id="p1-notes"><span class="dots-l">Subjective History · Mechanism · Patient Goals (PSFS)</span></div>
+<div class="dots" id="p1-notes" style="min-height:4.5mm;height:4.5mm;"><span class="dots-l">Subjective History · Mechanism · Patient Goals (PSFS)</span></div>
 
   </main>
   <footer class="pg-ftr">
@@ -665,50 +677,41 @@ body{
 </tr>
 </tbody>
 </table>
-<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-goniometry" rel="noopener" target="_blank"><b>Goniometry (universal goniometer, same tester)</b></a> (Armstrong 1998 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">real change if greater than 6° flexion, 7° extension, 8° pronation, 8° supination; between testers 10° flexion, 10° extension, 10° pronation, 11° supination</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#elbow-goniometry" rel="noopener" target="_blank"><b>Goniometry (universal goniometer, same tester)</b></a> (Armstrong 1998 J Shoulder Elbow Surg) <span class="eb eb-m">M</span>: <b class="nav">real change if greater than 6° flexion, 7° extension, 8° pronation, 8° supination; between testers 10° flexion, 10° extension, 10° pronation, 11° supination</b> • Soucie 2011 <span class="eb eb-m">M</span>: significant age- and sex-related variation — compare with the other side and the patient's own baseline</div></div>
 </div>
 </section>
-<!-- B : Grip Strength & JOSPT LET CPG Core Measures -->
+<!-- B : Isometric Strength (HHD & Grip) & JOSPT Impairment Measures -->
 <section class="card" id="p3-grip">
-<div class="card-h"><span>B · Pain-Free Grip, Maximum Grip &amp; JOSPT LET CPG Physical Impairment Measures</span><span class="tag">DYNAMOMETRY</span></div>
+<div class="card-h"><span>B · Isometric Strength (HHD &amp; Grip) &amp; JOSPT LET CPG Physical Impairment Measures <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a></span><span class="tag">DYNAMOMETRY · TORQUE</span></div>
 <div class="card-b flex flex-col gap-[1.5px]">
 <div class="grid grid-cols-2 gap-x-2">
 <div>
 <div class="sh" style="margin:0 0 .5px;"><span>Grip Strength Dynamometry &amp; Change Scores</span><a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>Grip Calc</a></div>
-<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Grip strength in LET (interobserver)</b></a> (Smidt 2002 Arch Phys Med Rehabil) <span class="eb eb-m">M</span>: <b class="nav">ICC pain-free grip .97, maximum grip .98, severity of complaints .90, pressure pain threshold .77 (unsatisfactory)</b></div></div>
-<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Pain-free grip — change scores</b></a> (Sveinall 2025 Shoulder Elbow) <span class="eb eb-m">M</span>: <b class="nav">SDC95 6.4 kg pain-free grip, 8.4 kg maximum grip; MIC 6.5 kg pain-free, 1 kg maximum; pain on gripping SDC95 4, MIC 3.5 (0–10)</b></div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank"><b>Grip in LET:</b></a> Smidt 2002 <span class="eb eb-m">M</span>: ICC pain-free grip .97, max grip .98 • Sveinall 2025 <span class="eb eb-m">M</span>: SDC95 6.4 kg pain-free, 8.4 kg max; MIC 6.5 kg pain-free, 1 kg max; pain on gripping SDC95 4, MIC 3.5 (0–10)</div></div>
 </div>
 <div class="divider-v">
-<div class="sh" style="margin:0 0 .5px;"><span>JOSPT LET CPG Core Measures (Lucado 2022)</span><a class="guide-badge" href="https://doi.org/10.2519/jospt.2022.0302" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><path d="M2 .7h4.2L8.3 2.8V9.3H2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.05"></path><path d="M6.1.8v2.1h2.1" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M3.3 5h3.5M3.3 6.6h3.5M3.3 8.1h2.2" stroke="currentColor" stroke-width=".85"></path></svg>JOSPT 2022</a></div>
-<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#jospt-2022-let-cpg" rel="noopener" target="_blank"><b>JOSPT LET CPG — measures</b></a> (Lucado 2022 JOSPT LET CPG) (Guideline): <b class="nav">“Clinicians should include the physical impairment measures of elbow and wrist range of motion, pressure pain threshold, pain-free grip strength, and maximum grip strength at baseline and at least one other follow-up point that includes discharge”</b></div></div>
+<div class="sh" style="margin:0 0 .5px;"><span>HHD Reliability &amp; Standardised Setup</span><a class="calc-badge" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank"><svg aria-hidden="true" class="badge-ico" viewbox="0 0 10 10"><rect fill="none" height="8.8" rx="1.4" stroke="currentColor" stroke-width="1.1" width="8.8" x=".6" y=".6"></rect><rect fill="currentColor" height="1.7" rx=".3" width="5.6" x="2.2" y="2.1"></rect><circle cx="2.9" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="5.6" fill="currentColor" r=".62"></circle><circle cx="2.9" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="5" cy="7.6" fill="currentColor" r=".62"></circle><circle cx="7.1" cy="7.6" fill="currentColor" r=".62"></circle></svg>HHD Calc</a></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank"><b>HHD reliability:</b></a> Bohannon 1986 <span class="eb eb-m">M</span>: median/modal correlations .97 or .98 (incl. elbow flexion / extension) • Krause 2014 <span class="eb eb-m">M</span>: mechanical advantage • Rule (E): same device, position, strap/lever point, tester; compare with other side</div></div>
 </div>
 </div>
-<table class="t" style="margin-top:1px;">
+<table class="t dense" style="margin-top:1px;">
 <thead>
 <tr>
-<th style="width:24%">Measure</th>
-<th class="c" style="width:15%">Affected</th>
-<th class="c" style="width:15%">Unaffected</th>
-<th class="c" style="width:16%">Ratio (%)</th>
-<th style="width:30%">Verified Change Benchmark (Sveinall 2025)</th>
+<th style="width:25%">Strength Measure</th>
+<th class="c" style="width:13%">Lever (cm)</th>
+<th class="c" style="width:15%">Affected (N / kg)</th>
+<th class="c" style="width:16%">Affected (N·m)</th>
+<th class="c" style="width:16%">Unaffected (N·m)</th>
+<th class="c" style="width:15%">LSI (%)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Pain-Free Grip (kg)</a></b></td>
-<td></td><td></td><td></td>
-<td><b>SDC95 6.4 kg · MIC 6.5 kg</b> (ICC .97, Smidt 2002)</td>
-</tr>
-<tr>
-<td><b><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Maximum Grip (kg)</a></b></td>
-<td></td><td></td><td></td>
-<td><b>SDC95 8.4 kg · MIC 1 kg</b> (ICC .98, Smidt 2002)</td>
-</tr>
-<tr>
-<td><b>Pain on Gripping (0–10) &amp; PPT</b></td>
-<td></td><td></td><td></td>
-<td><b>Pain on gripping SDC95 4 · MIC 3.5 (0–10)</b> · PPT ICC .77</td>
-</tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank">Elbow Flexion (HHD)</a></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank">Elbow Extension (HHD)</a></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank">Forearm Supination (HHD)</a></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#hhd-strength" rel="noopener" target="_blank">Forearm Pronation (HHD)</a></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Pain-Free Grip (kg)</a></td><td class="c">—</td><td></td><td class="c">—</td><td class="c">—</td><td></td></tr>
+<tr><td class="k"><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-free-grip-strength" rel="noopener" target="_blank">Maximum Grip (kg)</a></td><td class="c">—</td><td></td><td class="c">—</td><td class="c">—</td><td></td></tr>
 </tbody>
 </table>
 </div>
@@ -752,7 +755,7 @@ body{
 </table>
 </div>
 </section>
-<div class="dots fill" id="p3-notes"><span class="dots-l">Objective Examination · Goniometry · Grip Dynamometry · Neurodynamic Notes</span></div>
+<div class="dots" id="p3-notes" style="min-height:4.5mm;height:4.5mm;"><span class="dots-l">Objective Examination · Goniometry · Grip Dynamometry · Neurodynamic Notes</span></div>
 
   </main>
   <footer class="pg-ftr">
@@ -1064,7 +1067,17 @@ body{
 </div>
 </div>
 </section>
-<div class="dots fill" id="p5-notes"><span class="dots-l">Post-Operative Communication · Surgeon Orders · Splinting Progression Notes</span></div>
+<!-- Criteria to Progress Checklist -->
+<div class="box g xs flex flex-wrap items-center" style="padding:.6mm 1.2mm;margin-top:1px;">
+<b class="emer mr-2">Criteria to progress (E) <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#post-op-progression-criteria" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a>:</b>
+<span class="cio"><span class="cb sm g"></span>Surgeon clearance verified</span>
+<span class="cio"><span class="cb sm g"></span>Wound healed &amp; no infection</span>
+<span class="cio"><span class="cb sm g"></span>Pain controlled (zone ≤ 5/10)</span>
+<span class="cio"><span class="cb sm g"></span>Target PROM arc achieved</span>
+<span class="cio"><span class="cb sm g"></span>Strength baseline recorded</span>
+<span class="cio"><span class="cb sm g"></span>Patient confident</span>
+</div>
+<div class="dots" id="p5-notes" style="min-height:5mm;height:5mm;"><span class="dots-l">Post-Operative Communication · Surgeon Orders · Splinting Progression Notes</span></div>
 
   </main>
   <footer class="pg-ftr">
@@ -1242,9 +1255,17 @@ body{
 </div>
 </div>
 </section>
-<!-- C : Safety Screen, Informed Consent & Manual Therapy Log -->
+<!-- C : Dry Needling Safety & Adverse Events -->
+<section class="card red" id="p7-needling-safety">
+<div class="card-h"><span>C · Dry Needling Safety &amp; Adverse Events <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#needling-safety" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a></span><span class="tag">SAFETY SCREEN</span></div>
+<div class="card-b flex flex-col gap-[1.5px]" style="padding:.8mm 1.2mm;">
+<div class="ci"><span class="cb r"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#needling-safety" rel="noopener" target="_blank"><b>Adverse event rates:</b></a> Brady 2014 <span class="eb eb-m">M</span>: mild AEs 19.18 %; upper risk rate for significant AEs ≤ 0.04 %; bruising 7.55 %, bleeding 4.65 % • Boyce 2020 <span class="eb eb-m">M</span>: minor AE 36.7 %; major AE &lt; .1 % (prolonged symptom aggravation .03 %, fainting .02 %, forgotten needles .01 %)</div></div>
+<div class="ci"><span class="cb r"></span><div><b>Serious risks &amp; screening:</b> Halle 2016 <span class="eb eb-e">E</span>: pneumothorax, cardiac tamponade, haematoma, infection, CNS injury; filament needles 32–36 gauge (.25–.20 mm) • Kearns 2019 <span class="eb eb-e">E</span>: anticoagulants / coagulopathy — caution — possible increased incidence or severity of haematoma and bruising</div></div>
+</div>
+</section>
+<!-- D : Safety Screen, Informed Consent & Manual Therapy Log -->
 <section class="card" id="p7-consent">
-<div class="card-h"><span>C · Pre-Intervention Safety Screen, Informed Consent &amp; Manual Therapy / Dry Needling Log</span><span class="tag">CONSENT</span></div>
+<div class="card-h"><span>D · Pre-Intervention Safety Screen, Informed Consent &amp; Manual Therapy / Dry Needling Log</span><span class="tag">CONSENT</span></div>
 <div class="card-b flex flex-col gap-[1.5px]">
 <div class="fr flex-wrap xs">
 <span class="lb">Contraindications / Precautions Screened <span class="eb eb-e">E</span>:</span>
@@ -1278,14 +1299,14 @@ body{
 </tr>
 </thead>
 <tbody>
-<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:6mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
 </div>
 </section>
-<div class="dots fill" id="p7-notes"><span class="dots-l">Manual Therapy Response · MWM Glide Vector · Home Self-MWM Instructions</span></div>
+<div class="dots fill" id="p7-notes" style="min-height:6mm;"><span class="dots-l">Manual Therapy Response · MWM Glide Vector · Home Self-MWM Instructions</span></div>
 
   </main>
   <footer class="pg-ftr">
@@ -1344,11 +1365,41 @@ body{
 </div>
 </div>
 </section>
-<!-- B : 12-Week LET Loading Log -->
+<!-- B : Pain-Monitoring Model & Activity Guidance -->
+<section class="card" id="p8-pain-monitoring">
+<div class="card-h"><span>B · Pain-Monitoring Model &amp; Activity Modification <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#pain-monitoring-model" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a></span><span class="tag">TRAFFIC LIGHT</span></div>
+<div class="card-b grid grid-cols-12 gap-2" style="padding:.8mm 1.2mm;">
+<div class="col-span-7 flex flex-col gap-[1.5px]">
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#pain-monitoring-model" rel="noopener" target="_blank"><b>Pain-monitoring model:</b></a> Sprague 2021 <span class="eb eb-e">E</span>: <b class="emer">pain should not exceed 5/10 on the NPRS during or immediately after activity and should return to pre-activity levels by the following morning</b> • Silbernagel 2007 <span class="eb eb-m">M</span>: continued tendon loading with a pain-monitoring model showed no negative effects</div></div>
+<div class="ci"><span class="cb"></span><div><b>Origin of the zones:</b> Cavaggion 2024 <span class="eb eb-e">E</span>: low (0–2), acceptable (2–5) and high (5–10) risk zones were based on clinical experience</div></div>
+<div class="flex items-center gap-1 xs mt-[1px]">
+<span class="badge badge-green">Low 0–2 (Safe)</span>
+<span class="badge badge-amber">Acceptable 2–5 (Monitor)</span>
+<span class="badge badge-red">High 5–10 (Excessive)</span>
+</div>
+</div>
+<div class="col-span-5">
+<div class="xs b mb-[1px]">Activity Guidance (E):</div>
+<table class="t dense">
+<thead><tr><th style="width:33%">Avoid</th><th style="width:33%">Modify</th><th style="width:34%">OK</th></tr></thead>
+<tbody><tr style="height:5.5mm;"><td></td><td></td><td></td></tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- C : Upper-Limb Return-to-Sport Battery & BFR Protocol -->
+<section class="card" id="p8-rts-battery">
+<div class="card-h"><span>C · Upper-Limb Return-to-Sport Battery &amp; Blood Flow Restriction (BFR) <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#rts-battery-ul" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a> <a aria-label="Open Atlas info card" class="info-icon" href="https://azhry-x.github.io/elbow-atlas/#bfr-upper-limb" rel="noopener" target="_blank"><svg aria-hidden="true" class="info-svg" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="2.2"></circle><line stroke="currentColor" stroke-width="2.4" x1="12" x2="12" y1="16.5" y2="10.5"></line><circle cx="12" cy="7.3" fill="currentColor" r="1.4"></circle></svg></a></span><span class="tag">RTS · BFR</span></div>
+<div class="card-b flex flex-col gap-[1.5px]" style="padding:.8mm 1.2mm;">
+<div class="ci"><span class="cb g"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#rts-battery-ul" rel="noopener" target="_blank"><b>Upper-limb RTS battery (throwing/overhead athletes):</b></a> <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#rts-battery-ul" rel="noopener" target="_blank">CKCUEST</a> (Tucci 2014 <span class="eb eb-m">M</span>: SEM 1.45–2.76 touches, MDC 2.05–3.91, at least 3 touches = real improvement; Pontillo 2014 <span class="eb eb-l">L</span>: 21 touches: Sn 0.83, Sp 0.79, OR 18.75) • <a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#rts-battery-ul" rel="noopener" target="_blank">YBT-UQ</a> (Westrick 2012 <span class="eb eb-l">L</span>: dominant and non-dominant limbs similar) • <b>Seated shot put</b> (Chmielewski 2014 <span class="eb eb-m">M</span>: LSI exceeded 100 % — males 108.7 %, females 104.4 %)</div></div>
+<div class="ci"><span class="cb"></span><div><a class="test-link" href="https://azhry-x.github.io/elbow-atlas/#bfr-upper-limb" rel="noopener" target="_blank"><b>Blood flow restriction (BFR):</b></a> Patterson 2019 (Guideline): 40 to 80 % of arterial occlusion pressure (AOP), set from measured AOP; 20–40 % 1RM; 75 repetitions as 30-15-15-15; rest 30–60 s; 2–3 sessions per week • Lorenz 2021 <span class="eb eb-l">L</span>: 20 % to 40 % of 1-RM • <b class="crim">Cuff on proximal arm only</b> <span class="eb eb-e">E</span></div></div>
+</div>
+</section>
+<!-- D : 12-Week LET Loading Log -->
 <section class="card" id="p8-loading-log">
-<div class="card-h"><span>B · 12-Week Lateral / Medial Elbow Progressive Loading Log</span><span class="tag">12-WEEK LOG</span></div>
+<div class="card-h"><span>D · 12-Week Lateral / Medial Elbow Progressive Loading Log</span><span class="tag">12-WEEK LOG</span></div>
 <div class="card-b">
-<table class="t">
+<table class="t dense">
 <thead>
 <tr>
 <th style="width:22%">Exercise / Drill</th>
@@ -1358,40 +1409,39 @@ body{
 </tr>
 </thead>
 <tbody>
-<tr style="height:5.5mm;"><td><b>Isometric Wrist Ext / Flex</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td><b>Concentric / Eccentric Wrist Ext</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td><b>Supination / Pronation Hammer Load</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td><b>Grip / Carry Progression</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td><b>Scapular &amp; Rotator Cuff Kinetic Chain</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td><b>Isometric Wrist Ext / Flex</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td><b>Concentric / Eccentric Wrist Ext</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td><b>Supination / Pronation Hammer Load</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td><b>Grip / Carry Progression</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.2mm;"><td><b>Scapular &amp; Rotator Cuff Kinetic Chain</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
 </div>
 </section>
-<!-- C : Interval Throwing Log -->
+<!-- E : Interval Throwing Log -->
 <section class="card" id="p8-throwing-log">
-<div class="card-h"><span>C · Interval Throwing Programme Log (Flat-Ground &amp; Mound Progression)</span><span class="tag">THROWING LOG</span></div>
+<div class="card-h"><span>E · Interval Throwing Programme Log (Flat-Ground &amp; Mound Progression)</span><span class="tag">THROWING LOG</span></div>
 <div class="card-b">
-<table class="t">
+<table class="t dense">
 <thead>
 <tr>
-<th style="width:12%">Date / Phase</th>
-<th style="width:18%">Distance / Surface</th>
+<th style="width:14%">Date / Phase</th>
+<th style="width:20%">Distance / Surface</th>
 <th style="width:18%">Throws &amp; Effort</th>
-<th style="width:18%">Warm-Up / Crow-Hop</th>
+<th style="width:16%">Warm-Up / Crow-Hop</th>
 <th style="width:18%">Medial Pain / Next-Day Soreness</th>
-<th style="width:16%">Progression Decision</th>
+<th style="width:14%">Progression</th>
 </tr>
 </thead>
 <tbody>
-<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr style="height:5.5mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.4mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.4mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr style="height:4.4mm;"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
 </div>
 </section>
-<div class="dots fill" id="p8-notes"><span class="dots-l">Home Exercise Prescription · Occupational / Sport Conditioning · Interval Throwing Notes</span></div>
+<div class="dots fill" id="p8-notes" style="min-height:5mm;"><span class="dots-l">Home Exercise Prescription · Occupational / Sport Conditioning · Interval Throwing Notes</span></div>
 
   </main>
   <footer class="pg-ftr">
@@ -1434,115 +1484,116 @@ body{
  <table class="t flow slate" id="p9-flowsheet" style="table-layout:fixed;">
 <thead>
 <tr>
-<th class="c" style="width:4%">#</th>
-<th style="width:7%">Date</th>
-<th style="width:6%">NPRS</th>
-<th style="width:8.5%">Flex / Ext</th>
-<th style="width:8.5%">Pron / Sup</th>
-<th style="width:9%">PFG / Max (kg)</th>
-<th style="width:22%">Exercise &amp; Loading Delivered</th>
-<th style="width:16%">Manual / Tape / EPA</th>
-<th style="width:8%">Irritability</th>
-<th style="width:7%">PROM</th>
+<th class="c" style="width:3%">#</th>
+<th style="width:6%">Date</th>
+<th style="width:5%">NPRS</th>
+<th style="width:8%">Flex / Ext</th>
+<th style="width:8%">Pron / Sup</th>
+<th style="width:8%">PFG / Max</th>
+<th style="width:20%">Exercise &amp; Loading Delivered</th>
+<th style="width:15%">Manual / Tape / EPA</th>
+<th style="width:7.5%">Irritability</th>
+<th style="width:6.5%">PROM</th>
+<th style="width:10%;font-size:5.2pt;white-space:nowrap;">Patient signature</th>
 <th class="c" style="width:4%">Init</th>
 </tr>
 </thead>
 <tbody>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">1</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">2</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">3</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">4</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">5</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">6</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">7</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">8</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">9</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">10</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">11</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
-<tr style="height:11.2mm;">
+<tr style="height:10.4mm;">
 <td class="vnum">12</td>
 <td></td><td></td><td></td><td></td><td></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Isom | Conc/Ecc | Sup/Pron | Scap | Throw</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">MWM | Joint Mob | Needling | Tape</div></td>
 <td style="vertical-align:bottom;padding-bottom:1.2px;"><div class="p">Low | Mod | High</div></td>
-<td></td><td></td>
+<td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1570,7 +1621,11 @@ body{
 </div>
 </div>
 </section>
-<div class="dots fill" id="p9-notes"><span class="dots-l">Discharge Summary · Long-Term Relapse Prevention · Return-to-Sport / Work Clearance</span></div>
+<div class="box amber xs flex flex-wrap items-center" style="padding:.7mm 1.5mm;margin-top:1mm;">
+<b class="mr-2">Session 6 checkpoint:</b>
+<span>Re-score the main PROM against the MCID / MDC already on the sheet. If there is no change, re-assess the diagnosis, the dose or referral (E).</span>
+</div>
+<div class="dots" id="p9-notes" style="min-height:5mm;height:5mm;"><span class="dots-l">Discharge Summary · Long-Term Relapse Prevention · Return-to-Sport / Work Clearance</span></div>
 
   </main>
   <footer class="pg-ftr">

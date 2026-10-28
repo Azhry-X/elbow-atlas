@@ -1269,3 +1269,201 @@
     free_full_text: true
   - text: Armstrong 1998 J Shoulder Elbow Surg
     url: https://doi.org/10.1016/s1058-2746(98)90003-9
+- id: epa-medication-safety
+  title: Medication Safety & Electrophysical Agent Contraindications
+  type: info
+  page: 1
+  review_status: draft
+  summary: Safety screening guidelines for electrophysical agents (EPA) and fluoroquinolone-associated tendon toxicity.
+  steps:
+    - "Screen for electrophysical agent contraindications before applying modalities: implanted electronic devices, pregnancy, malignancy, recently irradiated tissue, active DVT, bleeding, impaired sensation (Houghton 2010)."
+    - "Caution with anticoagulants / coagulopathy: possible increased incidence or severity of haematoma and bruising (Kearns 2019)."
+    - "Screen for fluoroquinolone antibiotic use: tendonitis OR 4.3, rupture OR 2.0; stronger with oral glucocorticoids (OR 9.1) and age > 60 (OR 8.3) (Wise 2012)."
+    - "Distal biceps repair: fluoroquinolones within 90 days increases reoperation risk: 3.6 % vs 1.7 % [OR 2.13] (Waters 2023)."
+  positive: Safe application of modalities and screening for medication-related tendon vulnerability.
+  interpretation: "Houghton 2010 provides an agent-by-agent contraindication table for electrophysical agents; Kearns 2019 highlights anticoagulant precautions for haematoma and bruising; Wise 2012 documented significant tendonitis and rupture risk with fluoroquinolones, substantially magnified by oral corticosteroids and older age; Waters 2023 demonstrated a doubling of reoperation risk (OR 2.13) when fluoroquinolones are prescribed within 90 days of distal biceps repair."
+  metrics: "Houghton 2010 contraindications; Kearns 2019 anticoagulant caution (E); Wise 2012 fluoroquinolone tendonitis OR 4.3, rupture OR 2.0, steroids OR 9.1, age > 60 OR 8.3; Waters 2023 reoperation 3.6 % vs 1.7 % (OR 2.13)"
+  evidence: Guideline
+  sources:
+    - text: Houghton 2010 Physiother Can
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3031347/
+      free_full_text: true
+    - text: Kearns 2019 J Man Manip Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6598537/
+      free_full_text: true
+    - text: Wise 2012 Am J Med
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3502655/
+      free_full_text: true
+    - text: Waters 2023 Orthop Rev (Pavia)
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9946796/
+      free_full_text: true
+
+- id: hhd-strength
+  title: Hand-Held Dynamometry (HHD) Elbow Strength & Torque Calculator
+  type: info
+  page: 3
+  review_status: draft
+  summary: Standardised hand-held dynamometry (HHD) force and torque (N·m = N × m) measurement for elbow flexion, extension, supination, and pronation.
+  steps:
+    - "Use the same device, same position, same strap / lever-arm point and, where possible, the same tester at every visit; compare with the other side."
+    - "Measure lever arm in cm (convert to m = cm ÷ 100) and peak force in Newtons (N) on involved and uninvolved sides."
+    - "Calculate Torque (N·m) = Force (N) × Lever arm (m) and Limb Symmetry Index (LSI % = involved ÷ uninvolved × 100)."
+  positive: Reliable objective strength tracking and side-to-side symmetry guide progression.
+  interpretation: "Bohannon 1986 established median and modal test–retest correlations of .97 or .98 for single-session HHD (including elbow flexion and extension); Krause 2014 demonstrated that examiners of different strength can test reliably when using standardised technique providing mechanical advantage."
+  metrics: "Bohannon 1986: median/modal correlations .97 or .98 (incl. elbow flexion / extension); Krause 2014: examiner reliability with mechanical advantage"
+  evidence: M
+  calculator:
+    decimals: 1
+    expr: f_inv * lever / 100
+    inputs:
+      - key: f_inv
+        label: Involved force (N)
+        type: number
+      - key: f_uninv
+        label: Uninvolved force (N)
+        type: number
+      - key: lever
+        label: Lever arm (cm)
+        type: number
+    kind: formula
+    outputs:
+      - text: "Uninvolved torque: {f_uninv*lever/100|1} N·m · LSI: {f_inv/f_uninv*100|1}%"
+        tone: good
+        when: isFinite(f_inv) && isFinite(f_uninv) && f_uninv>0 && isFinite(lever)
+    value_label: Involved torque (N·m) = N × cm ÷ 100
+  sources:
+    - text: Bohannon 1986 Phys Ther
+      url: https://doi.org/10.1093/ptj/66.2.206
+      free_full_text: false
+    - text: Krause 2014 J Sport Rehabil
+      url: https://doi.org/10.1123/jsr.2012-0070
+      free_full_text: false
+
+- id: post-op-progression-criteria
+  title: Elbow Post-Operative Progression Criteria Checklist
+  type: info
+  page: 5
+  review_status: draft
+  summary: Objective criteria to progress through post-operative elbow rehabilitation phases.
+  steps:
+    - "Confirm surgeon clearance and verify that POST-OP RESTRICTIONS ARE SURGEON-DIRECTED."
+    - "Inspect surgical incision for healing, absence of drainage, infection, or neurovascular symptoms."
+    - "Verify pain tolerance within acceptable traffic light zones on page 8."
+    - "Assess functional active and passive elbow range of motion milestones without symptom exacerbation."
+    - "Record objective isometric elbow strength on page 3 and assess patient confidence before increasing load."
+  positive: Satisfying criteria allows safe advancement between post-operative rehabilitation phases.
+  interpretation: "POST-OP RESTRICTIONS ARE SURGEON-DIRECTED. Always follow individualised surgical protocols without fixed week counts."
+  metrics: "Surgeon clearance, wound healing, pain ≤ 5/10, target PROM arc, baseline strength, patient confidence (E)"
+  evidence: E
+  sources:
+    - text: Bergman 2021 J Bone Joint Surg Am
+      url: https://doi.org/10.2106/JBJS.20.02047
+      free_full_text: false
+
+- id: needling-safety
+  title: Dry Needling Adverse Events & Safety Screening
+  type: info
+  page: 7
+  review_status: draft
+  summary: Adverse event rates and safety guidelines for dry needling in musculoskeletal clinical practice.
+  steps:
+    - "Obtain informed consent and discuss potential adverse events and treatment alternatives."
+    - "Screen for anticoagulants / coagulopathy (Kearns 2019 caution for haematoma and bruising)."
+    - "Select proper filament needle gauge (32–36 gauge, .25–.20 mm; Halle 2016)."
+    - "Identify and avoid regional anatomical danger zones (neurovascular bundles and pleura)."
+  positive: Safe needling delivery without adverse events.
+  interpretation: "Brady 2014 reported mild AEs 19.18 %, upper risk rate for significant AEs ≤ 0.04 %, bruising 7.55 %, bleeding 4.65 % across 7,629 treatments; Boyce 2020 reported minor AE 36.7 %, major AE < .1 % across 20,464 treatments, with prolonged symptom aggravation .03 %, fainting .02 %, forgotten needles .01 %; Halle 2016 identified serious risks including pneumothorax, cardiac tamponade, haematoma, infection, CNS injury; Kearns 2019 advised caution regarding haematoma and bruising with anticoagulants."
+  metrics: "Mild AEs 19.18 %, significant AEs ≤ 0.04 %, bruising 7.55 %, bleeding 4.65 % (Brady 2014); Minor AE 36.7 %, major AE < .1 % (Boyce 2020); Needles 32–36 gauge (.25–.20 mm) (Halle 2016)"
+  evidence: M
+  sources:
+    - text: Brady 2014 J Man Manip Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4101552/
+      free_full_text: true
+    - text: Boyce 2020 Int J Sports Phys Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7015026/
+      free_full_text: true
+    - text: Halle 2016 Int J Sports Phys Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4970854/
+      free_full_text: true
+    - text: Kearns 2019 J Man Manip Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6598537/
+      free_full_text: true
+
+- id: pain-monitoring-model
+  title: Pain-Monitoring Model & Activity Modification
+  type: info
+  page: 8
+  review_status: draft
+  summary: Pain-monitoring model principles and zone boundaries for exercise and functional loading progression.
+  steps:
+    - "Instruct patient to monitor pain during and immediately after exercise and functional loading."
+    - "Maintain pain at or below 5/10 on the NPRS during loading."
+    - "Verify that symptoms return to pre-activity baseline levels by the following morning."
+    - "Classify daily activities and exercises into Avoid, Modify, or OK categories based on symptom response."
+  positive: Controlled loading without symptom flare-up or morning latency increase.
+  interpretation: "Sprague 2021 established that pain should not exceed 5/10 on the NPRS during or immediately after activity and should return to pre-activity levels by the following morning; Cavaggion 2024 noted that low (0–2), acceptable (2–5) and high (5–10) risk zones were based on clinical experience; Silbernagel 2007 demonstrated that continued loading with a pain-monitoring model showed no negative effects."
+  metrics: "Pain ≤ 5/10 during/after, return to baseline by following morning (Sprague 2021); Zones low 0–2, acceptable 2–5, high 5–10 from clinical experience (Cavaggion 2024); Continued loading safe (Silbernagel 2007)"
+  evidence: E
+  sources:
+    - text: Sprague 2021 Pilot Feasibility Stud
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7905015/
+      free_full_text: true
+    - text: Cavaggion 2024 Open Access J Sports Med
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11616428/
+      free_full_text: true
+    - text: Silbernagel 2007 Am J Sports Med
+      url: https://doi.org/10.1177/0363546506298279
+      free_full_text: false
+
+- id: rts-battery-ul
+  title: Upper-Limb Return-to-Sport Battery (CKCUEST, YBT-UQ, Seated Shot Put)
+  type: info
+  page: 8
+  review_status: draft
+  summary: Return-to-sport testing battery for upper-limb athletes including closed kinetic chain, reach symmetry, and explosive power.
+  steps:
+    - "Administer Closed Kinetic Chain Upper Extremity Stability Test (CKCUEST): Measure touches in 15 seconds across 3 trials; SEM 1.45–2.76 touches, MDC 2.05–3.91, at least 3 touches = real improvement (Tucci 2014); 21 touches: Sn 0.83, Sp 0.79, OR 18.75 (Pontillo 2014)."
+    - "Administer Upper Quarter Y-Balance Test (YBT-UQ): Medial, inferolateral, and superolateral reach distances; dominant and non-dominant limbs similar — uninjured limb serves as normal (Westrick 2012)."
+    - "Administer Seated Single-Arm Shot Put: Measure throw distance; limb symmetry index exceeded 100 % in healthy athletes (males 108.7 %, females 104.4 %) (Chmielewski 2014)."
+  positive: Objective attainment of symmetry and normative thresholds before discharge or athletic clearance.
+  interpretation: "Comprehensive upper-limb RTS assessment combines functional stability (CKCUEST: Tucci 2014, Pontillo 2014), dynamic balance (YBT-UQ: Westrick 2012), and explosive power (Shot Put: Chmielewski 2014)."
+  metrics: "CKCUEST MDC 2.05–3.91, ≥ 3 touches real change (Tucci 2014); YBT-UQ symmetry (Westrick 2012); Shot put LSI > 100 % (Chmielewski 2014)"
+  evidence: M
+  sources:
+    - text: Tucci 2014 BMC Musculoskelet Disord
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3890535/
+      free_full_text: true
+    - text: Pontillo 2014 Sports Health
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4212351/
+      free_full_text: true
+    - text: Westrick 2012 Int J Sports Phys Ther
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3325634/
+      free_full_text: true
+    - text: Chmielewski 2014 J Orthop Sports Phys Ther
+      url: https://doi.org/10.2519/jospt.2014.5004
+      free_full_text: false
+
+- id: bfr-upper-limb
+  title: Blood Flow Restriction (BFR) — Upper-Limb Protocol
+  type: info
+  page: 8
+  review_status: draft
+  summary: Evidence-based blood flow restriction (BFR) training guidelines for upper extremity rehabilitation.
+  steps:
+    - "Set cuff pressure to 40 to 80 % of arterial occlusion pressure (AOP), determined from measured AOP (Patterson 2019)."
+    - "Apply cuff to proximal arm only (never distal to the shoulder joint) (E)."
+    - "Set training load to 20 to 40 % of 1-RM (Patterson 2019, Lorenz 2021)."
+    - "Prescribe 75 repetitions partitioned into 4 sets: 30 repetitions, 15 repetitions, 15 repetitions, 15 repetitions (Patterson 2019)."
+    - "Maintain inter-set rest intervals of 30 to 60 seconds (Patterson 2019)."
+    - "Deliver 2 to 3 training sessions per week (Patterson 2019)."
+  positive: Hypertrophy and strength adaptations equivalent to high-load resistance training with minimal mechanical joint stress.
+  interpretation: "Patterson 2019 international position stand recommends cuff pressure of 40 to 80 % AOP from measured AOP, loads of 20 to 40 % 1-RM, 75 repetitions (30-15-15-15), 30–60 s rest, and 2–3 sessions per week; a wide variety of cuff widths can be used if pressure is individualised to AOP; Lorenz 2021 confirms resistance exercise typically 20 % to 40 % of 1-RM in sports medicine; cuff must always be placed on the proximal arm only."
+  metrics: "Pressure 40–80 % AOP; Load 20–40 % 1-RM; Volume 75 reps (30-15-15-15); Rest 30–60 s; Frequency 2–3 sessions/wk (Patterson 2019)"
+  evidence: Guideline
+  sources:
+    - text: Patterson 2019 Front Physiol
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6530612/
+      free_full_text: true
+    - text: Lorenz 2021 J Athl Train
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8448465/
+      free_full_text: true
